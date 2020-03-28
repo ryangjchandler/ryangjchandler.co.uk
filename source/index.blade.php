@@ -5,21 +5,21 @@
     <main>
         <section class="mb-8 md:mb-16">
             <ul>
-                <li class="pl-4 mb-2">
+                <li class="mb-2">
                     <span class="mr-2">🗺</span>
                     Essex, United Kingdom
                 </li>
-                <li class="pl-4 mb-2">
+                <li class="mb-2">
                     <span class="mr-2">📧</span>
                     <a href="mailto:contact@ryangjchandler.co.uk" class="underline" style="text-decoration-color: #718096;">contact@ryangjchandler.co.uk</a>
                 </li>
-                <li class="pl-4">
+                <li class="">
                     <span class="mr-2">🔗</span>
                     <a href="#" class="underline" style="text-decoration-color: #718096;">Twitter</a>, <a href="#"  class="underline" style="text-decoration-color: #718096;">GitHub</a>
                 </li>
             </ul>
         </section>
-        <section class="pl-4">
+        <section>
             <h2 class="text-lg text-gray-700 mb-8">Articles</h2>
             <table class="w-full">
                 <tbody>

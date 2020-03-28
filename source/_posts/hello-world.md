@@ -6,3 +6,7 @@ section: content
 ---
 
 ## cool stuff
+
+```php
+echo $test;
+```
