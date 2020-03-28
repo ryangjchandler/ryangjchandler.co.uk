@@ -10,3 +10,5 @@ section: content
 ```php
 echo $test;
 ```
+
+Here is some `inline code`

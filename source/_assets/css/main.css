@@ -89,19 +89,20 @@
 }
 
 .markup :not(pre) > code {
-    @apply p-1 bg-gray-100 border-b-2 border-gray-200;
+    @apply px-2 py-1 bg-gray-200 border-b border-gray-400;
     font-size: 0.8em;
 }
 
 .markup pre {
-    @apply -mx-4 p-4 bg-gray-100 overflow-x-auto;
+    @apply -mx-4 p-4 bg-gray-200 overflow-x-auto;
     font-size: 0.75em;
     line-height: 2.25;
 }
 
 @screen sm {
     .markup pre {
-        @apply mx-0 p-6 border-b-4 border-gray-200;
+        @apply mx-0 p-6 border-b-4 border-gray-400;
+        font-size: 0.825em;
     }
 }
 
