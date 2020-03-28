@@ -36,3 +36,12 @@ export default {
 }
 </script>
 ```
+
+This is quite a bit of code, I know. This can be simplified a lot but more verbosity's sake, we'll keep this format for now. 
+
+This is simple to understand. On click of the button, the `toggle` method will be called and the value of `show` will be inverted, or toggled. If the value of `show` is truth-y, the `div` will be shown. It's super simple stuff.
+
+Now, looking at this bit of code and this super simple component, we've managed to build up []kb of JavaScript ([]kb minified) just to toggle a `<div>`. It's a bit embarrassing.
+
+### React
+
