@@ -69,7 +69,7 @@ Here's what we've got so far (with some added styles):
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-### Show me more
+## Show me more
 
 I'm going to post some more articles on using Alpine and how it might be able to replace Vue or React in some of your applications.
 
