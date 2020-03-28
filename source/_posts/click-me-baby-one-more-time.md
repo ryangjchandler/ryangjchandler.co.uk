@@ -41,11 +41,11 @@ This is quite a bit of code, I know. This can be simplified a lot but more verbo
 
 This is simple to understand. On click of the button, the `toggle` method will be called and the value of `show` will be inverted, or toggled. If the value of `show` is truth-y, the `div` will be shown. It's super simple stuff.
 
-Now, looking at this bit of code and this super simple component, we've managed to build up []kb of JavaScript ([]kb minified) just to toggle a `<div>`. It's a bit embarrassing.
+Now, looking at this bit of code and this super simple component, we've managed to build up \[]kb of JavaScript (\[]kb minified) just to toggle a `<div>`. It's a bit embarrassing.
 
 ## React
 
-```javascript
+```jsx
 import React, { useState } from 'react';
 
 function App() {
@@ -64,7 +64,7 @@ function App() {
 
 This is also a very simple component. We're using Hooks because we're cool kids. That's also the philosophy behind functional components. We're too cool for school (everyone is at the moment, coronavirus 28.03.2020).
 
-Taking this approach for such a simple component will cost you []kb of JavaScript ([]kb minified).
+Taking this approach for such a simple component will cost you \[]kb of JavaScript (\[]kb minified).
 
 ## Vanilla JavaScript
 
@@ -84,11 +84,11 @@ button.addEventListener('click', () => {
 });
 ```
 
-This is obviously going to be the smallest in bundle size, and probably the fastest for this sort of thing. Without minification, you'd be looking at []kb. Post-minification is going to be roughly []kb.
+This is obviously going to be the smallest in bundle size, and probably the fastest for this sort of thing. Without minification, you'd be looking at \[]kb. Post-minification is going to be roughly \[]kb.
 
 ## What was the point in all of that?
 
-I wanted to show you how verbose the code _can_ be for such simple tasks. Even the vanilla JavaScript code is a bit ugly and requires some focus to see what's going on. Let me show you the Alpine way of doing this.
+I wanted to show you how verbose the code *can* be for such simple tasks. Even the vanilla JavaScript code is a bit ugly and requires some focus to see what's going on. Let me show you the Alpine way of doing this.
 
 <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="ryangjchandler" data-slug-hash="JjdwxRm" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Alpine Toggle Visibility">
   <span>See the Pen <a href="https://codepen.io/ryangjchandler/pen/JjdwxRm">
@@ -99,7 +99,7 @@ I wanted to show you how verbose the code _can_ be for such simple tasks. Even t
 
 Pretty simple, I know. We've achieved the same result as the other components, but how much JavaScript have we written? Zero lines. How long have we spent setting up Webpack, Parcel or Rollup? Zero minutes (hopefully). How much JavaScript have we pulled in? Just 7kb.
 
-All we _had_ to do was include the Alpine.js CDN, via a `<script>` tag, in our `<head>`. If there is any reason to use Alpine.js, it's for the reasons I just listed. I'll list them again for clarity:
+All we *had* to do was include the Alpine.js CDN, via a `<script>` tag, in our `<head>`. If there is any reason to use Alpine.js, it's for the reasons I just listed. I'll list them again for clarity:
 
 * No custom JavaScript needed.
 * No compilation needed.
