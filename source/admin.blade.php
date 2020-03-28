@@ -10,15 +10,25 @@
 <body>
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
     <script>
-    if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-            if (!user) {
-                window.netlifyIdentity.on("login", () => {
-                    document.location.href = "/admin/";
-                });
+        var postPreview = createClass({
+            render: function () {
+                return h('div', {
+                    className: 'markup'
+                }, this.props.entry)
             }
-        });
-    }
+        })
+
+        CMS.regiterPreviewStyle('/assets/build/css/main.css')
+        
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
     </script>
 </body>
 </html>
