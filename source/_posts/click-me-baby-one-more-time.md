@@ -45,3 +45,21 @@ Now, looking at this bit of code and this super simple component, we've managed 
 
 ### React
 
+```javascript
+import React, { useState } from 'react';
+
+function App() {
+    const [show, setShow] = useState(false)
+
+    return (
+        {show &&
+            <div>
+                You can see me!
+            </div>
+        }
+        <button type="button" onClick={() => setShow(true)}>
+    )
+}
+```
+
+This is also a very simple component. We're using Hooks because we're cool kids. That's also the philosophy behind functional components. We're too cool for school (everyone is at the moment, coronavirus 28.03.2020).
