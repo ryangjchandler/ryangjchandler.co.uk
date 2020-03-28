@@ -18,6 +18,7 @@ Some people might be asking 'Why the static site?':
 2. It's simple.
 3. It's powered by Blade, so if the need for a full blown Laravel app comes up then it will be simpler to move than using something like Hugo or Eleventy.
 4. Why not?
+5. I can actually still do some cool stuff with Jigsaw's powerful event system and various other tech such as GitHub Actions for recurring tasks or Webmentions for comments and likes (coming soon).
 
 ### Contributing
 
