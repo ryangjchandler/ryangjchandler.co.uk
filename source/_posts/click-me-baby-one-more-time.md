@@ -11,7 +11,7 @@ The first example of this pattern that comes to mind is showing and hiding somet
 
 Let's take a look at this inside of a Vue component, then a React component.
 
-### Vue
+## Vue
 
 ```html
 <template>
@@ -43,7 +43,7 @@ This is simple to understand. On click of the button, the `toggle` method will b
 
 Now, looking at this bit of code and this super simple component, we've managed to build up []kb of JavaScript ([]kb minified) just to toggle a `<div>`. It's a bit embarrassing.
 
-### React
+## React
 
 ```javascript
 import React, { useState } from 'react';
@@ -66,6 +66,6 @@ This is also a very simple component. We're using Hooks because we're cool kids.
 
 Taking this approach for such a simple component will cost you []kb of JavaScript ([]kb minified).
 
-### Vanilla JavaScript
+## Vanilla JavaScript
 
 For the sake of it, we'll write some vanilla JavaScript too. No frameworks, just good ol' JavaScript.
