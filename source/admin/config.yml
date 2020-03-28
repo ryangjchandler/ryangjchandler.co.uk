@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+display_url: https://ryangjchandler.co.uk
+
+publish_mode: editorial_workflow
+media_folder: "source/assets/images/uploads"
+public_folder: "assets/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    label_singular: "Post"
+    description: >
+      All my blog posts
+    folder: "source/_posts"
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    create: true
+    identifier_field: "title"
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true, default: "" }
+      - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD", dateFormat: "YYYY-MM-DD", required: true, default: "" }
+      - { label: "Content", name: "body", widget: "markdown", hint: "Main content goes here." }
+      - { label: "Published?", name: "published", widget: "boolean", default: false }
+      - { name: "extends", widget: "hidden", required: true, default: "_layouts.post" }
+      - { name: "section", widget: "hidden", required: true, default: "content" }
