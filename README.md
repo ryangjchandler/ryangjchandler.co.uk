@@ -1,5 +1,7 @@
 ### ryangjchandler.co.uk
 
+---
+
 This repository contains the source code for my personal site and blog. There will be constant changes in here as I experiment with new technologies and what not, so do not expect it to be stable 100% of the time.
 
 Please do feel free to fork this repository and use it for your own site, or atleast as a starting point.
