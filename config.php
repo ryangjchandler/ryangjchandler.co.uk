@@ -14,6 +14,9 @@ return [
         'posts' => [
             'path' => 'articles/{filename}',
             'sort' => 'date',
+            'filter' => function ($post) {
+                return $post->published;
+            }
         ]
     ],
 
