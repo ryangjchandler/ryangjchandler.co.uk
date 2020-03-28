@@ -96,3 +96,7 @@ I wanted to show you how verbose the code _can_ be for such simple tasks. Even t
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+Pretty simple, I know. We've achieved the same result as the other components, but how much JavaScript have we written? Zero lines. How long have we spent setting up Webpack, Parcel or Rollup? Zero minutes (hopefully). How much JavaScript have we pulled in? Just 7kb.
+
+All we _had_ to do was include the Alpine.js CDN script in our `<head>`.
