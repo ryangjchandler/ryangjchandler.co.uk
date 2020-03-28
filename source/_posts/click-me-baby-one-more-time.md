@@ -83,3 +83,5 @@ button.addEventListener('click', () => {
     }
 });
 ```
+
+This is obviously going to be the smallest in bundle size, and probably the fastest for this sort of thing. Without minification, you'd be looking at []kb. Post-minification is going to be roughly []kb.
