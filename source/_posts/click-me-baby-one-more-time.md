@@ -105,3 +105,11 @@ All we *had* to do was include the Alpine.js CDN, via a `<script>` tag, in our `
 * No compilation needed.
 * No verbose code written.
 * Just 7kb of JavaScript, delivered via CDN.
+
+## Where next?
+
+Don't worry. I've made my point about code verbosity and bundle sizes. The following articles will be a bit lighter and more to the point. 
+
+In the next article, I'll go over some more event-based directives and the modifiers that can be used with them.
+
+If you've got any constructive feedback or opinions about this article, let me know via [Twitter @ryangjchandler](https://twitter.com/ryangjchandler).
