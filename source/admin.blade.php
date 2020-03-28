@@ -10,16 +10,16 @@
 <body>
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
     <script>
-        var postPreview = createClass({
-            render: function () {
-                return h('div', {
-                    className: 'markup'
-                }, this.props.widgetFor('content'))
-            }
-        })
+        // var postPreview = createClass({
+        //     render: function () {
+        //         return h('div', {
+        //             className: 'markup'
+        //         }, this.props.widgetFor('content'))
+        //     }
+        // })
 
         CMS.registerPreviewStyle('/assets/build/css/main.css')
-        CMS.registerPreviewTemplate('posts', postPreview)
+        // CMS.registerPreviewTemplate('posts', postPreview)
         
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
