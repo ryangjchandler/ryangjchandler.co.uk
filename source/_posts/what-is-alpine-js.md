@@ -1,6 +1,6 @@
 ---
 title: What is Alpine.js?
-date: '2020-03-28'
+date: 2020-03-28
 published: true
 extends: _layouts.post
 section: content
