@@ -10,6 +10,11 @@ return [
     
     'description' => 'The ramblings and thoughts of a young web developer.',
     
-    'collections' => [],
+    'collections' => [
+        'posts' => [
+            'path' => 'articles/{filename}',
+            'sort' => 'date',
+        ]
+    ],
 
 ];

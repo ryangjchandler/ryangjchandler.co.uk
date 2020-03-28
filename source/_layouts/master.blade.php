@@ -4,13 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="referrer" content="always">
-        <link rel="canonical" href="{{ $page->getUrl() }}">
-        <meta name="description" content="{{ $page->description }}">
-        <title>{{ $page->title }}</title>
+        <title>{{ $page->title }} - Ryan Chandler</title>
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
     </head>
-    <body>
+    <body class="antialiased font-sans max-w-2xl mx-auto px-8 md:px-0">
         @include('_partials/_header')
         @yield('body')
     </body>

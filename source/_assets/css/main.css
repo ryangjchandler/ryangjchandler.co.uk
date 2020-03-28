@@ -2,4 +2,8 @@
 
 @tailwind components;
 
+.markup {
+    @apply pl-4;
+}
+
 @tailwind utilities;
