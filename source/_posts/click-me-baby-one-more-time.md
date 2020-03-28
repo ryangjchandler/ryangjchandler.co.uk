@@ -69,3 +69,17 @@ Taking this approach for such a simple component will cost you []kb of JavaScrip
 ## Vanilla JavaScript
 
 For the sake of it, we'll write some vanilla JavaScript too. No frameworks, just good ol' JavaScript.
+
+```javascript
+var button = document.querySelector('button');
+
+button.addEventListener('click', () => {
+    var div = document.querySelector('div');
+
+    if (div.style.display === 'none') {
+        div.style.display = 'block';
+    } else {
+        div.style.display = 'hidden';
+    }
+});
+```
