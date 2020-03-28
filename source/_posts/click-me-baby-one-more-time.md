@@ -63,3 +63,9 @@ function App() {
 ```
 
 This is also a very simple component. We're using Hooks because we're cool kids. That's also the philosophy behind functional components. We're too cool for school (everyone is at the moment, coronavirus 28.03.2020).
+
+Taking this approach for such a simple component will cost you []kb of JavaScript ([]kb minified).
+
+### Vanilla JavaScript
+
+For the sake of it, we'll write some vanilla JavaScript too. No frameworks, just good ol' JavaScript.
