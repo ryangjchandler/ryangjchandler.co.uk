@@ -99,9 +99,9 @@ I wanted to show you how verbose the code _can_ be for such simple tasks. Even t
 
 Pretty simple, I know. We've achieved the same result as the other components, but how much JavaScript have we written? Zero lines. How long have we spent setting up Webpack, Parcel or Rollup? Zero minutes (hopefully). How much JavaScript have we pulled in? Just 7kb.
 
-All we _had_ to do was include the Alpine.js CDN, via a `<script>` tag, in our `<head>`. If there is any reason to use Alpine.js, it's for the reasons I just listed. I'll list them again for clarity:
+All we _had_ to do was include the Alpine.js CDN, via a `<script>` tag, in our `<head>`. If there is any reason to use Alpine.js, it's for the reasons I just listed. I'll list them again for clarity, with a few extra:
 
-* No custom JavaScript written
-* No compilation needed, so no need to battle Webpack and co.
-* No need to worry about compilation targets
-* Just 7kb of JavaScript, leaving you with 7kb to squeeze into your first response
+* No custom JavaScript needed.
+* No compilation needed.
+* No verbose code written.
+* Just 7kb of JavaScript, delivered via CDN.
