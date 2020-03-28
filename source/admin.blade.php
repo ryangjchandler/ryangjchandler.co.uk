@@ -19,6 +19,7 @@
         })
 
         CMS.registerPreviewStyle('/assets/build/css/main.css')
+        CMS.registerPreviewTemplate('posts', postPreview)
         
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
