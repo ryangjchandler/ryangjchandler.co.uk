@@ -15,9 +15,9 @@
         "extra-watch-webpack-plugin": "^1.0.3",
         "hasbin": "^1.2.3",
         "laravel-mix": "^4.0.0",
+        "laravel-mix-purgecss": "^5.0.0-rc.1",
         "node-cmd": "^3.0.0",
-        "sass": "^1.15.2",
-        "sass-loader": "^7.1.0",
+        "tailwindcss": "^1.2.0",
         "yargs": "^4.6.0"
     }
 }
