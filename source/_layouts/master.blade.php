@@ -7,7 +7,7 @@
         <title>@yield('title')</title>
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
     </head>
-    <body class="antialiased font-sans max-w-2xl mx-auto px-8 md:px-0">
+    <body class="antialiased font-sans max-w-2xl mx-auto px-8 md:px-0 pb-12 md:pb-16">
         @include('_partials/_header')
         @yield('body')
     </body>
