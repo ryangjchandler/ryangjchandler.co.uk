@@ -12,6 +12,13 @@ Please do feel free to fork this repository and use it for your own site, or atl
 * All front-end styles are done with Tailwind CSS (of course)
 * There isn't any JavaScript on the site at the moment, but in the future I will be using [Alpine.js](https://github.com/alpinejs/alpine) to level up on interactivity.
 
+Some people might be asking 'Why the static site?':
+
+1. It's fast.
+2. It's simple.
+3. It's powered by Blade, so if the need for a full blown Laravel app comes up then it will be simpler to move than using something like Hugo or Eleventy.
+4. Why not?
+
 ### Contributing
 
 I've got issues closed currently since I don't need them for anything. If you spot a problem, hit me up on [Twitter @ryangjchandler](https://twitter.com/ryangjchandler) instead!
