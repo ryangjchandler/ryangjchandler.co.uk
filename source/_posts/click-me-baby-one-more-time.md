@@ -1,7 +1,7 @@
 ---
 title: Click Me Baby One More Time
 date: '2020-03-29'
-published: false
+published: true
 extends: _layouts.post
 section: content
 ---
