@@ -13,5 +13,6 @@
     <body class="antialiased font-sans max-w-2xl mx-auto px-8 md:px-0 pb-12 md:pb-16">
         @include('_partials/_header')
         @yield('body')
+        <script>hljs.initHighlightingOnLoad();</script>
     </body>
 </html>
