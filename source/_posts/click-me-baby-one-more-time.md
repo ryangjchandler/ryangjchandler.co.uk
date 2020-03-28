@@ -18,7 +18,7 @@ Let's take a look at this inside of a Vue component, then a React component.
     <div v-if="show">
         You can see me!
     </div>
-    <button type="button" v-on:click="toggle">
+    <button type="button" v-on:click="toggle" value="Toggle">
 </template>
 
 <script>
@@ -57,7 +57,7 @@ function App() {
                 You can see me!
             </div>
         }
-        <button type="button" onClick={() => setShow(true)}>
+        <button type="button" onClick={() => setShow(true)} value="Toggle">
     )
 }
 ```
@@ -85,3 +85,14 @@ button.addEventListener('click', () => {
 ```
 
 This is obviously going to be the smallest in bundle size, and probably the fastest for this sort of thing. Without minification, you'd be looking at []kb. Post-minification is going to be roughly []kb.
+
+## What was the point in all of that?
+
+I wanted to show you how verbose the code _can_ be for such simple tasks. Even the vanilla JavaScript code is a bit ugly and requires some focus to see what's going on. Let me show you the Alpine way of doing this.
+
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="ryangjchandler" data-slug-hash="JjdwxRm" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Alpine Toggle Visibility">
+  <span>See the Pen <a href="https://codepen.io/ryangjchandler/pen/JjdwxRm">
+  Alpine Toggle Visibility</a> by Ryan Chandler (<a href="https://codepen.io/ryangjchandler">@ryangjchandler</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
