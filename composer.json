@@ -1,6 +1,12 @@
 {
     "require": {
-        "tightenco/jigsaw": "^1.3"
+        "tightenco/jigsaw": "^1.3",
+        "samdark/sitemap": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "RyanChandler\\": "app/"
+        }
     },
     "scripts": {
         "build": "./vendor/bin/jigsaw build"

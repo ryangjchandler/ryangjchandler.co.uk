@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
     </head>
     <body>
+        @include('_partials/_header')
         @yield('body')
     </body>
 </html>

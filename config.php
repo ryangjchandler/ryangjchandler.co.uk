@@ -4,7 +4,7 @@ return [
 
     'production' => false,
 
-    'baseUrl' => '',
+    'baseUrl' => 'http://ryangjchandler.co.uk.test',
     
     'title' => 'Ryan Chandler',
     
