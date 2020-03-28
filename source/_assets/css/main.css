@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Code:500&display=swap');
-
+@import './hljs.css';
+    
 @tailwind base;
 
 html {
