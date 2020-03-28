@@ -14,7 +14,7 @@
             render: function () {
                 return h('div', {
                     className: 'markup'
-                }, this.props.entry.widgetFor('content'))
+                }, this.props.widgetFor('content'))
             }
         })
 
