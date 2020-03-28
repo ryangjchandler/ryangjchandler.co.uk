@@ -1,5 +1,7 @@
 @extends('_layouts.master')
 
+@section('title', $page->title . ' - Ryan Chandler')
+
 @section('body')
     <article class="markup">
         <h1 class="leading-normal">{{ $page->title }}</h1>

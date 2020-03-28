@@ -1,5 +1,7 @@
 @extends('_layouts.master')
 
+@section('title', 'Ryan Chandler')
+
 @section('body')
 
     <main>
