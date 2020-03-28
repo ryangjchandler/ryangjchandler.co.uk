@@ -2,9 +2,17 @@
 
 @tailwind base;
 
+html {
+    font-size: 16px;
+}
+
 @tailwind components;
 
 @tailwind utilities;
+
+.markup {
+    @apply leading-loose;
+}
 
 @screen md {
     .markup {
@@ -114,4 +122,8 @@
 
 .markup iframe {
     @apply w-full;
+}
+
+.markup mark {
+    @apply bg-yellow-200 p-1;
 }

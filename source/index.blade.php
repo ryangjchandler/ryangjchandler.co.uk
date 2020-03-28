@@ -19,7 +19,7 @@
                 </li>
             </ul>
         </section>
-        <section>
+        <section class="pl-4">
             <h2 class="text-lg text-gray-700 mb-8">Articles</h2>
             <table class="w-full">
                 <tbody>
