@@ -18,7 +18,7 @@
             }
         })
 
-        CMS.regiterPreviewStyle('/assets/build/css/main.css')
+        CMS.registerPreviewStyle('/assets/build/css/main.css')
         
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
