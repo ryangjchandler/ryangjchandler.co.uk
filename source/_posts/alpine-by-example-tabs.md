@@ -115,7 +115,7 @@ If you don't care about accessibility (you should), then skip this section. I'm 
 </div>
 ```
 
-Phew... that took a little while. Trust me though, it's worth the effort. We've added some `role` attributes so that accessibility APIs can understand the semantics behind our markup. The same goes for the `aria-` attributes.
+Phew... that took a little while. Trust me, it's worth the effort. We've added some `role` attributes so that accessibility APIs can understand the semantics behind our markup. The same goes for the `aria-` attributes.
 
 Lots of these attributes are currently being hardcoded, but for some of those `aria-` attributes, we want to change the values when a tab is active / focused, etc.
 
