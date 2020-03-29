@@ -1,6 +1,6 @@
 ---
 title: Advanced Alpine.js - Server Fetched Partials
-date: '2020-03-29'
+date: '2020-03-30'
 published: false
 extends: _layouts.post
 section: content
