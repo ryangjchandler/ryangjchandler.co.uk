@@ -205,3 +205,5 @@ We can shorten this syntax a little further though. Let's remove that `x-on:` pa
     ...
 </div>
 ```
+
+Much cleaner.
