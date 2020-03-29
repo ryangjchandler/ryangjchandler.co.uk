@@ -207,3 +207,5 @@ We can shorten this syntax a little further though. Let's remove that `x-on:` pa
 ```
 
 Much cleaner.
+
+You could stop here and you'd have some functioning tabs, but I want to go a step further and change those `aria-` attributes too.
