@@ -57,6 +57,10 @@ Let's sprinkle some magical Alpine dust in there too.
     <button type="button" x-on:click="show = !show">
         Awesome Dropdown
     </button>
-    <div></div>
+    <div x-show="show"></div>
 </div>
 ```
+
+We've got a simple `show` data property. This will determine whether or not our dropdown is visible via `x-show`. By default, it shouldn't be. When we click our `<button>`, the value of `show` will be flipped.
+
+If you put some content inside of the `<div>`, this component will work. You can toggle it and it works well.
