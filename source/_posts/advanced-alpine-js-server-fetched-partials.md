@@ -66,3 +66,12 @@ We've got a simple `show` data property. This will determine whether or not our 
 If you put some content inside of the `<div>`, this component will work. You can toggle it and it works well.
 
 Now let's make it dynamic with our server fetched partial. We're going to be using the Fetch API, but you could use Axios or XHR requests.
+
+The first step will be adding a reference to the dropdown container. Alpine provides an `x-ref` attribute. Let's add that to the container.
+
+```html
+<div x-data="{ show: false }">
+    ...
+    <div x-show="show" x-ref="dropdown"></div>
+</div>
+```
