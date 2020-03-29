@@ -25,3 +25,7 @@ collections:
       - { label: "Published?", name: "published", widget: "boolean", default: false }
       - { name: "extends", widget: "hidden", required: true, default: "_layouts.post" }
       - { name: "section", widget: "hidden", required: true, default: "content" }
+      - label: "Categories"
+        name: "categories"
+        widget: "select"
+        multiple: true
