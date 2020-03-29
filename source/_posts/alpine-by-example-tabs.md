@@ -163,3 +163,5 @@ Alpine will let us use an expression as the value of a directive. Let's hide our
     </div>
 </div>
 ```
+
+So now, when we change the value of our `tab` property, the active tab will change and our content will get swapped out.
