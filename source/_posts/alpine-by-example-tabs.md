@@ -147,4 +147,19 @@ We're setting the value of our tab to `declarative-syntax` so that the first tab
 
 Now, let's get those tabs changing. 
 
-Alpine provides 
+Alpine will let us use an expression as the value of a directive. Let's hide our tabs, based on the value of our `tab` data property.
+
+```html
+<div x-data="{ tab: 'declarative-syntax' }">
+    ...
+    <div tabindex="0" x-show="tab === 'declarative-syntax'" role="tabpanel" id="declarative-syntax-tab" aria-labelledby="declarative-syntax">
+        This is the declarative syntax tab...
+    </div>
+    <div tabindex="0" x-show="tab === 'lightweight'" role="tabpanel" id="lightweight-tab" aria-labelledby="lightweight">
+        This is the lightweight tab...
+    </div>
+    <div tabindex="0" x-show="tab === 'reactive'" role="tabpanel" id="reactive-tab" aria-labelledby="reactive">
+        This is the reactive tab...
+    </div>
+</div>
+```
