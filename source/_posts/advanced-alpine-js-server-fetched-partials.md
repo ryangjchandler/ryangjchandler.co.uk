@@ -36,3 +36,16 @@ Let's go into our `index` view and add the Alpine `<script>` to our `<head>`.
 ```html
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 ```
+
+Let's also add some markup. Here's what I've got.
+
+```html
+<div>
+    <button type="button">
+        Awesome Dropdown
+    </button>
+    <div></div>
+</div>
+```
+
+Couldn't get any simpler. We've got a `<button>` and a `<div>`. The nested `<div>` will hold our dropdown content and the `<button>` will toggle the visibility.
