@@ -49,3 +49,14 @@ Let's also add some markup. Here's what I've got.
 ```
 
 Couldn't get any simpler. We've got a `<button>` and a `<div>`. The nested `<div>` will hold our dropdown content and the `<button>` will toggle the visibility.
+
+Let's sprinkle some magical Alpine dust in there too.
+
+```html
+<div>
+    <button type="button">
+        Awesome Dropdown
+    </button>
+    <div></div>
+</div>
+```
