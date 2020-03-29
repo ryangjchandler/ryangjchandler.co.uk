@@ -119,7 +119,7 @@ Phew... that took a little while. Trust me, it's worth the effort. We've added s
 
 Lots of these attributes are currently being hardcoded, but for some of those `aria-` attributes, we want to change the values when a tab is active / focused, etc.
 
-Let's start to sprinkle some interactive goodness on top of our markup.
+Let's start to sprinkle some interactive goodness on top of our markup. Don't worry, I'll leave the extra attributes out until we need them.
 
 ## Interactivity
 
@@ -169,5 +169,22 @@ So now, when we change the value of our `tab` property, the active tab will chan
 Let's make our `<button>`s do that swapping.
 
 ```html
-
+<div x-data="{ tab: 'declarative-syntax' }">
+    <div role="tablist" aria-label="Features">
+        <button x-on:click="tab = 'declarative-syntax'" ...>
+            Declarative Syntax
+        </button>
+        <button x-on:click="tab = 'lightweight'" ...>
+            Lightweight
+        </button>
+        <button x-on:click="tab = 'reactive'" ...>
+            Reactive
+        </button>
+    </div>
+    ...
+</div>
 ```
+
+Still super simple. The `x-on:` directive will be evaluted when an event is fired on the element. So, in this case, when we click the button our expression will be evaluated and the component will react and re-render accordingly.
+
+We can shorten this syntax a little further though. Let's remove that `x-on:` part of the directive and replace it will a single `@`. This is the same approach that Vue takes, it removes some of the length and make it a bit _prettier_.
