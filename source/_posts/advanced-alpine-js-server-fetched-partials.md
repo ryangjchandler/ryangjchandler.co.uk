@@ -53,8 +53,8 @@ Couldn't get any simpler. We've got a `<button>` and a `<div>`. The nested `<div
 Let's sprinkle some magical Alpine dust in there too.
 
 ```html
-<div>
-    <button type="button">
+<div x-data="{ show: false }">
+    <button type="button" x-on:click="show = !show">
         Awesome Dropdown
     </button>
     <div></div>
