@@ -16,5 +16,10 @@ use TightenCo\Jigsaw\Jigsaw;
  * });
  */
 
+$container->bind(
+    Mni\FrontYAML\Markdown\MarkdownParser::class,
+    RyanChandler\Markdown\Parser::class
+);
+
 $events->afterBuild(RyanChandler\Listeners\GenerateSitemap::class);
 $events->afterBuild(RyanChandler\Listeners\GenerateFeed::class);
