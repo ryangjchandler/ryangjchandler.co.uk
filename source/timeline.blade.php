@@ -10,6 +10,23 @@
             or bad my design skills get as time goes on.
         </p>
         <div>
+            <h3 class="mb-4">30, March 2020</h3>
+            <p class="mb-4">
+                Pretty successful change. I added a footer to the site, along with a proper sitemap and RSS feed
+                so that my <strong>massive</strong> number of followers and readers can hook that up to their RSS feed apps.
+            </p>
+            <div class="border shadow-lg mb-4">
+                <img src="/assets/images/timeline/2020-03-30-footer.png" alt="30, March 2020 Screenshot of Footer">
+            </div>
+            <p class="mb-4">
+                Today was also the day that I deployed this new timeline thing. I think it's a pretty nifty idea. I'd love
+                to come back and do some sort of timeline-ception thing, but I can't be arsed right now. This is the best I've got.
+            </p>
+            <div class="border shadow-lg">
+                <img src="/assets/images/timeline/2020-03-30-timeline.png" alt="30, March 2020 Screenshot of Timeline Page">
+            </div>
+        </div>
+        <div>
             <h3 class="mb-4">28, March 2020</h3>
             <p class="mb-4">
                 This was the initial version of my personal site. I wanted a super minimal design with barebones features.
