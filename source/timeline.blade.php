@@ -10,7 +10,7 @@
             or bad my design skills get as time goes on.
         </p>
         <div>
-            <h3 class="mb-4">Goodbye, Highlight.js - 30, March 2020</h3>
+            <h3 class="mb-4 underline">Goodbye, Highlight.js - 30, March 2020</h3>
             <p class="mb-4">
                 So, I removed Highlight.js. This is in an effort to remove any unnecessary JavaScript and other
                 assets. Instead, I've chosen to go with <a href="https://twitter.com/calebporzio">Caleb Porzio's</a>
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div>
-            <h3 class="mb-4">Timeline & Footer - 30, March 2020</h3>
+            <h3 class="mb-4 underline">Timeline & Footer - 30, March 2020</h3>
             <p class="mb-4">
                 Pretty successful change. I added a footer to the site, along with a proper sitemap and RSS feed
                 so that my <strong>massive</strong> number of followers and readers can hook that up to their RSS feed apps.
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div>
-            <h3 class="mb-4">Initial Release - 28, March 2020</h3>
+            <h3 class="mb-4 underline">Initial Release - 28, March 2020</h3>
             <p class="mb-4">
                 This was the initial version of my personal site. I wanted a super minimal design with barebones features.
                 Looking back now, I should have added some more stuff and the launch wasn't the smoothest. I decided to change
