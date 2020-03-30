@@ -14,12 +14,6 @@ html {
     @apply leading-loose;
 }
 
-@screen md {
-    .markup {
-        @apply pl-4;
-    }
-}
-
 .markup > *:not(pre) {
     @apply break-words;
 }

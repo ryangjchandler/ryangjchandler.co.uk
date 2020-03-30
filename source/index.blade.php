@@ -21,7 +21,7 @@
                 </li>
             </ul>
         </section>
-        <section class="pl-4">
+        <section>
             <h2 class="text-lg text-gray-700 mb-8">Articles</h2>
             <table class="w-full">
                 <tbody>
