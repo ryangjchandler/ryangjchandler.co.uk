@@ -9,6 +9,8 @@ return [
     'title' => 'Ryan Chandler',
     
     'description' => 'The ramblings and thoughts of a young web developer.',
+
+    'author' => 'Ryan Chandler',
     
     'collections' => [
         'posts' => [

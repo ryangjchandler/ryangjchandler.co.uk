@@ -17,3 +17,4 @@ use TightenCo\Jigsaw\Jigsaw;
  */
 
 $events->afterBuild(RyanChandler\Listeners\GenerateSitemap::class);
+$events->afterBuild(RyanChandler\Listeners\GenerateFeed::class);

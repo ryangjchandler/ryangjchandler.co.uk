@@ -8,9 +8,10 @@
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
     </head>
-    <body class="antialiased font-sans max-w-2xl mx-auto px-8 md:px-0 pb-12 md:pb-16">
+    <body class="antialiased font-sans max-w-2xl mx-auto px-8 md:px-0">
         @include('_partials/_header')
         @yield('body')
+        @include('_partials/_footer')
         <script>hljs.initHighlightingOnLoad();</script>
     </body>
 </html>
