@@ -60,14 +60,7 @@ The example above is a bit pointless really. There's no way for us to change the
 
 Alpine provides another directive `x-model` which acts the same way as the one in Vue. Whenever we change the value inside of the input, our `foo` property will be updated and the text inside of our `<span>` will react.
 
-Here's what we've got so far (with some added styles):
-
-<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="ryangjchandler" data-slug-hash="oNXJaKg" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Alpine.js Simple Data Reactivity ">
-  <span>See the Pen <a href="https://codepen.io/ryangjchandler/pen/oNXJaKg">
-  Alpine.js Simple Data Reactivity </a> by Ryan Chandler (<a href="https://codepen.io/ryangjchandler">@ryangjchandler</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+I've put this on CodePen so you can play around with it [here](https://codepen.io/ryangjchandler/pen/oNXJaKg).
 
 ## Show me more
 
