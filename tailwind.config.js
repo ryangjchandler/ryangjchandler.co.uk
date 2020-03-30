@@ -7,6 +7,10 @@ module.exports = {
       mono: [
         'Fira Code',
         ...defaults.fontFamily.mono
+      ],
+      sans: [
+        'Inter',
+        ...defaults.fontFamily.sans
       ]
     }
   },
