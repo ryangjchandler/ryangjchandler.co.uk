@@ -10,7 +10,7 @@ Please do feel free to fork this repository and use it for your own site, or atl
 
 * Static site generation is powered by [Tighten's Jigsaw](https://jigsaw.tighten.co/)
 * All front-end styles are done with Tailwind CSS (of course)
-* There isn't any JavaScript on the site at the moment, but in the future I will be using [Alpine.js](https://github.com/alpinejs/alpine) to level up on interactivity.
+* There isn't any JavaScript on the site at the moment, but in the future I will be using [Alpine.js](https://github.com/alpinejs/alpine) to level up on interactivity. If you do see some JavaScript, it will probably be from CodePen embeds.
 
 Some people might be asking 'Why the static site?':
 
@@ -19,6 +19,10 @@ Some people might be asking 'Why the static site?':
 3. It's powered by Blade, so if the need for a full blown Laravel app comes up then it will be simpler to move than using something like Hugo or Eleventy.
 4. Why not?
 5. I can actually still do some cool stuff with Jigsaw's powerful event system and various other tech such as GitHub Actions for recurring tasks or Webmentions for comments and likes (coming soon).
+
+### Design Timeline
+
+If you want a visual timeline of changes made on the site, it's best to use [the official Timeline](https://ryangjchandler.co.uk/timeline). I'll update this page as time goes on with any notable changes worth mentioning.
 
 ### Contributing
 
