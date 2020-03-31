@@ -8,7 +8,7 @@
         @foreach($categories as $category)
             <div>
                 <h2 class="mb-4">
-                    <a href="#">{{ $category->title }}</a>
+                    <a href="{{ $category->getUrl() }}">{{ $category->title }}</a>
                 </h2>
                 {!! $category->getContent() !!}
             </div>

@@ -8,6 +8,7 @@
         <div class="text-sm -mt-2 text-gray-700 hover:text-gray-900 leading-normal mb-5">
             @yield('content')
         </div>
+        <hr class="mb-5" />
         @foreach($posts->filter(function ($post) use ($page) {
             return $post->categories ? in_array($page->getFilename(), $post->categories, true) : false;
         }) as $post)
