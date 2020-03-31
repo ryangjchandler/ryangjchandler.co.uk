@@ -35,7 +35,7 @@
         </section>
         <section>
             <h2 class="text-lg text-gray-700 mb-8">Articles</h2>
-            @forelse($posts as $post) 
+            @forelse($posts->take(3) as $post) 
                 @include('_partials._post-card')
 
                 @if(! $loop->last)
