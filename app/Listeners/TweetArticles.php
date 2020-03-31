@@ -23,7 +23,7 @@ class TweetArticles
     {
         $posts = $jigsaw->getCollection('posts')
             ->filter(function ($post) {
-                return $post->should_tweet && ! ($post->tweeted ?? true);
+                return $post->published && $post->should_tweet;
             })
             ->each(function ($post) {
                 if ($post->tweeted) {
