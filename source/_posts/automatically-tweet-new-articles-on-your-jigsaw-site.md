@@ -1,5 +1,5 @@
 ---
-title: Automatically Tweet New Articles on Your Jigsaw Site
+title: Automatically Tweet about New Articles on Your Jigsaw Site
 date: 2020-04-03T00:00:00.000Z
 published: false
 should_tweet: false
