@@ -37,6 +37,10 @@
             <h2 class="text-lg text-gray-700 mb-8">Articles</h2>
             @forelse($posts as $post) 
                 @include('_partials._post-card')
+
+                @if(! $loop->last)
+                    <hr class="mb-8">
+                @endif
             @empty
                 <p>🤦🏻‍♂️ Don't worry, something will be here soon!</p>
             @endforelse
