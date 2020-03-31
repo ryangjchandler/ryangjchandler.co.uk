@@ -5,12 +5,13 @@
 @section('body')
     <main class="markup">
         <h1>Categories</h1>
-        <ul>
-            @foreach($categories as $category)
-                <li>
+        @foreach($categories as $category)
+            <div>
+                <h2 class="mb-4">
                     <a href="#">{{ $category->title }}</a>
-                </li>
-            @endforeach
-        </ul>
+                </h2>
+                {!! $category->getContent() !!}
+            </div>
+        @endforeach
     </main>
 @endsection
