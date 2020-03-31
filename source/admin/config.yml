@@ -45,6 +45,6 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string", required: true, default: "" }
       - { label: "Content", name: "body", widget: "markdown", hint: "Main content goes here." }
-      - { label: "Has Archive?", name: "has_archive", widget: "boolean", default: false }
+      - { label: "Has Archive?", name: "has_archive", widget: "boolean", default: false } 
       - { name: "extends", widget: "hidden", required: true, default: "_layouts.category" }
       - { name: "section", widget: "hidden", required: true, default: "content" }
