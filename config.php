@@ -19,7 +19,10 @@ return [
             'sort' => '-date',
             'filter' => function ($post) {
                 return $post->published;
-            }
+            },
+            'excerpt' => function ($post, $characters = 50) {
+                return trim(substr(strip_tags($post->getContent()), 0, $characters)) . '...';
+            },
         ],
 
         'categories' => [
