@@ -3,6 +3,9 @@ title: Prevent Updating or Saving of Laravel Models
 date: 2020-03-31
 published: true
 categories: [php, laravel]
+should_tweet: false
+tweeted: true
+tweet_link: https://twitter.com/ryangjchandler/status/1245022822151438336
 extends: _layouts.post
 section: content
 ---

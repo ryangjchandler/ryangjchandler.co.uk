@@ -23,3 +23,4 @@ $container->bind(
 
 $events->afterBuild(RyanChandler\Listeners\GenerateSitemap::class);
 $events->afterBuild(RyanChandler\Listeners\GenerateFeed::class);
+$events->afterBuild(RyanChandler\Listeners\TweetArticles::class);
