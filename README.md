@@ -24,7 +24,7 @@ Some people might be asking 'Why the static site?':
 
 * Article publishing powered by Netlify CMS
 * Categorisation of articles
-* Automatic tweeting off new published articles via a build hook
+* Automatic tweeting of new published articles via a build hook
 
 ### Design Timeline
 
