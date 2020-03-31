@@ -12,6 +12,16 @@
             or bad my design skills get as time goes on.
         </p>
         <div>
+            <h3 class="mb-4 underline">About Me - 31, March 2020</h3>
+            <p class="mb-4">
+                Most sites have this, a small 'About Me' section on the front page (or a dedicated page). Decided to
+                add one of my own, which I'll try to keep up to date with changes in my life, etc.
+            </p>
+            <div class="border shadow-lg mb-4">
+                <img src="/assets/images/timeline/2020-03-31-about-me.png" alt="31, March 2020 Screenshot of About Me">
+            </div>
+        </div>
+        <div>
             <h3 class="mb-4 underline">Categories & Cards - 31, March 2020</h3>
             <p class="mb-4">
                 One of the things I wanted when I launched this blog was categories. That's now been added.

@@ -21,6 +21,18 @@
                 </li>
             </ul>
         </section>
+        <section class="mb-8 md:mb-16">
+            <h2 class="text-lg text-gray-700 mb-8">About Me</h2>
+            <p class="leading-loose mb-4">
+                I'm 19 years old and currently working as a Full Stack Web Developer at <a href="https://surewise.com" class="underline">Surewise</a>.
+                I primarily work with Laravel, with no specific front-end framework. 
+            </p>
+            <p class="leading-loose">
+                I try my best to contribute to open source projects. I'm quite heavily involved in the development and repository maintenance of
+                <a href="https://github.com/alpinejs" target="_blank" class="underline">Alpine.js</a>, which is a lightweight Vue / React alternative for small to medium sized JavaScript components.
+                I have also contributed to other open source projects but you can find my contribution graph on <a href="https://github.com/ryangjchandler" target="_blank" class="underline">GitHub</a>.
+            </p>
+        </section>
         <section>
             <h2 class="text-lg text-gray-700 mb-8">Articles</h2>
             @forelse($posts as $post) 
