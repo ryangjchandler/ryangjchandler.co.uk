@@ -12,6 +12,33 @@
             or bad my design skills get as time goes on.
         </p>
         <div>
+            <h3 class="mb-4 underline">100 Commits! - 31, March 2020</h3>
+            <p class="mb-4">
+                Pretty big milestone. The first 100 commits into the <code>ryangjchandler/ryangjchandler</code> repository.
+                The 100th commit was a bit of a rip off since it was a merge commit. The pull request that got merged can be 
+                found <a href="https://github.com/ryangjchandler/ryangjchandler/pull/24">here</a>. It included some changes
+                to the front page that changed the "Articles" to "Latest Articles" and added a new dedicated "Articles" page.
+            </p>
+            <div class="border shadow-lg mb-4">
+                <img src="/assets/images/timeline/2020-03-31-latest-articles.png" alt="31, March 2020 Screenshot of Latest Articles Section">
+            </div>
+            <p class="mb-4">
+                You might also notice the new excerpts / short text for each post. Think it's nice to have a sneak preview of what
+                the article is about. These don't have much information, and in the future I might choose to add a dedicated excerpt
+                which does a bit more explaining. This is fine for now.
+            </p>
+            <p class="mb-4">
+                I also changed the footer slightly. On desktop, it now sits inline and flat and then on mobile it will stack using the
+                <code>.flex-col-reverse</code> class that Tailwind ever so kindly provides for situations such as this.
+            </p>
+            <p class="mb-4">
+                Here's what the new "Articles" page looks like:
+            </p>
+            <div class="border shadow-lg mb-4">
+                <img src="/assets/images/timeline/2020-03-31-articles.png" alt="31, March 2020 Screenshot of Articles Page">
+            </div>
+        </div>
+        <div>
             <h3 class="mb-4 underline">About Me - 31, March 2020</h3>
             <p class="mb-4">
                 Most sites have this, a small 'About Me' section on the front page (or a dedicated page). Decided to
