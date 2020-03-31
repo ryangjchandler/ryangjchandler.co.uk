@@ -1,6 +1,6 @@
 ---
-title: "\U0001F525 Easily Format Your Titles"
-date: '2020-04-01'
+title: "Easily Format Your Titles"
+date: 2020-04-01
 published: false
 should_tweet: true
 tweeted: false
