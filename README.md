@@ -20,6 +20,12 @@ Some people might be asking 'Why the static site?':
 4. Why not?
 5. I can actually still do some cool stuff with Jigsaw's powerful event system and various other tech such as GitHub Actions for recurring tasks or Webmentions for comments and likes (coming soon).
 
+### Features
+
+* Article publishing powered by Netlify CMS
+* Categorisation of articles
+* Automatic tweeting off new published articles via a build hook
+
 ### Design Timeline
 
 If you want a visual timeline of changes made on the site, it's best to use [the official Timeline](https://ryangjchandler.co.uk/timeline). I'll update this page as time goes on with any notable changes worth mentioning.
