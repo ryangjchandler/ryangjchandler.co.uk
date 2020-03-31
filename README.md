@@ -26,6 +26,6 @@ If you want a visual timeline of changes made on the site, it's best to use [the
 
 ### Contributing
 
-I've got issues closed currently since I don't need them for anything. If you spot a problem, hit me up on [Twitter @ryangjchandler](https://twitter.com/ryangjchandler) instead!
+If you spot a problem, hit me up on [Twitter @ryangjchandler](https://twitter.com/ryangjchandler), or file an issue on this repo. I'll get to it eventually.
 
 If you're feeling really cool and rebellious, fork the repo and throw in a PR. Why the hell not?
