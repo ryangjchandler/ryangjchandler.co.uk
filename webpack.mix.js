@@ -16,5 +16,7 @@ mix
     .postCss('source/_assets/css/main.css', 'css', [
         require('tailwindcss'),
     ])
-    .purgeCss()
+    .purgeCss({
+        content: ['./source/**/*.blade.php']
+    })
     .version();

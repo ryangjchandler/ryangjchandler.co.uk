@@ -3,6 +3,7 @@ title: What is Alpine.js?
 date: 2020-03-28T00:00:00.000Z
 published: true
 categories: [javascript]
+should_tweet: false
 extends: _layouts.post
 section: content
 ---
