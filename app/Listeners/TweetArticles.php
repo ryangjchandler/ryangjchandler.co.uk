@@ -31,7 +31,7 @@ class TweetArticles
                 }
 
                 $message = sprintf(
-                    "🔥 NEW ARTICLE - %s - %s",
+                    "📰 %s - %s",
                     $post->title,
                     $post->getUrl()
                 );
