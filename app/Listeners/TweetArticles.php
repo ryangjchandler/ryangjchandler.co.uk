@@ -40,12 +40,15 @@ class TweetArticles
 
                 $tweetUrl = "https://twitter.com/ryangjchandler/status/{$response['id_str']}";
 
+                // get original file contents
                 $originalContents = file_get_contents($filePath = ($post->_meta->source . '/' . $post->getFilename() . '.md'));
                 
+                // replace with updated stuffs
                 $newContents = str_replace('should_tweet: true', 'should_tweet: false', $originalContents);
                 $newContents = str_replace('tweeted: false', 'tweeted: true', $newContents);
                 $newContents = str_replace('tweet_link:', 'tweet_link: ' . $tweetUrl, $newContents);
 
+                // overwrite file
                 file_put_contents($filePath, $newContents);
             });
     }
