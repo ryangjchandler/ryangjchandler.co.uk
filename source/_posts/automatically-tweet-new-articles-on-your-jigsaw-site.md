@@ -26,3 +26,6 @@ Since we're just writing PHP, we also have the full power of Composer packages, 
 
 ## Tweeting about New Articles
 
+The first step is creating a new listener. A lot of examples will tell you to create a `listeners/` directory in your Jigsaw site, but I prefer to create an `app/` directory. This feels more Laravel like to me and it also lets me put other stuff in there too.
+
+After creating the directory, be sure to hook it up with an autoloader
