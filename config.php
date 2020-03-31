@@ -26,7 +26,7 @@ return [
             'path' => 'categories/{filename}',
             'filter' => function ($category) {
                 return $category->has_archive;
-            }
+            },
         ],
 
     ],
