@@ -1,7 +1,7 @@
 ---
 title: Prevent Updating or Saving of Laravel Models
 date: '2020-03-31'
-published: false
+published: true
 extends: _layouts.post
 section: content
 ---
