@@ -23,3 +23,6 @@ Every time I use Jigsaw, I completely forget about the lifecycle hooks. The fram
 This event gets fired after all of the collections have been built and stored on disk. This is super useful as it allows me to run something after any further modifications have happened.
 
 Since we're just writing PHP, we also have the full power of Composer packages, specifically [`abraham/twitteroauth`](https://github.com/abraham/twitteroauth).
+
+## Tweeting about New Articles
+
