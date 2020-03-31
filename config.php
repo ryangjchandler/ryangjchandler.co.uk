@@ -13,13 +13,22 @@ return [
     'author' => 'Ryan Chandler',
     
     'collections' => [
+
         'posts' => [
             'path' => 'articles/{filename}',
-            'sort' => 'date',
+            'sort' => '-date',
             'filter' => function ($post) {
                 return $post->published;
             }
-        ]
+        ],
+
+        'categories' => [
+            'path' => 'categories/{filename}',
+            'filter' => function ($category) {
+                return $category->has_archive;
+            },
+        ],
+
     ],
 
 ];

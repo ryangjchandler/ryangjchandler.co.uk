@@ -1,5 +1,7 @@
 @extends('_layouts.master')
 
+@section('title', 'Timeline - Ryan Chandler')
+
 @section('body')
     <main class="markup">
         <h1>Timeline</h1>

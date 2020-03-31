@@ -23,5 +23,28 @@ collections:
       - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD", dateFormat: "YYYY-MM-DD", required: true, default: "" }
       - { label: "Content", name: "body", widget: "markdown", hint: "Main content goes here." }
       - { label: "Published?", name: "published", widget: "boolean", default: false }
+      - label: "Categories"
+        name: "categories"
+        widget: "relation"
+        collection: "categories"
+        searchFields: ["title"]
+        valueField: "title"
       - { name: "extends", widget: "hidden", required: true, default: "_layouts.post" }
+      - { name: "section", widget: "hidden", required: true, default: "content" }
+  - name: "categories"
+    label: "Categories"
+    label_singular: "Category"
+    description: >
+      All my blog categories
+    folder: "source/_categories"
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    create: true
+    identifier_field: "title"
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true, default: "" }
+      - { label: "Content", name: "body", widget: "markdown", hint: "Main content goes here." }
+      - { label: "Has Archive?", name: "has_archive", widget: "boolean", default: false } 
+      - { name: "extends", widget: "hidden", required: true, default: "_layouts.category" }
       - { name: "section", widget: "hidden", required: true, default: "content" }

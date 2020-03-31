@@ -23,22 +23,11 @@
         </section>
         <section>
             <h2 class="text-lg text-gray-700 mb-8">Articles</h2>
-            <table class="w-full">
-                <tbody>
-                @forelse($posts as $post)
-                    <tr>
-                        <td class="p-0 align-middles">
-                            <a href="{{ $post->getUrl() }}" class="underline" style="text-decoration-color: #718096;">{{ $post->title }}</a>
-                        </td>
-                        <td class="text-right align-middle">
-                            {{ date('j, M Y', $post->date) }}
-                        </td>
-                    </tr>
-                @empty
-                    <p>🤦🏻‍♂️ Don't worry, something will be here soon!</p>
-                @endforelse
-                </tbody>
-            </table>
+            @forelse($posts as $post) 
+                @include('_partials._post-card')
+            @empty
+                <p>🤦🏻‍♂️ Don't worry, something will be here soon!</p>
+            @endforelse
         </section>
     </main>
 
