@@ -10,6 +10,46 @@
             or bad my design skills get as time goes on.
         </p>
         <div>
+            <h3 class="mb-4 underline">Categories & Cards - 31, March 2020</h3>
+            <p class="mb-4">
+                One of the things I wanted when I launched this blog was categories. That's now been added.
+                Each post can have many categories, which is normally wrong. But, I want to write a post
+                for say both <a href="/categories/php">PHP</a> and <a href="/categories/laravel">Laravel</a>,
+                I can do that and file it under both.
+            </p>
+            <div class="border shadow-lg mb-4">
+                <img src="/assets/images/timeline/2020-03-31-categories-cards.png" alt="31, March 2020 Screenshot of Categories">
+            </div>
+            <p class="mb-4">
+                You probably noticed the different post "card". This is was intended and I think it looks a little bit nicer.
+                Previously, I was using a table and some rows, but now it's just straight divs. Much cleaner and very 'Refactoring UI'-esque.
+            </p>
+            <p class="mb-4">
+                I also decided to add a listing page for the categories too. Here's how that looks:
+            </p>
+            <div class="border shadow-lg mb-4">
+                <img src="/assets/images/timeline/2020-03-31-category-listing.png" alt="31, March 2020 Screenshot of Category Listing">
+            </div>
+            <p class="mb-4">
+                Not the nicest looking page, but it gets the job done. Each category also has it's own mini archive page, that was
+                pretty easy. I wanted to copy how the <a href="http://jigsaw-blog-staging.tighten.co/">Jigsaw Blog Starter</a> does it, but I couldn't get it to work, so I
+                went for the inline filtering. Nasty looking code, but functionally sound.
+            </p>
+            <div class="border shadow-lg mb-4">
+                <img src="/assets/images/timeline/2020-03-31-category-archive.png" alt="31, March 2020 Screenshot of Category Archive">
+            </div>
+            <p class="mb-4">
+                This was a pretty easy change to make. Not sure how best to handle the CMS side of things though, Netlify CMS doesn't seem to be
+                picking up the existing categories in the source directory. Will need to look into that at some point, but for not it's not a big deal.
+            </p>
+            <p class="mb-4">
+                I think the next thing on my list is to implement Webmentions. There's tonnes of articles out there about how to do this, but I'd like
+                to tackle it on my own first. I'd also like to actually own the webmentions, instead of using JavaScript to show them. That way, there's
+                still no JavaScript on the site. <a href="https://twitter.com/sebdedeyne" target="_blank">Sebastian De Deyne</a> wrote a cool article about
+                how he did that on <a href="https://sebastiandedeyne.com/webmentions-on-a-static-site-with-github-actions/">his blog</a>.
+            </p>
+        </div>
+        <div>
             <h3 class="mb-4 underline">Goodbye, Highlight.js - 30, March 2020</h3>
             <p class="mb-4">
                 So, I removed Highlight.js. This is in an effort to remove any unnecessary JavaScript and other
