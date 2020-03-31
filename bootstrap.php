@@ -21,7 +21,6 @@ $container->bind(
     RyanChandler\Markdown\Parser::class
 );
 
-$events->beforeBuild(RyanChandler\Listeners\TweetArticles::class);
-
+$events->afterBuild(RyanChandler\Listeners\TweetArticles::class);
 $events->afterBuild(RyanChandler\Listeners\GenerateSitemap::class);
 $events->afterBuild(RyanChandler\Listeners\GenerateFeed::class);
