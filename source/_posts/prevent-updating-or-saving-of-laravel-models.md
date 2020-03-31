@@ -2,6 +2,7 @@
 title: Prevent Updating or Saving of Laravel Models
 date: 2020-03-31
 published: true
+categories: [php, laravel]
 extends: _layouts.post
 section: content
 ---
@@ -33,7 +34,7 @@ trait PreventsModelEvents
 {
     protected static $prevents = [];
 
-    public static function bootPreventsUpdating()
+    public static function bootPreventsModelEvents()
     {
         foreach (static::$prevents as $event) {
             static::{$event}(function (Model $model) {

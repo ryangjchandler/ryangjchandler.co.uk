@@ -10,6 +10,14 @@ html {
 
 @tailwind utilities;
 
+.post-header {
+    @apply leading-loose;
+}
+
+.post-header h1 {
+    @apply text-3xl font-extrabold leading-tight;
+}
+
 .markup {
     @apply leading-loose;
 }
@@ -31,6 +39,10 @@ html {
     @apply inline-block ml-1 text-gray-400;
 }
 
+.markup .permalink-category {
+    @apply text-indigo-900;
+}
+
 .markup h1 {
     @apply text-3xl font-extrabold leading-tight;
 }
@@ -42,6 +54,10 @@ html {
 .h3,
 .markup h3 {
     @apply font-semibold leading-tight mt-12;
+}
+
+.markup ul.list-none {
+    list-style-type: none;
 }
 
 .markup ul,
