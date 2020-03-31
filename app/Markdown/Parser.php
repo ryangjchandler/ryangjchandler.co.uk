@@ -10,7 +10,7 @@ class Parser extends MarkdownParser
     public function parse($markdown)
     {
         return (new GitDown(
-            getenv('GITHUB_TOKEN'),
+            env('GITHUB_TOKEN'),
             'ryangjchandler/ryangjchandler'
         ))->parse($markdown);
     }
