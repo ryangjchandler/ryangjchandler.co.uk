@@ -13,6 +13,7 @@
         <style>
             {{ (new GitDown\GitDown)->styles() }}
         </style>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
     </head>
     <body class="antialiased font-sans max-w-2xl mx-auto px-8 md:px-0">
         @include('_partials/_header')

@@ -11,6 +11,10 @@ return [
     'description' => 'The ramblings and thoughts of a young web developer.',
 
     'author' => 'Ryan Chandler',
+
+    'getVersion' => function () {
+        return file_get_contents(__DIR__.'/.version');
+    },
     
     'collections' => [
 
