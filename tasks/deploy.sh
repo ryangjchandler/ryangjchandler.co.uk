@@ -27,8 +27,11 @@ then
     git commit --author="${author_string}" -m "Version number for deployment ${new_tag} [${new_tag_date}]"
     git push --force origin HEAD # this is a dangerous force push, but I like to live life on the edge
 
-    git fetch && git checkout ${production_branch}
-    git merge origin ${source_branch} # merge source branch (i.e. master) into production
+    git fetch
+    git pull # pull just in case we missed something
+    git checkout ${production_branch}
+    git pull # pull just in case we missed something
+    git merge ${source_branch} # merge source branch (i.e. master) into production
     git commit --author="${author_string}" -m "New deployment ${new_tag} [${new_tag_date}]"
     git push --force origin ${production_branch} # another dangerous force push
 fi
