@@ -17,7 +17,7 @@
                 </li>
                 <li class="">
                     <span class="mr-2">🔗</span>
-                    <a href="https://twitter.com/ryangjchandler" target="_blank" class="underline" style="text-decoration-color: #718096;">Twitter</a>, <a href="https://github.com/ryangjchandler" target="_blank" class="underline" style="text-decoration-color: #718096;">GitHub</a>
+                    <a href="https://twitter.com/ryangjchandler" rel="me" target="_blank" class="underline" style="text-decoration-color: #718096;">Twitter</a>, <a href="https://github.com/ryangjchandler" target="_blank" class="underline" style="text-decoration-color: #718096;">GitHub</a>
                 </li>
             </ul>
         </section>
