@@ -13,6 +13,7 @@
         }
     },
     "scripts": {
-        "build": "./vendor/bin/jigsaw build"
+        "build": "./vendor/bin/jigsaw build",
+        "deploy": "./tasks/deploy.sh"
     }
 }
