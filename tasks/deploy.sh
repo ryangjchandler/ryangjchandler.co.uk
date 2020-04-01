@@ -33,6 +33,7 @@ then
     git pull # pull just in case we missed something
     git merge ${source_branch} # merge source branch (i.e. master) into production
     git commit --author="${author_string}" -m "New deployment ${new_tag} [${new_tag_date}]"
+    git tag -a "${new_tag}" -m "New deployment ${new_tag} [${new_tag_date}]"
     git push --force origin ${production_branch} # another dangerous force push
 fi
 
