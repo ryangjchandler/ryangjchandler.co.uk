@@ -33,4 +33,6 @@ then
     git push --force origin ${production_branch} # another dangerous force push
 fi
 
+git fetch && git checkout ${source_branch} # return to source branch
+
 echo "Deployment finished."
