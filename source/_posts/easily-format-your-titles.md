@@ -2,9 +2,8 @@
 title: Easily Format Your Titles
 date: 2020-04-01T00:00:00.000Z
 published: true
+categories: [tips-and-tricks]
 should_tweet: true
-tweeted: false
-tweet_url: ''
 extends: _layouts.post
 section: content
 ---
