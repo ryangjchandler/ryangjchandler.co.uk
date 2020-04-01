@@ -1,7 +1,7 @@
 ---
-title: "Easily Format Your Titles"
-date: 2020-04-01
-published: false
+title: Easily Format Your Titles
+date: 2020-04-01T00:00:00.000Z
+published: true
 should_tweet: true
 tweeted: false
 tweet_url: ''
