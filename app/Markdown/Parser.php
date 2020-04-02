@@ -10,6 +10,8 @@ use League\CommonMark\CommonMarkConverter;
 use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
 use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
 use League\CommonMark\Environment;
+use League\CommonMark\Inline\Element\Link;
+use RyanChandler\Markdown\Renderers\LinkRenderer;
 use TightenCo\Jigsaw\Parsers\JigsawMarkdownParser;
 
 class Parser extends MarkdownParser
@@ -35,6 +37,7 @@ class Parser extends MarkdownParser
     protected static function createCommonmark()
     {
         $environment = Environment::createCommonMarkEnvironment()
+            ->addInlineRenderer(Link::class, new LinkRenderer)
             ->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(static::$languages))
             ->addBlockRenderer(IndentedCode::class, new IndentedCodeRenderer(static::$languages));
 
