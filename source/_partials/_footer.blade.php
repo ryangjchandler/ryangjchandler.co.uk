@@ -6,9 +6,6 @@
         <nav>
             <ul class="flex items-center">
                 <li class="mr-4">
-                    <a href="/timeline">Timeline</a>
-                </li>
-                <li class="mr-4">
                     <a href="/feed.xml">RSS</a>
                 </li>
                 <li>
