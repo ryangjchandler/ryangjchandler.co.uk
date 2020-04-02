@@ -28,7 +28,7 @@ Simply use this on your model and you will no longer be able to update it.
 
 ### Improvements
 
-We could take this a step further and make it more reusable and DRY-er [<sup>1</sup>](#note-1).
+We could take this a step further and make it more reusable and DRY-er.
 
 ```php
 trait PreventsModelEvents
@@ -58,5 +58,3 @@ class User extends Model
 ```
 
 When we try to update our `User` model, it will be stopped and will return false. This can be applied to the other events such as `saving` and `creating` too.
-
-<small id="note-1">1. I could probably come up with a better name for the trait, but this will do for now.</small>

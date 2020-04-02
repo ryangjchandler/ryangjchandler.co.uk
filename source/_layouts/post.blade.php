@@ -13,8 +13,10 @@
                 @include('_partials/_categories', ['post' => $page])
             </div>
         </div>
-        <div class="markup">
+        <div class="markup mb-6">
             @yield('content')
         </div>
+        <hr class="mb-6" />
+        @include('_partials._post-pagination', ['post' => $page])
     </article>
 @endsection
