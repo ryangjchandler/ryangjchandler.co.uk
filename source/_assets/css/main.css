@@ -143,3 +143,7 @@ html {
 .timeline-entry img {
     @apply block border shadow-lg mb-4;
 }
+
+.timeline-entry strong {
+    @apply inline-block mb-2;
+}

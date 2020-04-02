@@ -19,7 +19,7 @@ return [
     'collections' => [
 
         'timeline' => [
-            'sort' => '-date',
+            'sort' => ['-date', 'order'],
             'filter' => function ($timeline) {
                 return $timeline->published;
             },
