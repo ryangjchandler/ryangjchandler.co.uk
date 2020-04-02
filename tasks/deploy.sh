@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-# git reset HEAD^ # start by resetting against HEAD
+# add some colours for script output
+green=$(tput setaf 2)
+reset=$(tput sgr0)
+bold=$(tput bold)
 
 version_file=./.version # change this to your desired version file
 source_branch=master
@@ -9,8 +12,8 @@ author_string="Ryan's Deployment Script <deployments@ryangjchandler.co.uk>"
 new_tag_date=$(date +"%Y-%m-%d %H-%M-%S")
 new_tag=$(date +"%Y%m%d%H%M%S") # set a new tag for the deployment
 
-echo "Previous deployment: $(git describe --abbrev=0 --tags)"
-echo "New deployment: ${new_tag}"
+echo "${bold}${green}Previous deployment:${reset} $(git describe --abbrev=0 --tags)"
+echo "${bold}${green}New deployment:${reset} ${new_tag}"
 
 if [[ -f "${version_file}" ]]; # only remove the version file if it exists
 then
@@ -39,4 +42,4 @@ fi
 
 git fetch && git checkout ${source_branch} # return to source branch
 
-echo "Deployment finished."
+echo "${bold}${green}Deployment finished${reset}."
