@@ -6,7 +6,7 @@
         <li class="text-sm text-gray-800 mr-4">
             <a href="/articles" class="hover:underline focus:underline">Articles</a>
         </li>
-        <li class="text-sm text-gray-800">
+        <li class="text-sm text-gray-800 mr-4">
             <a href="/categories" class="hover:underline focus:underline">Categories</a>
         </li>
         <li class="text-sm text-gray-800">

@@ -135,3 +135,15 @@ html {
 .markup mark {
     @apply bg-yellow-200 p-1;
 }
+
+.timeline-entry p {
+    @apply mb-4;
+}
+
+.timeline-entry img {
+    @apply block border shadow-lg mb-4;
+}
+
+.timeline-entry strong {
+    @apply inline-block mb-2;
+}

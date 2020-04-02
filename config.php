@@ -18,6 +18,13 @@ return [
     
     'collections' => [
 
+        'timeline' => [
+            'sort' => ['-date', 'order'],
+            'filter' => function ($timeline) {
+                return $timeline->published;
+            },
+        ],
+
         'posts' => [
             'path' => 'articles/{filename}',
             'sort' => '-date',
