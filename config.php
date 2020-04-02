@@ -37,7 +37,7 @@ return [
                 $minutes = (int) floor($wordCount / $wordsPerMinute);
                 $seconds = (int) floor($wordCount % $wordsPerMinute / ($wordsPerMinute / 60));
 
-                if ($minutesOnly && ($minutes > 0 && $seconds >= 30 || $minutes === 0 && $seconds <= 30)) {
+                if ($minutesOnly && $minutes > 0 && $seconds >= 30) {
                     $minutes++;
                 }
 
