@@ -9,5 +9,8 @@
         <li class="text-sm text-gray-800">
             <a href="/categories" class="hover:underline focus:underline">Categories</a>
         </li>
+        <li class="text-sm text-gray-800">
+            <a href="/timeline" class="hover:underline focus:underline">Timeline</a>
+        </li>
     </ul>
 </header>
