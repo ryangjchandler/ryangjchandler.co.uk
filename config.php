@@ -27,17 +27,17 @@ return [
             'excerpt' => function ($post, $characters = 50) {
                 return trim(substr(strip_tags($post->getContent()), 0, $characters)) . '...';
             },
-            'readingTime' => function ($post, int $wordsPerMinute = 200, bool $minutesOnly = true, bool $abbreviated = true) {
+            'readingTime' => function ($post, int $wordsPerMinute = 160, bool $minutesOnly = true, bool $abbreviated = true) {
                 $wordCount = str_word_count(strip_tags($post->getContent()));
 
                 if ($wordsPerMinute <= 0) {
                     $wordsPerMinute = 200;
                 }
 
-                $minutes = floor($wordCount, $wordsPerMinute);
-                $seconds = floor($wordCount % $wordsPerMinute / ($wordsPerMinute / 60));
+                $minutes = (int) floor($wordCount / $wordsPerMinute);
+                $seconds = (int) floor($wordCount % $wordsPerMinute / ($wordsPerMinute / 60));
 
-                if ($minutesOnly && $minutes > 0 && $seconds >= 30) {
+                if ($minutesOnly && ($minutes > 0 && $seconds >= 30 || $minutes === 0 && $seconds <= 30)) {
                     $minutes++;
                 }
 
