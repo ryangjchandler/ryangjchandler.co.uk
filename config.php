@@ -27,6 +27,38 @@ return [
             'excerpt' => function ($post, $characters = 50) {
                 return trim(substr(strip_tags($post->getContent()), 0, $characters)) . '...';
             },
+            'readingTime' => function ($post, int $wordsPerMinute = 160, bool $minutesOnly = true, bool $abbreviated = true) {
+                $wordCount = str_word_count(strip_tags($post->getContent()));
+
+                if ($wordsPerMinute <= 0) {
+                    $wordsPerMinute = 200;
+                }
+
+                $minutes = (int) floor($wordCount / $wordsPerMinute);
+                $seconds = (int) floor($wordCount % $wordsPerMinute / ($wordsPerMinute / 60));
+
+                if ($minutesOnly && $minutes > 0 && $seconds >= 30) {
+                    $minutes++;
+                }
+
+                if ($abbreviated) {
+                    $strMinutes = 'min';
+                    $strSeconds = 'sec';
+                } else {
+                    $strMinutes = $minutes === 1 ? 'minute' : 'minutes';
+                    $strSeconds = $seconds === 1 ? 'second' : 'seconds';
+                }
+
+                if ($minutes === 0) {
+                    return "{$seconds} {$strSeconds} read";
+                }
+
+                if ($minutesOnly) {
+                    return "{$minutes} {$strMinutes} read";
+                }
+
+                return "{$minutes} {$strMinutes}, {$seconds} {$strSeconds} read";
+            },
         ],
 
         'categories' => [
