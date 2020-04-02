@@ -11,7 +11,10 @@
     "autoload": {
         "psr-4": {
             "RyanChandler\\": "app/"
-        }
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "scripts": {
         "build": "./vendor/bin/jigsaw build",
