@@ -18,6 +18,7 @@
     },
     "scripts": {
         "build": "./vendor/bin/jigsaw build",
-        "deploy": "./tasks/deploy.sh"
+        "deploy": "./tasks/deploy.sh",
+        "fetch-webmentions": "./vendor/bin/jigsaw fetch-webmentions"
     }
 }

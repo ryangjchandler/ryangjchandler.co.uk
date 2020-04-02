@@ -10,6 +10,14 @@ return [
     
     'description' => 'The ramblings and thoughts of a young web developer.',
 
+    'webmentions' => [
+        'directory' => __DIR__ . './source/_webmentions',
+        'url' => 'https://webmention.io/api/mentions.jf2',
+        'domain' => env('WEBMENTIONS_DOMAIN'),
+        'token' => env('WEBMENTIONS_TOKEN'),
+        'per_page' => env('WEBMENTIONS_PER_PAGE', 999),
+    ],
+
     'author' => 'Ryan Chandler',
 
     'getVersion' => function () {

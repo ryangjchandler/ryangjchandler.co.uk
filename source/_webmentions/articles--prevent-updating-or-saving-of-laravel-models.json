@@ -1,0 +1,20 @@
+[
+    {
+        "type": "entry",
+        "author": {
+            "type": "card",
+            "name": "Florian Voutzinos \u26a1",
+            "photo": "https:\/\/webmention.io\/avatar\/pbs.twimg.com\/b4bcee3db413dc3c370ae018ccac41cf27b5f9b1f20e6cc9942c35426842de1c.jpg",
+            "url": "https:\/\/twitter.com\/voutzinos"
+        },
+        "url": "https:\/\/twitter.com\/ryangjchandler\/status\/1244986192090877953#favorited-by-2195036186",
+        "published": null,
+        "wm-received": "2020-03-31T18:54:35Z",
+        "wm-id": 777153,
+        "wm-source": "https:\/\/brid-gy.appspot.com\/like\/twitter\/ryangjchandler\/1244986192090877953\/2195036186",
+        "wm-target": "articles--prevent-updating-or-saving-of-laravel-models",
+        "like-of": "https:\/\/ryangjchandler.co.uk\/articles\/prevent-updating-or-saving-of-laravel-models\/",
+        "wm-property": "like-of",
+        "wm-private": false
+    }
+]
