@@ -4,10 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <meta name="description" content="Ryan Chandler is a web developer and writer.">
+        <meta property="og:site_name" content="ryangjchandler.co.uk">
+        <meta property="og:locale" content="en_GB">
+        <meta property="og:description" content="Ryan Chandler is a Laravel developer and wannabe writer.">
+        <meta property="og:url" content="https://ryangjchandler.co.uk">
+	    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
+	    <link rel="manifest" href="/site.webmanifest">
+	    @stack('head')
         <title>@yield('title')</title>
         <link rel="webmention" href="https://webmention.io/ryangjchandler.co.uk/webmention" />
         <link rel="pingback" href="https://webmention.io/ryangjchandler.co.uk/xmlrpc" />
