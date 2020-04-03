@@ -17,7 +17,7 @@ echo "${bold}${green}New deployment:${reset} ${new_tag}"
 
 if [[ -f "${version_file}" ]]; # only remove the version file if it exists
 then
-    rm $version_file 
+    rm $version_file >> /dev/null 2>&1
 fi
 
 echo "${new_tag}" >> ./.version # write the new tag to the version file
@@ -26,20 +26,20 @@ echo "${new_tag}" >> ./.version # write the new tag to the version file
 # this will work since we reset against the HEAD at beginning
 if [[ -n $(git status --short) ]];
 then
-    git add .version
-    git commit --author="${author_string}" -m "Version number for deployment ${new_tag} [${new_tag_date}]"
-    git push --force origin HEAD # this is a dangerous force push, but I like to live life on the edge
+    git add .version >> /dev/null 2>&1
+    git commit --author="${author_string}" -m "Version number for deployment ${new_tag} [${new_tag_date}]" >> /dev/null 2>&1
+    git push --force origin HEAD >> /dev/null 2>&1 # this is a dangerous force push, but I like to live life on the edge
 
-    git fetch
-    git pull # pull just in case we missed something
-    git checkout ${production_branch}
-    git pull # pull just in case we missed something
-    git merge ${source_branch} # merge source branch (i.e. master) into production
-    git commit --author="${author_string}" -m "New deployment ${new_tag} [${new_tag_date}]"
-    git tag -a "${new_tag}" -m "New deployment ${new_tag} [${new_tag_date}]"
-    git push --force origin ${production_branch} --tags # another dangerous force push
+    git fetch >> /dev/null 2>&1
+    git pull >> /dev/null 2>&1 # pull just in case we missed something
+    git checkout ${production_branch} >> /dev/null 2>&1
+    git pull >> /dev/null 2>&1 # pull just in case we missed something
+    git merge ${source_branch} >> /dev/null 2>&1 # merge source branch (i.e. master) into production
+    git commit --author="${author_string}" -m "New deployment ${new_tag} [${new_tag_date}]" >> /dev/null 2>&1
+    git tag -a "${new_tag}" -m "New deployment ${new_tag} [${new_tag_date}]" >> /dev/null 2>&1
+    git push --force origin ${production_branch} --tags >> /dev/null 2>&1 # another dangerous force push
 fi
 
-git fetch && git checkout ${source_branch} # return to source branch
+git fetch && git checkout ${source_branch} >> /dev/null 2>&1 # return to source branch
 
 echo "${bold}${green}Deployment finished${reset}."

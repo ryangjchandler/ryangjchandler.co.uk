@@ -8,9 +8,6 @@ extends: _layouts.post
 section: content
 categories:
   - tips-and-tricks
-archived: true
-archived_date: 2020-03-01
-archived_alternative: https://google.co.uk
 ---
 Don't worry, this isn't an April Fools Day post. It's a genuine article with a genuine quick tip.
 
