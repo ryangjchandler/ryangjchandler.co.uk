@@ -168,4 +168,4 @@ Hopefully you've made it this far. The deployment process isn't too complicated 
 
 If you found it interesting or helpful at all, you can share this article on Twitter and write some nice stuff about it. It will be shown in the "Webmentions" section below.
 
-I won't keep you any longer, have a good one!
+I won't keep you any longer, have a good one 👋!
