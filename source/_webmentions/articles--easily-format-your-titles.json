@@ -42,5 +42,49 @@
         "in-reply-to": "https:\/\/ryangjchandler.co.uk\/articles\/easily-format-your-titles\/",
         "wm-property": "in-reply-to",
         "wm-private": false
+    },
+    {
+        "type": "entry",
+        "author": {
+            "type": "card",
+            "name": "JReviews",
+            "photo": "https:\/\/webmention.io\/avatar\/pbs.twimg.com\/02bade12eb58c12545753d3a91e054024bcc039f5fc46b6c82eb50635ee2ff0a.png",
+            "url": "https:\/\/twitter.com\/getJReviews"
+        },
+        "url": "https:\/\/twitter.com\/getJReviews\/status\/1245352151913828355",
+        "published": "2020-04-01T14:07:45+00:00",
+        "wm-received": "2020-04-01T15:56:31Z",
+        "wm-id": 777531,
+        "wm-source": "https:\/\/brid-gy.appspot.com\/comment\/twitter\/ryangjchandler\/1245340487218847746\/1245352151913828355",
+        "wm-target": "articles--easily-format-your-titles",
+        "content": {
+            "html": "Nice. The link to <a href=\"http:\/\/title.sh\">title.sh<\/a> on the post is relative and points to your site.\n<a class=\"u-mention\" href=\"https:\/\/ryangjchandler.co.uk\/\"><\/a>\n<a class=\"u-mention\" href=\"https:\/\/twitter.com\/ryangjchandler\"><\/a>",
+            "text": "Nice. The link to title.sh on the post is relative and points to your site."
+        },
+        "in-reply-to": "https:\/\/ryangjchandler.co.uk\/articles\/easily-format-your-titles\/",
+        "wm-property": "in-reply-to",
+        "wm-private": false
+    },
+    {
+        "type": "entry",
+        "author": {
+            "type": "card",
+            "name": "JReviews",
+            "photo": "https:\/\/webmention.io\/avatar\/pbs.twimg.com\/02bade12eb58c12545753d3a91e054024bcc039f5fc46b6c82eb50635ee2ff0a.png",
+            "url": "https:\/\/twitter.com\/getJReviews"
+        },
+        "url": "https:\/\/twitter.com\/getJReviews\/status\/1245352151913828355",
+        "published": "2020-04-01T14:07:45+00:00",
+        "wm-received": "2020-04-01T15:56:31Z",
+        "wm-id": 777531,
+        "wm-source": "https:\/\/brid-gy.appspot.com\/comment\/twitter\/ryangjchandler\/1245340487218847746\/1245352151913828355",
+        "wm-target": "articles--easily-format-your-titles",
+        "content": {
+            "html": "Nice. The link to <a href=\"http:\/\/title.sh\">title.sh<\/a> on the post is relative and points to your site.\n<a class=\"u-mention\" href=\"https:\/\/ryangjchandler.co.uk\/\"><\/a>\n<a class=\"u-mention\" href=\"https:\/\/twitter.com\/ryangjchandler\"><\/a>",
+            "text": "Nice. The link to title.sh on the post is relative and points to your site."
+        },
+        "in-reply-to": "https:\/\/ryangjchandler.co.uk\/articles\/easily-format-your-titles\/",
+        "wm-property": "in-reply-to",
+        "wm-private": false
     }
 ]
