@@ -62,11 +62,11 @@ class FetchWebmentionsCommand extends Command
 
             $entries = json_decode(file_get_contents($filename), true);
 
-            $entries[] = $webmention;
-
             $entries = array_filter($entries, function ($existingWebmention) use ($webmention) {
                 return $existingWebmention['wm-id'] !== $webmention['wm-id'];
-            });
+	    });
+
+	    $entries[] = $webmention;
             
             usort($entries, function ($a, $b) {
                 return $a['wm-id'] - $b['wm-id'];
