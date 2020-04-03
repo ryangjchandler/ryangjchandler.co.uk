@@ -29,7 +29,7 @@
         <details>
             <summary>Webmentions</summary>
             <div class="pt-8">
-                @foreach($page->webmentions() as $webmention)
+                @forelse($page->webmentions() as $webmention)
                     <div class="mb-4">
                         <div class="flex items-center mb-4">
                             <img src="{{ $webmention->avatar() }}" alt="{{ $webmention->author->name}} Avatar" class="w-10 h-10 rounded-full mr-4">
@@ -48,7 +48,11 @@
                     @if(! $loop->last)
                         <hr class="mb-4" />
                     @endif
-                @endforeach
+                @empty
+                    <div class="mb-4">
+                        😞 There's no webmentions here yet.
+                    </div>
+                @endforelse
             </div>
         </details>
         <hr class="my-6" />

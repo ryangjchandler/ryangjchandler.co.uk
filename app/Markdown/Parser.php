@@ -19,7 +19,7 @@ class Parser extends MarkdownParser
     protected $commonmark;
 
     protected static $languages = [
-        'html', 'php', 'js', 'css', 'yaml', 'bash',
+        'html', 'php', 'js', 'css', 'yaml', 'bash', 'json'
     ];
 
     public function __construct(JigsawMarkdownParser $parser = null)
