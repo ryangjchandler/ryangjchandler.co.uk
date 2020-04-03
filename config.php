@@ -1,5 +1,7 @@
 <?php
 
+use RyanChandler\DataObjects\Webmention;
+
 return [
 
     'production' => false,
@@ -73,6 +75,16 @@ return [
                 }
 
                 return "{$minutes} {$strMinutes}, {$seconds} {$strSeconds} read";
+            },
+            'webmentions' => function ($post) {
+                return collect(
+                    json_decode(
+                        file_get_contents(__DIR__.'/source/_webmentions/articles--' . $post->getFilename() . '.json'),
+                        true
+                    )
+                )->map(function ($webmention) {
+                    return new Webmention($webmention);
+                });
             },
         ],
 
