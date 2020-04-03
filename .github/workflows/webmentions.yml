@@ -1,0 +1,45 @@
+name: Webmentions
+
+on:
+    schedule:
+        - cron: "0 */12 * * *"
+
+webmentions:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout repository
+          uses: actions/checkout@master
+
+        - name: Set up PHP
+          uses: shivammathur/setup-php@v2
+          with: 
+            php_version: '7.4'
+            coverage: none
+
+        - name: Cache Composer dependencies
+          uses: actions/cache@v1
+          with:
+            path: vendor
+            key: composer-${{ hashFiles('composer.lock') }}
+
+        - name: Install Composer dependencies
+          run: composer install -n --prefer-dist
+
+        - name: Fetch webmentions
+          env:
+            WEBMENTIONS_TOKEN: ${{ secrets.WEBMENTIONS_TOKEN }}
+          run: composer fetch-webmentions
+
+        - name: Commit changes to repository
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            COMMIT_MSG: |
+              Fetch webmentions
+            skip-checks: true
+          run: |
+            git config user.email "ryan@chandler.codes"
+            git config user.name "Ryan Chandler"
+            git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/ryangjchandler/ryangjchandler.git
+            git checkout master
+            git add .
+            git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
