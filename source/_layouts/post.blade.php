@@ -29,11 +29,13 @@
                     <div class="mb-4">
                         <div class="flex items-center mb-4">
                             <img src="{{ $webmention->avatar() }}" alt="{{ $webmention->author->name}} Avatar" class="w-10 h-10 rounded-full mr-4">
-                            <strong class="mr-4 tracking-wide">
-                                <a href="{{ $webmention->author->url }}" target="_blank" rel="noopener noreferrer" class="underline">{{ $webmention->author->name }}</a>
-                                <a href="{{ $webmention->sourceUrl }}" target="_blank" rel="noopener noreferrer" class="underline">{{ $webmention->keyword }}</a>
-                            </strong>
-                            <time datetime="{{ $webmention->date->format('Y-m-d') }}">{{ $webmention->date->format('d, M Y') }}</time>
+                            <div class="flex flex-col md:flex-row">
+                                <strong class="mr-4 tracking-wide mb-1 md:mb-0">
+                                    <a href="{{ $webmention->author->url }}" target="_blank" rel="noopener noreferrer" class="underline">{{ $webmention->author->name }}</a>
+                                    <a href="{{ $webmention->sourceUrl }}" target="_blank" rel="noopener noreferrer" class="underline">{{ $webmention->keyword }}</a>
+                                </strong>
+                                <time datetime="{{ $webmention->date->format('Y-m-d') }}" class="text-gray-600">{{ $webmention->date->format('d, M Y') }}</time>
+                            </div>
                         </div>
                         @if($webmention->type !== 'repost-of')
                             {!! $webmention->content !!}
