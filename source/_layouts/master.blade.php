@@ -13,6 +13,25 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	    <link rel="manifest" href="/site.webmanifest">
+        <script type='application/ld+json'>
+            {
+                "@context":"http:\/\/schema.org",
+                "@type":"WebSite",
+                "@id":"#website",
+                "url":"https:\/\/ryangjchandler.co.uk\/",
+                "name":"ryangjchandler.co.uk",
+                "alternateName":"A developer blog about Laravel and other languages and frameworks."
+            }
+        </script>
+        <script type='application/ld+json'>
+            {
+                "@context":"http:\/\/schema.org",
+                "@type":"Person",
+                "sameAs":["https:\/\/twitter.com\/ryangjchandler"],
+                "@id":"#person",
+                "name":"Ryan Chandler"
+            }
+        </script>
 	    @stack('head')
         <title>@yield('title')</title>
         <link rel="webmention" href="https://webmention.io/ryangjchandler.co.uk/webmention" />
