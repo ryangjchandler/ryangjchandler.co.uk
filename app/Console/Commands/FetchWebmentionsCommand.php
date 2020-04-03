@@ -39,6 +39,10 @@ class FetchWebmentionsCommand extends Command
         }
 
         foreach ($response['children'] as &$webmention) {
+            if ($webmention['author']['name'] === 'Ryan Chandler') {
+                continue;
+            }
+
             $webmention['wm-target'] = trim(str_replace(
                 'https://' . $this->config['domain'] . '/', '', $webmention['wm-target']
             ), '/');
@@ -49,6 +53,8 @@ class FetchWebmentionsCommand extends Command
             $filename = __DIR__.'/../../../source/_webmentions/' . $webmention['wm-target'] . '.json';
 
             if (! file_exists($filename)) {
+                touch($filename);
+
                 file_put_contents($filename, json_encode([$webmention], JSON_PRETTY_PRINT));
 
                 continue;
