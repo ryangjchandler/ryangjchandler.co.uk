@@ -1,5 +1,7 @@
 <?php
 
+use RyanChandler\DataObjects\Webmention;
+
 return [
 
     'production' => false,
@@ -9,6 +11,14 @@ return [
     'title' => 'Ryan Chandler',
     
     'description' => 'The ramblings and thoughts of a young web developer.',
+
+    'webmentions' => [
+        'directory' => __DIR__ . './source/_webmentions',
+        'url' => 'https://webmention.io/api/mentions.jf2',
+        'domain' => env('WEBMENTIONS_DOMAIN'),
+        'token' => env('WEBMENTIONS_TOKEN'),
+        'per_page' => env('WEBMENTIONS_PER_PAGE', 999),
+    ],
 
     'author' => 'Ryan Chandler',
 
@@ -65,6 +75,16 @@ return [
                 }
 
                 return "{$minutes} {$strMinutes}, {$seconds} {$strSeconds} read";
+            },
+            'webmentions' => function ($post) {
+                return collect(
+                    json_decode(
+                        file_get_contents(__DIR__.'/source/_webmentions/articles--' . $post->getFilename() . '.json'),
+                        true
+                    )
+                )->map(function ($webmention) {
+                    return new Webmention($webmention);
+                });
             },
         ],
 

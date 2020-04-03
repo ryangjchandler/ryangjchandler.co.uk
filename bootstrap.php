@@ -1,5 +1,6 @@
 <?php
 
+use RyanChandler\Console\Kernel;
 use TightenCo\Jigsaw\Jigsaw;
 
 /** @var $container \Illuminate\Container\Container */
@@ -16,11 +17,14 @@ use TightenCo\Jigsaw\Jigsaw;
  * });
  */
 
+foreach (Kernel::$commands as $command) {
+    Jigsaw::registerCommand($command);
+}
+
 $container->bind(
     Mni\FrontYAML\Markdown\MarkdownParser::class,
     RyanChandler\Markdown\Parser::class
 );
 
-// $events->afterBuild(RyanChandler\Listeners\TweetArticles::class);
 $events->afterBuild(RyanChandler\Listeners\GenerateSitemap::class);
 $events->afterBuild(RyanChandler\Listeners\GenerateFeed::class);

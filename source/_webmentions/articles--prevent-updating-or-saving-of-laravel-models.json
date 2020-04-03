@@ -1,0 +1,38 @@
+[
+    {
+        "type": "entry",
+        "author": {
+            "type": "card",
+            "name": "duncan mcclean \ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f",
+            "photo": "https:\/\/webmention.io\/avatar\/pbs.twimg.com\/e229d3b49f1ce6074ca67565e7916e69f9b5d9089119daf8e2fa49d2f0cdf2d6.jpg",
+            "url": "https:\/\/twitter.com\/damcclean"
+        },
+        "url": "https:\/\/twitter.com\/ryangjchandler\/status\/1244986192090877953#favorited-by-1005088501342392320",
+        "published": null,
+        "wm-received": "2020-03-31T18:53:08Z",
+        "wm-id": 777151,
+        "wm-source": "https:\/\/brid-gy.appspot.com\/like\/twitter\/ryangjchandler\/1244986192090877953\/1005088501342392320",
+        "wm-target": "articles--prevent-updating-or-saving-of-laravel-models",
+        "like-of": "https:\/\/ryangjchandler.co.uk\/articles\/prevent-updating-or-saving-of-laravel-models\/",
+        "wm-property": "like-of",
+        "wm-private": false
+    },
+    {
+        "type": "entry",
+        "author": {
+            "type": "card",
+            "name": "Florian Voutzinos \u26a1",
+            "photo": "https:\/\/webmention.io\/avatar\/pbs.twimg.com\/b4bcee3db413dc3c370ae018ccac41cf27b5f9b1f20e6cc9942c35426842de1c.jpg",
+            "url": "https:\/\/twitter.com\/voutzinos"
+        },
+        "url": "https:\/\/twitter.com\/ryangjchandler\/status\/1244986192090877953#favorited-by-2195036186",
+        "published": null,
+        "wm-received": "2020-03-31T18:54:35Z",
+        "wm-id": 777153,
+        "wm-source": "https:\/\/brid-gy.appspot.com\/like\/twitter\/ryangjchandler\/1244986192090877953\/2195036186",
+        "wm-target": "articles--prevent-updating-or-saving-of-laravel-models",
+        "like-of": "https:\/\/ryangjchandler.co.uk\/articles\/prevent-updating-or-saving-of-laravel-models\/",
+        "wm-property": "like-of",
+        "wm-private": false
+    }
+]
