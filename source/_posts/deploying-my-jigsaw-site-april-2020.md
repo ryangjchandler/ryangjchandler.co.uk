@@ -9,7 +9,7 @@ section: content
 
 As of this moment in time (3th April 2020), this site is deployed on [Netlify](https://netlify.com) and built with [Jigsaw](https://jigsaw.tighten.co) (a static site generator from the very generous and clever folks at [Tighten](https://tighten.co)).
 
-For me, this combination is _nearly_ perfect. My day job is working as a "full stack" web developer, working mostly with the [Laravel framework](https://laravel.com) so most of Jigsaw's core features like Blade templating are second nature. I will write an article on why I chose Jigsaw soon, but that's the basis of it.
+For me, this combination is _nearly_ perfect. My day job is working as a "full stack" web developer, working mostly with the [Laravel framework](https://laravel.com) so most of Jigsaw's core features like Blade templates are second nature. I will write an article on why I chose Jigsaw soon, but that's the basis of it.
 
 It's not quite the perfect setup though. Netlify is great, like really great. It's got lots of handy tools and is a solid tool, but their free plan is a bit too limited on build minutes. For most this wouldn't be a problem, but I like to constantly improve and experiment so those build minutes would disappear very, _very_ quickly.
 
@@ -158,7 +158,7 @@ And **that is it! 🎉**
 
 Like I've said, Netlify is great but it's so limited on build minutes. That's the main reason I didn't want to automatically build from `master`. 
 
-The other problem I have is the automated deployments. Each time a deployment is made, all of my assets are rebuilt (CSS and images transferred) before my site actually builds. With Netlify there's no easy way to run multiple commands like there is with GitHub Actions, so my first improvment would be ditching Netlify altogether and moving to GitHub Pages. This would let me run deployment from GitHub Actions and check certaini conditions, like "has my CSS file changed?" or "did my `tailwind.config.js` change?". With those changes, my deployment & build times would be reduced dramatically.
+The other problem I have is the automated deployments. Each time a deployment is made, all of my assets are rebuilt (CSS and images transferred) before my site actually builds. With Netlify there's no easy way to run multiple commands like there is with GitHub Actions, so my first improvement would be ditching Netlify altogether and moving to GitHub Pages. This would let me run deployment from GitHub Actions and check certain conditions, like "has my CSS file changed?" or "did my `tailwind.config.js` change?". With those changes, my deployment & build times would be reduced dramatically.
 
 It would also be nice to have everything unified in one space. My webmentions are updated every 12 hours using a GitHub Actions workflow, so having all of my workflows on the same platform would create less friction for myself when developing and maintaining the site.
 
