@@ -10,6 +10,8 @@ class Webmention
 
     public object $author;
 
+    public string $type;
+
     public string $keyword;
 
     public Carbon $date;
@@ -20,7 +22,8 @@ class Webmention
     {
         $this->content = $webmention['content']['html'] ?? $webmention['content']['text'] ?? '';
         $this->author = (object) $webmention['author'];
-        $this->keyword = $this->determineKeywordFromType($webmention['wm-property']);
+        $this->type = $webmention['wm-property'];
+        $this->keyword = $this->determineKeywordFromType();
         $this->date = Carbon::parse($webmention['published']);
         $this->sourceUrl = $webmention['url'];
     }
@@ -30,9 +33,9 @@ class Webmention
         return $this->author->photo;
     }
     
-    protected function determineKeywordFromType(string $type): string
+    protected function determineKeywordFromType(): string
     {
-        switch ($type) {
+        switch ($this->type) {
             case 'in-reply-to':
                 return 'replied';
             case 'repost-of':

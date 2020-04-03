@@ -35,7 +35,9 @@
                             </strong>
                             <time datetime="{{ $webmention->date->format('Y-m-d') }}">{{ $webmention->date->format('d, M Y') }}</time>
                         </div>
-                        {!! $webmention->content !!}
+                        @if($webmention->type !== 'repost-of')
+                            {!! $webmention->content !!}
+                        @endif
                     </div>
                     @if(! $loop->last)
                         <hr class="mb-4" />
