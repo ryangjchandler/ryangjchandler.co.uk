@@ -29,6 +29,8 @@ That's all it was, really simple. So I made some changes and this is my new depl
 4. Run `composer deploy`.
 5. Netlify automatically builds my site from the **`production`** and deploys to their CDNs.
 
+## The new process
+
 There's only 2 extra steps now, but the details of those steps matter most.
 
 ### Sending in a pull request
@@ -130,8 +132,40 @@ The next part will check to see if a `.version` file exists in the root of my pr
 
 This file is used to keep track of the latest version, hence the name. In theory, you could go into the "Releases" section on GitHub and find out, or check the previous deployment commit but that's too much effort. I can also use this file to see what deployment is currently live, specifically after a rollback.
 
-I'm just removing the file and writing the new tag to a fresh version of it.
+I'm just removing the file and writing the new tag to a fresh version of it. Nothing special going on here.
 
 ### Actually deploying the code
 
-With the `.version` file handled, we can move onto actually getting the latest code live.
+With the `.version` file handled we can move onto actually getting the latest code live and with that, the first we need to do is check if there are _any_ changes to be committed. In the case that the previous `.version` changes failed, there would be no changed files so the deployment commits will never unnecessarily be made.
+
+`-n` just checks if a string is **not** empty. Again, nothing special going on here. 
+
+The next part is simple still, just good ol' `git` commands. I'm then adding the `.version` file and committing it with a pre deployment message, indicating that a deployment is about to be processed. All of these commands are being pushed to `/dev/null` so the output doesn't appear in my console.
+
+The next part is a bit risky because we're going to force push to `master` using the `--force` flag. This will stop any failed pushes due to out of sync `HEAD`s being shown or required merges. I wouldn't do this normally, but I'm an adult and know the risks so it's fine by me.
+
+Now for the speed explanation of what happens next...
+
+Then it will `fetch` the latest changes just to be certain everything is up to date, `pull` just in case, `checkout production` so it is on the deployment branch, `pull` again, `merge master` so that all of the latest and stable changes are ready for deployment, `commit -m` the deployment message with the custom author using the `--author` flag, `tag` a new release using the `new_tag` variable set towards the start and finally, `--force push` to the deployment branch with tags using the `--tags` flag.
+
+After all of that, Netlify will pick up that changes have been made to `production`. It then runs my deployment commands (`yarn production`) inside of their build container using `PHP_VERSION=7.4` as an environment variable and pushes the `build_production` folder to their CDNs.
+
+Whilst that is running elsewhere, the script will `fetch` and `checkout` my source branch (`master`) to ensure I don't accidentally commit changes to the `production` branch.
+
+And **that is it! 🎉**
+
+## Improvements to be made
+
+Like I've said, Netlify is great but it's so limited on build minutes. That's the main reason I didn't want to automatically build from `master`. 
+
+The other problem I have is the automated deployments. Each time a deployment is made, all of my assets are rebuilt (CSS and images transferred) before my site actually builds. With Netlify there's no easy way to run multiple commands like there is with GitHub Actions, so my first improvment would be ditching Netlify altogether and moving to GitHub Pages. This would let me run deployment from GitHub Actions and check certaini conditions, like "has my CSS file changed?" or "did my `tailwind.config.js` change?". With those changes, my deployment & build times would be reduced dramatically.
+
+It would also be nice to have everything unified in one space. My webmentions are updated every 12 hours using a GitHub Actions workflow, so having all of my workflows on the same platform would create less friction for myself when developing and maintaining the site.
+
+## Sign off
+
+Hopefully you've made it this far. The deployment process isn't too complicated at the moment, but these sort of things change quite often so when I do decide to move to GitHub Pages, I'll be sure to write a new article about how and why I did it. 
+
+If you found it interesting or helpful at all, you can share this article on Twitter and write some nice stuff about it. It will be shown in the "Webmentions" section below.
+
+I won't keep you any longer, have a good one!
