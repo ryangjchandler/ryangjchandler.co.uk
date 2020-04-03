@@ -36,7 +36,7 @@ jobs:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 COMMIT_MSG: |
                 Fetch webmentions
-              skip-checks: true
+                skip-checks: true
               run: |
                 git config user.email "ryan@chandler.codes"
                 git config user.name "Ryan Chandler"
