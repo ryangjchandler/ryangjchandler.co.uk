@@ -1,13 +1,13 @@
 ---
 title: Deploying my Jigsaw Site (April 2020)
-date: 2020-04-05
+date: 2020-04-03
 published: true
 categories: [php, deployment]
 extends: _layouts.post
 section: content
 ---
 
-As of this moment in time (5th April 2020), this site is deployed on [Netlify](https://netlify.com) and built with [Jigsaw](https://jigsaw.tighten.co) (a static site generator from the very generous and clever folks at [Tighten](https://tighten.co)).
+As of this moment in time (3th April 2020), this site is deployed on [Netlify](https://netlify.com) and built with [Jigsaw](https://jigsaw.tighten.co) (a static site generator from the very generous and clever folks at [Tighten](https://tighten.co)).
 
 For me, this combination is _nearly_ perfect. My day job is working as a "full stack" web developer, working mostly with the [Laravel framework](https://laravel.com) so most of Jigsaw's core features like Blade templating are second nature. I will write an article on why I chose Jigsaw soon, but that's the basis of it.
 
