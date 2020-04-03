@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="description" content="Ryan Chandler is a web developer and writer.">
+        <meta name="description" content="Ryan Chandler is a Laravel developer and wannabe writer.">
         <meta property="og:site_name" content="ryangjchandler.co.uk">
         <meta property="og:locale" content="en_GB">
         <meta property="og:description" content="Ryan Chandler is a Laravel developer and wannabe writer.">
