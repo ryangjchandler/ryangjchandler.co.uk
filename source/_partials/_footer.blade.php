@@ -14,12 +14,6 @@
                 <li class="ml-4">
                     <a href="mailto:contact@ryangjchandler.co.uk">Email</a>
                 </li>
-                <li class="ml-4" x-data="{ showVersion: false }">
-                    <a href="#" x-show="!showVersion" @click.prevent="showVersion = !showVersion">Version</a>
-                    <a href="#" x-show="showVersion" @click.prevent="showVersion = !showVersion" class="font-mono">
-                        {{ $page->getVersion() }}
-                    </a>
-                </li>
             </ul>
         </nav>
     </div>
