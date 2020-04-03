@@ -1,5 +1,5 @@
 ---
-title: How I Deploy My Static Jigsaw Site (April 2020)
+title: Deploying my Jigsaw Site (April 2020)
 date: 2020-04-05
 published: true
 categories: [php, deployment]
