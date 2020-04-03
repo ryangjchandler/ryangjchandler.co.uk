@@ -39,10 +39,6 @@ class FetchWebmentionsCommand extends Command
         }
 
         foreach ($response['children'] as &$webmention) {
-            if ($webmention['author']['name'] === 'Ryan Chandler') {
-                continue;
-            }
-
             $webmention['wm-target'] = trim(str_replace(
                 'https://' . $this->config['domain'] . '/', '', $webmention['wm-target']
             ), '/');
@@ -63,11 +59,15 @@ class FetchWebmentionsCommand extends Command
             $entries = json_decode(file_get_contents($filename), true);
 
             $entries = array_filter($entries, function ($existingWebmention) use ($webmention) {
-                return $existingWebmention['wm-id'] !== $webmention['wm-id'];
-	    });
+                return $existingWebmention['wm-id'] !== $webmention['wm-id'] || $existingWebmention['author']['name'] !== 'Ryan Chandler';
+            });
 
-	    $entries[] = $webmention;
-            
+            $entries[] = $webmention;
+
+            $entries = array_filter($entries, function ($webmention) {
+                return $webmention['author']['name'] !== 'Ryan Chandler';
+            });
+                
             usort($entries, function ($a, $b) {
                 return $a['wm-id'] - $b['wm-id'];
             });
