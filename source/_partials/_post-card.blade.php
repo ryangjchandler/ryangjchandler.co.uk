@@ -1,5 +1,5 @@
 <div class="flex flex-col mb-8">
-    <h2 class="font-semibold md:text-lg mb-3">
+    <h2 class="font-semibold text-lg md:text-xl mb-3">
         <a href="{{ $post->getUrl() }}">{{ $post->title }}</a>
     </h2>
     <div class="flex items-center mb-4">
