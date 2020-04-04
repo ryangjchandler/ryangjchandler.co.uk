@@ -77,11 +77,14 @@ return [
                 return "{$minutes} {$strMinutes}, {$seconds} {$strSeconds} read";
             },
             'webmentions' => function ($post) {
+                $filePath = __DIR__.'/source/_webmentions/articles--' . $post->getFilename() . '.json';
+
+                if (!file_exists($filePath)) {
+                    return [];
+                }
+
                 return collect(
-                    json_decode(
-                        file_get_contents(__DIR__.'/source/_webmentions/articles--' . $post->getFilename() . '.json'),
-                        true
-                    )
+                    json_decode(file_get_contents($filePath), true)
                 )->map(function ($webmention) {
                     return new Webmention($webmention);
                 });
