@@ -77,7 +77,7 @@ return [
                 return "{$minutes} {$strMinutes}, {$seconds} {$strSeconds} read";
             },
             'webmentions' => function ($webmention) {
-                $filePath = __DIR__.'/source/_webmentions/articles--' . $post->getFilename() . '.json';
+                $filePath = __DIR__.'/source/_webmentions/articles--' . $webmention->getFilename() . '.json';
 
                 if (!file_exists($filePath)) {
                     return [];
