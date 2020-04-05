@@ -1,7 +1,7 @@
 ---
 title: My Personal Git Workflow
 date: 2020-04-05
-published: false
+published: true
 categories: [php, deployment]
 extends: _layouts.post
 section: content
