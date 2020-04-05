@@ -44,8 +44,8 @@
         </style>
     </head>
     <body class="antialiased font-sans max-w-2xl mx-auto px-8 md:px-0">
-        @include('_partials/_header')
+        @include('partials::_header')
         @yield('body')
-        @include('_partials/_footer')
+        @include('partials::_footer')
     </body>
 </html>

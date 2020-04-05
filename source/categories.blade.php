@@ -1,4 +1,4 @@
-@extends('_layouts.master')
+@extends('layouts::master')
 
 @section('title', 'Categories - Ryan Chandler')
 

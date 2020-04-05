@@ -7,5 +7,5 @@
         <p class="text-gray-700 text-sm md:text-base">⏱ {{ $post->readingTime() }}</p>
     </div>
     <p class="mb-4">{{ $post->excerpt(150) }}</p>
-    @include('_partials._categories')
+    @include('partials::_categories')
 </div>

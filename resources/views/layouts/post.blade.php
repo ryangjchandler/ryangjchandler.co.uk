@@ -1,4 +1,4 @@
-@extends('_layouts.master')
+@extends('layouts::master')
 
 @section('title', $page->title . ' - Ryan Chandler')
 
@@ -14,12 +14,12 @@
                 📅 Published at <time datetime="{{ date('Y-m-d', $page->date) }}">{{ date('d, M Y', $page->date) }}</time>
             </p>
             <div class="mb-6">
-                @include('_partials/_categories', ['post' => $page])
+                @include('partials::_categories', ['post' => $page])
             </div>
         </div>
         @if($page->archived && carbon($page->archived_date)->isPast())
             <div class="mb-5">
-                @include('_partials/_post-archived-notice', ['post' => $page])
+                @include('partials::_post-archived-notice', ['post' => $page])
             </div>
         @endif
         <div class="markup mb-6">
@@ -56,6 +56,6 @@
             </div>
         </details>
         <hr class="my-6" />
-        @include('_partials._post-pagination', ['post' => $page])
+        @include('partials::._post-pagination', ['post' => $page])
     </article>
 @endsection

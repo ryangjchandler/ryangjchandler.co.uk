@@ -1,4 +1,4 @@
-@extends('_layouts.master')
+@extends('layouts::master')
 
 @section('title', $page->title . ' - Ryan Chandler')
 
@@ -12,7 +12,7 @@
         @foreach($posts->filter(function ($post) use ($page) {
             return $post->categories ? in_array($page->getFilename(), $post->categories, true) : false;
         }) as $post)
-            @include('_partials._post-card', ['post' => $post])
+            @include('partials::_post-card', ['post' => $post])
         @endforeach
     </section>
 @endsection

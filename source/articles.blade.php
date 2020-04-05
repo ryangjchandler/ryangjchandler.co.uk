@@ -1,4 +1,4 @@
-@extends('_layouts.master')
+@extends('layouts::master')
 
 @section('title', 'Articles - Ryan Chandler')
 
@@ -7,7 +7,7 @@
         <h1 class="leading-normal mb-5">Articles</h1>
         <hr class="mb-5" />
         @foreach($posts as $post)
-            @include('_partials._post-card', ['post' => $post])
+            @include('partials::_post-card', ['post' => $post])
 
             @if(! $loop->last) 
                 <hr class="mb-8" />

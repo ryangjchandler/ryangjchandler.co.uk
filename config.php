@@ -38,7 +38,7 @@ return [
         'posts' => [
             'path' => 'articles/{filename}',
             'sort' => '-date',
-            'extends' => '_layouts.post',
+            'extends' => 'layouts::post',
             'section' => 'content',
             'filter' => function ($post) {
                 return $post->published;
@@ -98,10 +98,15 @@ return [
             'filter' => function ($category) {
                 return $category->has_archive;
             },
-            'extends' => '_layouts.category',
+            'extends' => 'layouts::category',
             'section' => 'content',
         ],
 
+    ],
+
+    'viewHintPaths' => [
+        'layouts' => __DIR__.'/resources/views/layouts',
+        'partials' => __DIR__.'/resources/views/partials',
     ],
 
 ];

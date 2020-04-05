@@ -1,4 +1,4 @@
-@extends('_layouts.master')
+@extends('layouts::master')
 
 @section('title', 'Timeline - Ryan Chandler')
 
@@ -12,7 +12,7 @@
             or bad my design skills get as time goes on.
         </p>
         @foreach($timeline as $timelineEntry)
-            @include('_partials._timeline-entry', ['timeline' => $timelineEntry])
+            @include('partials::_timeline-entry', ['timeline' => $timelineEntry])
         @endforeach
     </main>
 @endsection
