@@ -13,7 +13,7 @@ mix.webpackConfig({
 });
 
 mix
-    .postCss('source/_assets/css/main.css', 'css', [
+    .postCss('resources/css/main.css', 'css', [
         require('tailwindcss'),
     ])
     .purgeCss({

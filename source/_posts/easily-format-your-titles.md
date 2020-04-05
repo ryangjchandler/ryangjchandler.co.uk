@@ -4,8 +4,6 @@ date: 2020-04-01T00:00:00.000Z
 published: true
 should_tweet: true
 tweeted: 'false'
-extends: _layouts.post
-section: content
 categories:
   - tips-and-tricks
 ---

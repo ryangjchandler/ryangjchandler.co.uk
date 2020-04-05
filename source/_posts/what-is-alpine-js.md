@@ -4,8 +4,6 @@ date: 2020-03-28T00:00:00.000Z
 published: true
 categories: [javascript]
 should_tweet: false
-extends: _layouts.post
-section: content
 ---
 If you're a part of the Laravel community, you've probably already heard of Alpine. It's a minimalistic JavaScript framework that ditches the virtual DOM in favour of raw DOM updates and operations. The documentation says to *Think of it like [Tailwind](https://tailwindcss.com/) for JavaScript.*
 

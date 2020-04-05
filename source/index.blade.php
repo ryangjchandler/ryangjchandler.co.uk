@@ -1,4 +1,4 @@
-@extends('_layouts.master')
+@extends('layouts::master')
 
 @section('title', 'Ryan Chandler')
 
@@ -36,7 +36,7 @@
         <section>
             <h2 class="text-lg text-gray-700 mb-8">Latest Articles</h2>
             @forelse($posts->take(3) as $post) 
-                @include('_partials._post-card')
+                @include('partials::_post-card')
 
                 @if(! $loop->last)
                     <hr class="mb-8">

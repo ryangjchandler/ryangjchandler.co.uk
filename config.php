@@ -38,6 +38,8 @@ return [
         'posts' => [
             'path' => 'articles/{filename}',
             'sort' => '-date',
+            'extends' => 'layouts::post',
+            'section' => 'content',
             'filter' => function ($post) {
                 return $post->published;
             },
@@ -76,8 +78,8 @@ return [
 
                 return "{$minutes} {$strMinutes}, {$seconds} {$strSeconds} read";
             },
-            'webmentions' => function ($post) {
-                $filePath = __DIR__.'/source/_webmentions/articles--' . $post->getFilename() . '.json';
+            'webmentions' => function ($webmention) {
+                $filePath = __DIR__.'/source/_webmentions/articles--' . $webmention->getFilename() . '.json';
 
                 if (!file_exists($filePath)) {
                     return [];
@@ -96,8 +98,15 @@ return [
             'filter' => function ($category) {
                 return $category->has_archive;
             },
+            'extends' => 'layouts::category',
+            'section' => 'content',
         ],
 
+    ],
+
+    'viewHintPaths' => [
+        'layouts' => __DIR__.'/resources/views/layouts',
+        'partials' => __DIR__.'/resources/views/partials',
     ],
 
 ];
