@@ -101,7 +101,7 @@ For example, I want to add comments to my site. I would do this inside of a feat
 
 When working in larger teams where you are the only person working on a feature, it's nice to add a suffix or prefix to the branch to indicate who is working on it. Taking the comments example, if I was working on my own I might call my branch `feature/ryan-comments` or `feature/comments-ryan`. Find a naming convention and stick to it.
 
-### Hotfix branches
+### Hotfix branches
 
 I don't know if I like these or not. Generally, a "hotfix" is something that needs to be done quickly or is urgent, but sometimes those same hotfixes can take 8 hours to debug, taking away from the key part "hot".
 
