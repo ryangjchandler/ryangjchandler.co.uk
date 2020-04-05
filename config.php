@@ -98,6 +98,8 @@ return [
             'filter' => function ($category) {
                 return $category->has_archive;
             },
+            'extends' => '_layouts.category',
+            'section' => 'content',
         ],
 
     ],
