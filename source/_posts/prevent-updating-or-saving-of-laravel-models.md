@@ -4,8 +4,6 @@ date: 2020-03-31
 published: true
 categories: [php, laravel]
 should_tweet: false
-extends: _layouts.post
-section: content
 ---
 
 Recently I've needed to disable particular methods and mutations on my Laravel models. For example, after a model gets created I don't want anyone to be able to update that record again. Instead, it should get overwritten with a brand new record and archived.

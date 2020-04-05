@@ -3,8 +3,6 @@ title: Deploying my Jigsaw Site (April 2020)
 date: 2020-04-03
 published: true
 categories: [php, deployment]
-extends: _layouts.post
-section: content
 ---
 
 As of this moment in time (3th April 2020), this site is deployed on [Netlify](https://netlify.com) and built with [Jigsaw](https://jigsaw.tighten.co) (a static site generator from the very generous and clever folks at [Tighten](https://tighten.co)).

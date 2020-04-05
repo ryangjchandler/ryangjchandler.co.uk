@@ -38,6 +38,8 @@ return [
         'posts' => [
             'path' => 'articles/{filename}',
             'sort' => '-date',
+            'extends' => '_layouts.post',
+            'section' => 'content',
             'filter' => function ($post) {
                 return $post->published;
             },
