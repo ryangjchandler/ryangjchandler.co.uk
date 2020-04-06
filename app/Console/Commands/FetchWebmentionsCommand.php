@@ -65,14 +65,14 @@ class FetchWebmentionsCommand extends Command
 
             // filter out duplicates and ones from me
             $entries = array_filter($entries, function ($existingWebmention) use ($webmention) {
-                return $existingWebmention['wm-id'] !== $webmention['wm-id'] || $existingWebmention['author']['name'] !== 'Ryan Chandler';
+                return $existingWebmention['wm-id'] !== $webmention['wm-id'];
             });
 
             $entries[] = $webmention;
 
-            // check the new one isn't from me again
-            $entries = array_filter($entries, function ($webmention) {
-                return $webmention['author']['name'] !== 'Ryan Chandler';
+            // filter out ones from me
+            $entries = array_filter($entries, function ($existingWebmention) {
+                return $existingWebmention['author']['name'] !== 'Ryan Chandler';
             });
                 
             // sort by ID, which should be created date
