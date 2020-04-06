@@ -42,6 +42,10 @@
         <style>
             .hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-symbol{color:#0086b3}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{color:#55a532;background-color:#eaffea}.hljs-deletion{color:#bd2c00;background-color:#ffecec}.hljs-link{text-decoration:underline}
         </style>
+        <script async src="https://ackee.ryangjchandler.co.uk/tracker.js"
+            data-ackee-server="https://ackee.ryangjchandler.co.uk"
+            data-ackee-domain-id="60c0a5e2-7f31-454c-a31f-6080ac316d57"
+        ></script>
     </head>
     <body class="antialiased font-sans max-w-2xl mx-auto px-8 md:px-0">
         @include('partials::_header')
