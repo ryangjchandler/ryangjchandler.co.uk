@@ -17,6 +17,7 @@ mix
         require('tailwindcss'),
     ])
     .purgeCss({
-        content: ['./source/**/*.blade.php']
+        content: ['./source/**/*.blade.php'],
+        whitelist: [/-active$/, /-enter$/, /-leave-to$/, /mode-dark$/]
     })
     .version();
