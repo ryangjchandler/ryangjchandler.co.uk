@@ -109,6 +109,10 @@ html {
     font-size: 0.8em;
 }
 
+body.mode-dark .markup :not(pre) > code {
+    @apply bg-gray-700 border-gray-600 text-gray-300;
+}
+
 .markup pre {
     @apply -mx-4 p-4 bg-gray-200 overflow-x-auto;
     font-size: 0.75em;

@@ -4,8 +4,8 @@
 
 @section('body')
     <main class="markup">
-        <h1>Timeline</h1>
-        <p>
+        <h1 class="dark:text-gray-200">Timeline</h1>
+        <p class="dark:text-gray-500">
             This page provides a sweet little timeline of the different iterations this site has taken.
             I'll like to <em>try</em> and keep this updated with new images each time I make a change to the site
             but there is definitely no promises being made. It's more for my personal benefit of seeing how good

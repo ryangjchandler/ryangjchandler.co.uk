@@ -1,4 +1,4 @@
-<footer class="flex items-center justify-between flex-col-reverse md:flex-row text-sm text-gray-600 pl-0 mt-8 border-t pt-4 pb-12">
+<footer class="flex items-center justify-between flex-col-reverse md:flex-row text-sm text-gray-600 pl-0 mt-8 dark:border-gray-600 border-t pt-4 pb-12">
     <div>
         &copy; 2020 Ryan Chandler All rights reserved.
     </div>

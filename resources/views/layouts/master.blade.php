@@ -4,35 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="description" content="Ryan Chandler is a Laravel developer and wannabe writer.">
-        <meta property="og:site_name" content="ryangjchandler.co.uk">
-        <meta property="og:locale" content="en_GB">
-        <meta property="og:description" content="Ryan Chandler is a Laravel developer and wannabe writer.">
-        <meta property="og:url" content="https://ryangjchandler.co.uk">
 	    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	    <link rel="manifest" href="/site.webmanifest">
-        <script type='application/ld+json'>
-            {
-                "@context":"http:\/\/schema.org",
-                "@type":"WebSite",
-                "@id":"#website",
-                "url":"https:\/\/ryangjchandler.co.uk\/",
-                "name":"ryangjchandler.co.uk",
-                "alternateName":"A developer blog about Laravel and other languages and frameworks."
-            }
-        </script>
-        <script type='application/ld+json'>
-            {
-                "@context":"http:\/\/schema.org",
-                "@type":"Person",
-                "sameAs":["https:\/\/twitter.com\/ryangjchandler"],
-                "@id":"#person",
-                "name":"Ryan Chandler"
-            }
-        </script>
-	    @stack('head')
         <title>@yield('title')</title>
         <link rel="webmention" href="https://webmention.io/ryangjchandler.co.uk/webmention" />
         <link rel="pingback" href="https://webmention.io/ryangjchandler.co.uk/xmlrpc" />
@@ -46,10 +21,18 @@
             data-ackee-server="https://ackee.ryangjchandler.co.uk"
             data-ackee-domain-id="60c0a5e2-7f31-454c-a31f-6080ac316d57"
         ></script>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer async></script>
     </head>
-    <body class="antialiased font-sans max-w-2xl mx-auto px-8 md:px-0">
-        @include('partials::_header')
-        @yield('body')
-        @include('partials::_footer')
+    <body x-data="{ prefersDark: window.matchMedia('(prefers-color-scheme: dark)').matches }"
+        class="antialiased font-sans"
+        :class="{ 'mode-dark': prefersDark }"
+    >
+        <div class="dark:bg-gray-900 w-screen h-full">
+            <div class="px-8 md:px-0 max-w-2xl mx-auto">
+                @include('partials::_header')
+                @yield('body')
+                @include('partials::_footer')
+            </div>
+        </div>
     </body>
 </html>

@@ -2,10 +2,6 @@
 
 @section('title', $page->title . ' - Ryan Chandler')
 
-@push('head')
-    
-@endpush
-
 @section('body')
     <article>
         <div class="post-header">
