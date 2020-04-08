@@ -4,8 +4,8 @@
 
 @section('body')
     <section class="post-header">
-        <h1 class="leading-normal mb-5">{{ $page->title }}</h1>
-        <div class="text-sm -mt-2 text-gray-700 hover:text-gray-900 leading-normal mb-5">
+        <h1 class="leading-normal mb-5 dark:text-gray-200">{{ $page->title }}</h1>
+        <div class="text-sm -mt-2 dark:text-gray-500 text-gray-700 hover:text-gray-900 leading-normal mb-5">
             @yield('content')
         </div>
         <hr class="mb-5" />

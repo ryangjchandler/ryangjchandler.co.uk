@@ -27,7 +27,7 @@
         class="antialiased font-sans"
         :class="{ 'mode-dark': prefersDark }"
     >
-        <div class="dark:bg-gray-900 w-screen h-full">
+        <div class="dark:bg-gray-900 w-screen min-h-screen">
             <div class="px-8 md:px-0 max-w-2xl mx-auto">
                 @include('partials::_header')
                 @yield('body')
