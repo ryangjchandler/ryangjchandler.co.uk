@@ -2,7 +2,7 @@
 title: 200 Commits & Webmentions
 date: 2020-04-03
 order: 1
-published: false
+published: true
 ---
 
 Another milestone reached. I made the 200th commit on the repository! This was quite a bit deployment actually, I'll explain why.
