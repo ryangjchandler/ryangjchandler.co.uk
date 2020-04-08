@@ -4,8 +4,7 @@ date: 2020-04-01T00:00:00.000Z
 published: true
 should_tweet: true
 tweeted: 'false'
-categories:
-  - tips-and-tricks
+categories: [tips-and-tricks]
 ---
 Don't worry, this isn't an April Fools Day post. It's a genuine article with a genuine quick tip.
 
