@@ -80,6 +80,10 @@ html {
     font-size: 0.925em;
 }
 
+body.mode-dark .markup blockquote {
+    @apply bg-indigo-700 border-indigo-400 text-gray-400;
+}
+
 @screen sm {
     .markup blockquote {
         @apply mx-0 p-6 border-b-4 border-indigo-200;
@@ -109,10 +113,30 @@ html {
     font-size: 0.8em;
 }
 
+body.mode-dark .markup :not(pre) > code {
+    @apply bg-gray-700 border-gray-600 text-gray-300;
+}
+
 .markup pre {
     @apply -mx-4 p-4 bg-gray-200 overflow-x-auto;
     font-size: 0.75em;
     line-height: 2.25;
+}
+
+body.mode-dark .markup pre {
+    @apply bg-gray-800 border-gray-600;
+}
+
+body.mode-dark .markup pre .hljs-tag {
+    @apply text-gray-300;
+}
+
+body.mode-dark .markup pre .hljs-attr {
+    @apply text-purple-400;
+}
+
+body.mode-dark .markup pre .hljs-string {
+    @apply text-orange-500;
 }
 
 @screen sm {

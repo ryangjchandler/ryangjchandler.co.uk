@@ -8,7 +8,7 @@ mix.webpackConfig({
     plugins: [
         build.jigsaw,
         build.browserSync(),
-        build.watch(['source/**/*.md', 'source/**/*.php', 'source/**/*.scss', '!source/**/_tmp/*']),
+        build.watch(['source/**/*.md', 'source/**/*.php', 'resources/views/**/*.php', 'source/**/*.scss', '!source/**/_tmp/*']),
     ]
 });
 
@@ -17,6 +17,7 @@ mix
         require('tailwindcss'),
     ])
     .purgeCss({
-        content: ['./source/**/*.blade.php']
+        content: ['./source/**/*.blade.php'],
+        whitelist: [/-active$/, /-enter$/, /-leave-to$/, /mode-dark$/]
     })
     .version();

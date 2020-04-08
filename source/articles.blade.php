@@ -4,7 +4,7 @@
 
 @section('body')
     <section class="post-header">
-        <h1 class="leading-normal mb-5">Articles</h1>
+        <h1 class="leading-normal mb-5 dark:text-gray-200">Articles</h1>
         <hr class="mb-5" />
         @foreach($posts as $post)
             @include('partials::_post-card', ['post' => $post])
