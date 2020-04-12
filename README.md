@@ -22,7 +22,6 @@ Some people might be asking 'Why the static site?':
 
 ### Features
 
-* Article publishing powered by Netlify CMS
 * Categorisation of articles
 * Automatic tweeting of new published articles via a build hook
 
