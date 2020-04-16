@@ -68,7 +68,7 @@ This is what we get:
 
 ![Alpine Computed Properties Attempt](/assets/images/alpine-computed-properties-1.png)
 
-The problem here is that Alpine doesn't know that our `reversedMessage` expression inside of `x-text` needs to be evaluated as a function. Instead, the function gets casted to a string by the browser.
+The problem here is that Alpine doesn't know that our `reversedMessage` expression inside of `x-text` needs to be evaluated as a function. Instead, the function gets cast to a string by the browser.
 
 The way to fix this would be by changing `reversedMessage` to `reversedMessage()` and voila:
 
