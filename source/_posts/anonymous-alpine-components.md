@@ -1,7 +1,7 @@
 ---
 title: "Anonymous" Alpine Components
 date: 2020-04-19
-published: false
+published: true
 categories: [javascript]
 ---
 
@@ -70,7 +70,7 @@ window.eventHandler = function () {
 
 In other Alpine components, you might choose to define functions on the data object itself. When doing this, you can reference your event callback functions without the ending `()` parentheses. Alpine does this automatically for functions defined on your data object by checking the return value of your expression, then calling it if it is of the type `function`.
 
-If you are using function defined on the global scope, you will need to add those `()` parentheses yourself.
+If you are using a function that's defined on the global scope, you will need to add those `()` parentheses yourself.
 
 ```html
 // bad
@@ -80,7 +80,33 @@ If you are using function defined on the global scope, you will need to add thos
 <button @click="eventHandler()">Click me</button>
 ```
 
+### The event won't be automatically passed through
 
+When using functions defined on your data object (as mentioned above), your function will receive a magic `$event` property as the first argument. This behaviour is the same as any other event handler in JavaScript, most commonly shortened to a single `e`.
+
+Since we're having to put the parentheses in yourselves, we'll also need to pass through any of those mystical Alpine properties too.
+
+```html
+<button @click="eventHandler($event)">Click me</button>
+```
+
+Now we can access properties such as `$event.target` or `$event.type` in our function.
+
+### You don't have to write a function
+
+All the way through this post, I've used a function on the global scope as my event handler. Since Alpine will evaluate the expression inside of the attribute, you could also write some inline JavaScript too.
+
+```javascript
+<button @click="$event.target.style.display = 'none'">Hide me</button>
+```
+
+## Sign off
+
+This is probably my current favourite use case for Alpine. Sure, the reactivity is cool but this can be so much cooler.
+
+If you do get stuck with this approach at all, feel free to ask me questions on [Twitter @ryangjchandler](https://twitter.com/ryangjchandler). I've also put a quick example [here on CodePen](https://codepen.io/ryangjchandler/pen/wvKzypX?editors=1111).
+
+Thanks for sticking around this far, have a good one!
 
 
 
