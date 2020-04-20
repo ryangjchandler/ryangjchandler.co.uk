@@ -1,5 +1,5 @@
 ---
-title: "Anonymous" Alpine Components
+title: Anonymous Alpine Components
 date: 2020-04-19
 published: true
 categories: [javascript]
@@ -20,7 +20,7 @@ Alpine will default to using an empty object literal, so you don't have to worry
 
 ```html
 <div x-data>
-  <button @click="eventHandler()">Click me!</button>
+  <button x-on:click="eventHandler()">Click me!</button>
 </div>
 ```
 
@@ -74,10 +74,10 @@ If you are using a function that's defined on the global scope, you will need to
 
 ```html
 // bad
-<button @click="eventHandler">Click me</button>
+<button x-on:click="eventHandler">Click me</button>
 
 // good
-<button @click="eventHandler()">Click me</button>
+<button x-on:click="eventHandler()">Click me</button>
 ```
 
 ### The event won't be automatically passed through
@@ -87,7 +87,7 @@ When using functions defined on your data object (as mentioned above), your func
 Since we're having to put the parentheses in yourselves, we'll also need to pass through any of those mystical Alpine properties too.
 
 ```html
-<button @click="eventHandler($event)">Click me</button>
+<button x-on:click="eventHandler($event)">Click me</button>
 ```
 
 Now we can access properties such as `$event.target` or `$event.type` in our function.
@@ -97,7 +97,7 @@ Now we can access properties such as `$event.target` or `$event.type` in our fun
 All the way through this post, I've used a function on the global scope as my event handler. Since Alpine will evaluate the expression inside of the attribute, you could also write some inline JavaScript too.
 
 ```javascript
-<button @click="$event.target.style.display = 'none'">Hide me</button>
+<button x-on:click="$event.target.style.display = 'none'">Hide me</button>
 ```
 
 ## Sign off
