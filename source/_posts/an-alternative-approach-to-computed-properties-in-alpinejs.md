@@ -46,7 +46,7 @@ The other added benefit this method provides is that you **don't** need to add t
 
 ## Browser compatibility
 
-Regular `getters` and `setters` are supported in all modern browsers and ... 🥁 all the way back to Internet Explorer 9. The only thing that isn't supported is computed property names, so you can't do things like:
+Regular `getters` and `setters` are supported in all modern browsers and ... 🥁 all the way back to Internet Explorer 9. The only thing that isn't supported that far back is computed property names, so you can't do things like:
 
 ```javascript
 function data() {
@@ -58,7 +58,7 @@ function data() {
 }
 ```
 
-where the expression is dynamic and acts like a fallthrough if the property doesn't exist or doesn't have a getter defined already.
+The expression is dynamic and acts like a fallthrough if the property doesn't exist or doesn't have a getter defined already. That's not a big deal, because nobody should be using IE9 today. Seriously, **nobody**.
 
 ## Sign off
 
