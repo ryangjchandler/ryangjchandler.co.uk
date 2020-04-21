@@ -40,7 +40,7 @@ This approach just didn't occur to me at first. It's probably because I hadn't a
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-Out of the box, it just works! Click the button on the right and watch the `<span>` below update. I almost feel kind of stupid that I hadn't though of this originally. Since Alpine is using a regular object literal as it's source of data, we can use all of the normal things an object provides, such as [getters and setters](https://javascript.info/property-accessors).
+Out of the box, it just works! Click the button on the right and watch the `<span>` below update. I almost feel kind of stupid that I hadn't though of this originally. Since Alpine is using an object literal as it's source of data, we can use all of the normal things an object provides, such as [getters and setters](https://javascript.info/property-accessors).
 
 The other added benefit this method provides is that you **don't** need to add the parentheses anymore because when Alpine tries to access the property, the browser's JavaScript engine will recognise that there is a getter set and call that for us.
 
