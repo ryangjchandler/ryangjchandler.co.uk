@@ -1,5 +1,5 @@
 ---
-title: Realistic Computed Properties in Alpine.js
+title: An Alternative Approach to Computed Properties in Alpine.js
 date: 2020-04-21
 published: true
 categories: [javascript]
