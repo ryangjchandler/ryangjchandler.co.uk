@@ -9,6 +9,8 @@ class Post extends Model
 {
     protected $guarded = [];
 
+    protected $dates = ['published_at'];
+
     public static function booted()
     {
         static::creating(function (Post $post) {
@@ -16,7 +18,7 @@ class Post extends Model
                 $post->slug = Str::slug($post->title);
             }
 
-            if ($post->published) {
+            if ($post->published && ! $post->published_at) {
                 $post->published_at = now();
             }
         });
