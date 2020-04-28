@@ -1,0 +1,15 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Console\Command;
+
+class {{ class }} extends Command
+{
+    protected $name = '{{ command }}';
+
+    public function handle()
+    {
+        //
+    }
+}
