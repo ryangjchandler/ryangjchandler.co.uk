@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Markdown;
@@ -50,6 +51,8 @@ class Category extends Resource
             Markdown::make('Content'),
 
             Boolean::make('Has Archive'),
+
+            BelongsToMany::make('Posts'),
         ];
     }
 
