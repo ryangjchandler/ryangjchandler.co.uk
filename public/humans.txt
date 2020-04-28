@@ -1,0 +1,10 @@
+/* TEAM */
+Writer and Developer: Ryan Chandler
+Contact: contact [at] ryangjchandler.co.uk
+Twitter: @ryangjchandler
+From: Essex, United Kingdom
+
+/* SITE */
+Language: English
+Doctype: HTML5
+IDE: Visual Studio Code
