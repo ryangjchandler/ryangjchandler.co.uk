@@ -9,7 +9,6 @@ use Illuminate\Support\Str;
 use Mtownsend\ReadTime\ReadTime;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
 use Facades\App\Services\Markdown\Markdown;
 
 class Post extends Model implements Feedable
