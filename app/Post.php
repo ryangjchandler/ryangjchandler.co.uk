@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Facades\App\Services\Markdown\Markdown;
+use Illuminate\Support\Facades\Cache;
 use Mtownsend\ReadTime\ReadTime;
 
 class Post extends Model
@@ -30,25 +31,23 @@ class Post extends Model
             if ($post->published && ! $post->published_at) {
                 $post->published_at = now();
             }
-        });
-    }
 
-    public function scopePublished(Builder $query)
-    {
-        $query->when(auth()->guest(), function (Builder $query) {
-            return $query->where('published', true);
+            Cache::forget('all_posts');
+            Cache::forget("post_content_{$this->id}");
         });
     }
 
     public function getParsedContentAttribute()
     {
-        return Markdown::parse($this->content);
+        return Cache::rememberForever("post_content_{$this->id}", function () {
+            return Markdown::parse($this->content);
+        });
     }
 
     public function getExcerptAttribute()
     {
         return Markdown::parse(
-            Str::limit($this->content, 200)
+            Str::limit($this->parsed_content, 250)
         );
     }
 

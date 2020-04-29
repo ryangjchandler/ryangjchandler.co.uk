@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use Illuminate\Support\Facades\Cache;
 
 class ArticlesController
 {
     public function index()
     {
         return view('articles.index', [
-            'posts' => Post::published()->get(),
+            'posts' => Cache::rememberForever('all_posts', function () {
+                return Post::all();
+            }),
         ]);
     }
 
