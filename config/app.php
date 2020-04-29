@@ -175,6 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\NovaServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Services\Markdown\MarkdownServiceProvider::class,
 
     ],
 

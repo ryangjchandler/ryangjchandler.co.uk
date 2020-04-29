@@ -3,7 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
+use Facades\App\Services\Markdown\Markdown;
+use Mtownsend\ReadTime\ReadTime;
 
 class Post extends Model
 {
@@ -28,6 +31,35 @@ class Post extends Model
                 $post->published_at = now();
             }
         });
+    }
+
+    public function scopePublished(Builder $query)
+    {
+        $query->when(auth()->guest(), function (Builder $query) {
+            return $query->where('published', true);
+        });
+    }
+
+    public function getParsedContentAttribute()
+    {
+        return Markdown::parse($this->content);
+    }
+
+    public function getExcerptAttribute()
+    {
+        return Markdown::parse(
+            Str::limit($this->content, 200)
+        );
+    }
+
+    public function getUrlAttribute()
+    {
+        return route('articles.show', ['post' => $this]);
+    }
+
+    public function getReadingTimeAttribute()
+    {
+        return new ReadTime(strip_tags($this->parsed_content));
     }
 
     public function categories()
