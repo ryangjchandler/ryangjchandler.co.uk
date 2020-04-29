@@ -1,6 +1,6 @@
 <header>
     <h1>
-        <a href="{{ route('articles.index') }}">Ryan Chandler</a>
+        <a href="{{ route('index') }}">Ryan Chandler</a>
     </h1>
     <nav>
         <a href="{{ route('articles.index') }}" style="text-decoration: underline; margin-right: 10px;">Articles</a>
