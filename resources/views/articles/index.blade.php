@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master', ['title' => 'Articles'])
 
 @section('body')
     @foreach($posts as $post)
