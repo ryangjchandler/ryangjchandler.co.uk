@@ -25,6 +25,8 @@ class Post extends Model
             if ($post->published && ! $post->published_at) {
                 $post->published_at = now();
             }
+
+            Cache::forget('all_posts');
         });
 
         static::saving(function (Post $post) {
@@ -33,7 +35,7 @@ class Post extends Model
             }
 
             Cache::forget('all_posts');
-            Cache::forget("post_content_{$this->id}");
+            Cache::forget("post_content_{$post->id}");
         });
     }
 
