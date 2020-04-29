@@ -18,6 +18,8 @@ class CategoriesController
 
     public function show(Category $category)
     {
-
+        return view('categories.show', [
+            'category' => $category,
+        ]);
     }
 }
