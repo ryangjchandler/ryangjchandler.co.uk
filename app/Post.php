@@ -52,7 +52,7 @@ class Post extends Model implements Feedable
 
     public function getExcerptAttribute()
     {
-        return strip_tags(Str::limit($this->parsed_content, 250));
+        return Str::limit(strip_tags($this->parsed_content), 250);
     }
 
     public function getUrlAttribute()
