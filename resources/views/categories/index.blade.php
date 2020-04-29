@@ -1,4 +1,4 @@
-@extends('layouts.master', ['title' => $category->title])
+@extends('layouts.master', ['title' => 'Categories'])
 
 @section('body')
     @foreach($categories as $category)
