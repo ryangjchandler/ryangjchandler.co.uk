@@ -22,9 +22,9 @@
                     <input type="checkbox" class="checkbox">
                 </td>
                 <td>
-                    <a href="#" v-if="file.type === 'dir'" class="font-semibold text-90 no-underline">
+                    <button @click="$emit('dir-change', file.name)" v-if="file.type === 'dir'" class="font-semibold text-90 no-underline">
                         {{ file.name }}
-                    </a>
+                    </button>
                     <span v-else class="text-90">{{ file.name }}</span>
                 </td>
                 <td class="text-center">{{ file.lastModified }}</td>

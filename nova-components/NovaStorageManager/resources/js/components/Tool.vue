@@ -7,7 +7,7 @@
             style="min-height: 300px"
         >
             <Toolbar :path="currentPath" />
-            <Browser :files="files" />
+            <Browser :files="files" @dir-change="requestNewFiles" />
         </card>
     </div>
 </template>
@@ -34,12 +34,16 @@ export default {
     },
     methods: {
         getFiles(path = '/') {
-            Nova.request().get('/nova-vendor/nova-storage-manager/files')
+            Nova.request().get(`/nova-vendor/nova-storage-manager/files?path=${path}`)
                 .then(response => {
                     this.files = response.data
                     this.initialLoading = false
                     this.loading = false
                 })
+        },
+        requestNewFiles($event) {
+            this.currentPath = `/${$event}`
+            this.getFiles(`/${$event}`)
         }
     }
 }

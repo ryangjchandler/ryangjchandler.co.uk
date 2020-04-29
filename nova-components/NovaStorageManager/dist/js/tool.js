@@ -278,7 +278,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Scoped Styles */\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Scoped Styles */\n", ""]);
 
 // exports
 
@@ -677,11 +677,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var path = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '/';
 
-            Nova.request().get('/nova-vendor/nova-storage-manager/files').then(function (response) {
+            Nova.request().get('/nova-vendor/nova-storage-manager/files?path=' + path).then(function (response) {
                 _this.files = response.data;
                 _this.initialLoading = false;
                 _this.loading = false;
             });
+        },
+        requestNewFiles: function requestNewFiles($event) {
+            this.currentPath = '/' + $event;
+            this.getFiles('/' + $event);
         }
     }
 });
@@ -751,6 +755,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['path'],
@@ -773,47 +782,63 @@ var render = function() {
     "div",
     {
       staticClass:
-        "flex items-center justify-between text-lg px-6 py-4 border-b border-40"
+        "flex items-center justify-between text-lg pr-6 py-4 border-b border-40"
     },
     [
-      _c(
-        "nav",
-        { staticClass: "flex items-center" },
-        [
-          _c("span", { staticClass: "text-60" }, [_vm._v("/")]),
-          _vm._v(" "),
-          _vm._l(_vm.parts, function(part, index) {
-            return _c("p", { key: part, staticClass: "flex items-center" }, [
-              _c(
-                "a",
-                { staticClass: "mx-4 text-sm text-90", attrs: { href: "#" } },
-                [_vm._v(_vm._s(part))]
-              ),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: index < _vm.parts.length - 1,
-                      expression: "index < parts.length - 1"
-                    }
-                  ],
-                  staticClass: "text-60"
-                },
-                [_vm._v("/")]
-              )
-            ])
-          })
-        ],
-        2
-      )
+      _c("div", { staticClass: "flex items-center" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "nav",
+          { staticClass: "flex items-center" },
+          [
+            _c("span", { staticClass: "text-60 pl-3" }, [_vm._v("/")]),
+            _vm._v(" "),
+            _vm._l(_vm.parts, function(part, index) {
+              return _c("p", { key: part, staticClass: "flex items-center" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "mx-4 text-base text-90",
+                    attrs: { href: "#" }
+                  },
+                  [_vm._v(_vm._s(part))]
+                ),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: index < _vm.parts.length - 1,
+                        expression: "index < parts.length - 1"
+                      }
+                    ],
+                    staticClass: "text-60"
+                  },
+                  [_vm._v("/")]
+                )
+              ])
+            })
+          ],
+          2
+        )
+      ])
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-16 text-center" }, [
+      _c("input", { staticClass: "checkbox", attrs: { type: "checkbox" } })
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -845,7 +870,10 @@ var render = function() {
         [
           _c("Toolbar", { attrs: { path: _vm.currentPath } }),
           _vm._v(" "),
-          _c("Browser", { attrs: { files: _vm.files } })
+          _c("Browser", {
+            attrs: { files: _vm.files },
+            on: { "dir-change": _vm.requestNewFiles }
+          })
         ],
         1
       )
@@ -992,10 +1020,14 @@ var render = function() {
             _c("td", [
               file.type === "dir"
                 ? _c(
-                    "a",
+                    "button",
                     {
                       staticClass: "font-semibold text-90 no-underline",
-                      attrs: { href: "#" }
+                      on: {
+                        click: function($event) {
+                          return _vm.$emit("dir-change", file.name)
+                        }
+                      }
                     },
                     [
                       _vm._v(

@@ -17,13 +17,13 @@ class FilesController
         $files = collect(array_merge(
             Storage::allDirectories("public{$basePath}"),
             Storage::allFiles("public{$basePath}"),
-        ))->filter(function ($path) {
-            return count(explode('/', $path)) <= 2;
+        ))->filter(function ($path) use ($basePath) {
+            return count(array_filter(explode('/', Str::after($path, $basePath)))) <= 1;
         })->map(function ($path) use ($basePath) {
             $fullPath = storage_path("app/{$path}");
 
             return [
-                'name' => Str::after($path, $basePath),
+                'name' => trim(Str::after($path, $basePath), '/'),
                 'type' => filetype($fullPath),
                 'lastModified' => Carbon::parse(filemtime($fullPath))->format('d/m/Y H:i:s'),
                 'permissions' => fileperms($fullPath),
