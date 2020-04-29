@@ -278,7 +278,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Scoped Styles */\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Scoped Styles */\n", ""]);
 
 // exports
 
@@ -661,7 +661,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
+            previousPath: '/',
             currentPath: '/',
+            nextPath: '/',
             initialLoading: true,
             loading: false,
             files: {}
@@ -675,17 +677,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getFiles: function getFiles() {
             var _this = this;
 
-            var path = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '/';
-
-            Nova.request().get('/nova-vendor/nova-storage-manager/files?path=' + path).then(function (response) {
+            Nova.request().get('/nova-vendor/nova-storage-manager/files?path=' + this.currentPath).then(function (response) {
                 _this.files = response.data;
                 _this.initialLoading = false;
                 _this.loading = false;
             });
         },
         requestNewFiles: function requestNewFiles($event) {
+            this.previousPath = this.currentPath;
             this.currentPath = '/' + $event;
-            this.getFiles('/' + $event);
+            this.getFiles();
+        },
+        goBack: function goBack() {
+            console.log('cool');
+            this.nextPath = this.currentPath;
+            this.currentPath = this.previousPath;
+            this.previousPath = '/';
+            this.getFiles();
+        },
+        goForward: function goForward() {
+            this.previousPath = this.currentPath;
+            this.currentPath = this.nextPath;
+            this.nextPath = '/';
+            this.getFiles();
         }
     }
 });
@@ -760,9 +774,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['path'],
+    props: ['nextPath', 'previousPath', 'path'],
     computed: {
         parts: function parts() {
             return this.path.split('/').filter(Boolean);
@@ -782,24 +801,91 @@ var render = function() {
     "div",
     {
       staticClass:
-        "flex items-center justify-between text-lg pr-6 py-4 border-b border-40"
+        "flex items-center justify-between text-lg px-5 py-4 border-b border-40"
     },
     [
-      _c("div", { staticClass: "flex items-center" }, [
-        _vm._m(0),
+      _c("div", { staticClass: "flex items-center flex-1" }, [
+        _c("div", { staticClass: "flex items-center mr-4" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-default btn-icon btn-primary mr-2",
+              attrs: { disabled: _vm.previousPath === _vm.path },
+              on: {
+                click: function($event) {
+                  return _vm.$emit("back")
+                }
+              }
+            },
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "w-6 h-6",
+                  attrs: { fill: "currentColor", viewBox: "0 0 20 20" }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      d:
+                        "M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z",
+                      "clip-rule": "evenodd",
+                      "fill-rule": "evenodd"
+                    }
+                  })
+                ]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-default btn-icon btn-primary",
+              attrs: { disabled: _vm.nextPath === "/" },
+              on: {
+                click: function($event) {
+                  return _vm.$emit("forward")
+                }
+              }
+            },
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "w-6 h-6",
+                  attrs: { fill: "currentColor", viewBox: "0 0 20 20" }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      d:
+                        "M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z",
+                      "clip-rule": "evenodd",
+                      "fill-rule": "evenodd"
+                    }
+                  })
+                ]
+              )
+            ]
+          )
+        ]),
         _vm._v(" "),
         _c(
           "nav",
-          { staticClass: "flex items-center" },
+          {
+            staticClass:
+              "flex items-center bg-white border rounded border-50 px-3 py-2 w-1/2"
+          },
           [
-            _c("span", { staticClass: "text-60 pl-3" }, [_vm._v("/")]),
+            _c("span", { staticClass: "text-60" }, [_vm._v("/")]),
             _vm._v(" "),
             _vm._l(_vm.parts, function(part, index) {
               return _c("p", { key: part, staticClass: "flex items-center" }, [
                 _c(
                   "a",
                   {
-                    staticClass: "mx-4 text-base text-90",
+                    staticClass: "mx-1 text-base text-90",
                     attrs: { href: "#" }
                   },
                   [_vm._v(_vm._s(part))]
@@ -829,16 +915,7 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-16 text-center" }, [
-      _c("input", { staticClass: "checkbox", attrs: { type: "checkbox" } })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -868,7 +945,14 @@ var render = function() {
           staticStyle: { "min-height": "300px" }
         },
         [
-          _c("Toolbar", { attrs: { path: _vm.currentPath } }),
+          _c("Toolbar", {
+            attrs: {
+              path: _vm.currentPath,
+              previousPath: _vm.previousPath,
+              nextPath: _vm.nextPath
+            },
+            on: { back: _vm.goBack, forward: _vm.goForward }
+          }),
           _vm._v(" "),
           _c("Browser", {
             attrs: { files: _vm.files },

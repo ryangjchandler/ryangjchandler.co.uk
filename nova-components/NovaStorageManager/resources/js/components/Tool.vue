@@ -6,7 +6,7 @@
             class="bg-white flex flex-col"
             style="min-height: 300px"
         >
-            <Toolbar :path="currentPath" />
+            <Toolbar :path="currentPath" :previousPath="previousPath" :nextPath="nextPath" @back="goBack" @forward="goForward" />
             <Browser :files="files" @dir-change="requestNewFiles" />
         </card>
     </div>
@@ -23,7 +23,9 @@ export default {
     },
     data() {
         return {
+            previousPath: '/',
             currentPath: '/',
+            nextPath: '/',
             initialLoading: true,
             loading: false,
             files: {}
@@ -33,8 +35,8 @@ export default {
         this.getFiles()
     },
     methods: {
-        getFiles(path = '/') {
-            Nova.request().get(`/nova-vendor/nova-storage-manager/files?path=${path}`)
+        getFiles() {
+            Nova.request().get(`/nova-vendor/nova-storage-manager/files?path=${this.currentPath}`)
                 .then(response => {
                     this.files = response.data
                     this.initialLoading = false
@@ -42,8 +44,22 @@ export default {
                 })
         },
         requestNewFiles($event) {
+            this.previousPath = this.currentPath
             this.currentPath = `/${$event}`
-            this.getFiles(`/${$event}`)
+            this.getFiles()
+        },
+        goBack() {
+            console.log('cool')
+            this.nextPath = this.currentPath
+            this.currentPath = this.previousPath
+            this.previousPath = '/'
+            this.getFiles()
+        },
+        goForward() {
+            this.previousPath = this.currentPath
+            this.currentPath = this.nextPath
+            this.nextPath = '/'
+            this.getFiles()
         }
     }
 }
