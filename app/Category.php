@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Concerns\ClearsResponseCache;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Database\Eloquent\Model;
@@ -9,6 +10,8 @@ use Facades\App\Services\Markdown\Markdown;
 
 class Category extends Model
 {
+    use ClearsResponseCache;
+
     protected $guarded = [];
 
     public static function booted()

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Concerns\ClearsResponseCache;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 use Illuminate\Support\Str;
@@ -13,6 +14,8 @@ use Facades\App\Services\Markdown\Markdown;
 
 class Post extends Model implements Feedable
 {
+    use ClearsResponseCache;
+
     protected $guarded = [];
 
     protected $dates = ['published_at'];
