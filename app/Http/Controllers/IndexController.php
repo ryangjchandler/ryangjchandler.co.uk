@@ -17,7 +17,7 @@ class IndexController
     {
         return view('articles.index', [
             'posts' => Cache::rememberForever('all_posts', function () {
-                return Post::all();
+                return Post::query()->latest('published_at')->get();
             }),
         ]);
     }
