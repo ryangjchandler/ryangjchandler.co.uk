@@ -12,4 +12,11 @@ class ArticlesController
             'posts' => Post::published()->get(),
         ]);
     }
+
+    public function show(Post $post)
+    {
+        return view('articles.show', [
+            'post' => $post,
+        ]);
+    }
 }
