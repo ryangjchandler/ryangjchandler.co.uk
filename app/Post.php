@@ -2,14 +2,16 @@
 
 namespace App;
 
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
+use Illuminate\Support\Str;
+use Mtownsend\ReadTime\ReadTime;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Str;
 use Facades\App\Services\Markdown\Markdown;
-use Illuminate\Support\Facades\Cache;
-use Mtownsend\ReadTime\ReadTime;
 
-class Post extends Model
+class Post extends Model implements Feedable
 {
     protected $guarded = [];
 
@@ -66,5 +68,22 @@ class Post extends Model
     public function categories()
     {
         return $this->belongsToMany(Category::class);
+    }
+
+    public function toFeedItem()
+    {
+        return FeedItem::create([
+            'id' => $this->id,
+            'title' => $this->title,
+            'summary' => $this->excerpt,
+            'updated' => $this->updated_at,
+            'link' => $this->url,
+            'author' => 'Ryan Chandler',
+        ]);
+    }
+
+    public static function getFeedItems()
+    {
+        return static::where('published', true)->get();
     }
 }

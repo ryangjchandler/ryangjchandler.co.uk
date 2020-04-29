@@ -24,6 +24,7 @@
         "league/commonmark": "^1.4",
         "mtownsend/read-time": "^1.1",
         "spatie/commonmark-highlighter": "^2.1",
+        "spatie/laravel-feed": "^2.6",
         "spatie/laravel-permission": "^3.11",
         "spatie/laravel-sitemap": "^5.7",
         "vyuldashev/nova-permission": "^2.9"
