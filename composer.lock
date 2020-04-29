@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d687a2f861efd89334db7127efc20254",
+    "content-hash": "c766e6e1f3750ecbd5fc21e3adddaeea",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1430,16 +1430,16 @@
         },
         {
             "name": "laravel/ui",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/ui.git",
-                "reference": "cacae405a781e4dc6956b9db96aedbc2fc0d404e"
+                "reference": "15368c5328efb7ce94f35ca750acde9b496ab1b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/ui/zipball/cacae405a781e4dc6956b9db96aedbc2fc0d404e",
-                "reference": "cacae405a781e4dc6956b9db96aedbc2fc0d404e",
+                "url": "https://api.github.com/repos/laravel/ui/zipball/15368c5328efb7ce94f35ca750acde9b496ab1b1",
+                "reference": "15368c5328efb7ce94f35ca750acde9b496ab1b1",
                 "shasum": ""
             },
             "require": {
@@ -1481,7 +1481,7 @@
                 "laravel",
                 "ui"
             ],
-            "time": "2020-04-28T16:06:57+00:00"
+            "time": "2020-04-29T15:06:45+00:00"
         },
         {
             "name": "league/commonmark",
@@ -2874,6 +2874,39 @@
                 }
             ],
             "time": "2020-03-29T20:13:32+00:00"
+        },
+        {
+            "name": "ryangjchandler/nova-storage-manager",
+            "version": "dev-next",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/NovaStorageManager",
+                "reference": "ac91c0e084f65d5bd43736893e99947f52b1a2d6"
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ryangjchandler\\NovaStorageManager\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ryangjchandler\\NovaStorageManager\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
         },
         {
             "name": "scrivo/highlight.php",
