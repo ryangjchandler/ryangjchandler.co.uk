@@ -883,9 +883,9 @@ var render = function() {
             _vm._l(_vm.parts, function(part, index) {
               return _c("p", { key: part, staticClass: "flex items-center" }, [
                 _c(
-                  "a",
+                  "button",
                   {
-                    staticClass: "mx-1 text-base text-90",
+                    staticClass: "mx-2 text-base text-90 hover:underline",
                     attrs: { href: "#" }
                   },
                   [_vm._v(_vm._s(part))]

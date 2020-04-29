@@ -12,7 +12,7 @@
             <nav class="flex items-center bg-white border rounded border-50 px-3 py-2 w-1/2">
                 <span class="text-60">/</span>
                 <p v-for="(part, index) in parts" :key="part" class="flex items-center">
-                    <a href="#" class="mx-1 text-base text-90">{{ part }}</a>
+                    <button href="#" class="mx-2 text-base text-90 hover:underline">{{ part }}</button>
                     <span class="text-60" v-show="index < parts.length - 1">/</span>
                 </p>
             </nav>
