@@ -20,6 +20,12 @@
         </article>
     </section>
     <section>
+        <div>
+            <x-form-button action="{{ route('articles.likes.store', $article) }}" buttonClasses="flex items-center text-red-500 border-2 border-red-500 rounded px-4 py-1">
+                <svg class="w-8 h-8 m-0 p-0" fill="currentColor" viewBox="0 0 20 20"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                <span class="ml-2 font-semibold">Click to Like</span>
+            </x-form-button>
+        </div>
         @auth
             @include('partials.article-comments-form')
         @else
