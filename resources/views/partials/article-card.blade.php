@@ -12,4 +12,6 @@
             <small class="text-gray-600 font-medium">Updated {{ $article->updated_at->diffForHumans() }}</small>
         @endif
     @endif
+    <small class="mx-2 text-gray-400">|</small>
+    <small class="text-gray-600 font-medium">{{ $article->likes_count ?? 0 }} likes</small>
 </article>
