@@ -1,0 +1,19 @@
+{
+    "private": true,
+    "scripts": {
+        "css": "postcss ./resources/css/app.css -o ./public/css/app.css",
+        "js": "node ./bin/build.js",
+        "build": "yarn css && yarn js && node ./bin/manifest.js",
+        "production": "NODE_ENV=production yarn build",
+        "prod": "yarn production"
+    },
+    "devDependencies": {
+        "@tailwindcss/custom-forms": "^0.2.1",
+        "autoprefixer": "^9.7.6",
+        "esbuild": "^0.2.11",
+        "postcss-cli": "^7.1.1",
+        "postcss-import": "^12.0.1",
+        "tailwindcss": "^1.4.6",
+        "tiny-glob": "^0.2.6"
+    }
+}

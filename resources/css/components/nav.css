@@ -1,0 +1,38 @@
+li.nav-link {
+    @apply w-full rounded mr-2 text-center;
+}
+
+li.nav-link:hover {
+    @apply bg-primary-100 text-primary-600;
+}
+
+li.nav-link a {
+    @apply inline-block px-8 py-2;
+}
+
+li.nav-link a.active {
+    @apply rounded bg-primary-100 text-primary-600;
+}
+
+li.auth-nav-link {
+    @apply w-full font-bold text-primary-500 rounded mr-2 text-center;
+}
+
+li.auth-nav-link:hover {
+    @apply bg-primary-100 text-primary-600;
+}
+
+li.auth-nav-link a, li.auth-nav-link button {
+    @apply inline-block px-8 py-2;
+}
+
+.menu-button {
+    @apply block uppercase font-semibold border-b-2 border-primary-200 px-4 py-2 bg-primary-100 text-primary-600 rounded-t text-sm;
+}
+
+@screen md {
+
+    .menu-button {
+        @apply hidden;
+    }
+}
