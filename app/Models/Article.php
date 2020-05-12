@@ -5,9 +5,12 @@ namespace App\Models;
 use App\Models\Concerns\HasComments;
 use App\Models\Concerns\HasLikes;
 use App\Services\Markdown\Markdown;
+use Carbon\CarbonInterval;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
+use Carbon\CarbonPeriod;
 
 class Article extends Model
 {
@@ -33,8 +36,8 @@ class Article extends Model
 
     public function content()
     {
-        // return Cache::remember("content_cache_{$this->id}", CarbonInterval::days(7)->totalSeconds, function () {
+        return Cache::remember("content_cache_{$this->id}", CarbonInterval::days(7)->totalSeconds, function () {
             return app(Markdown::class)->parse($this->content);
-        // });
+        });
     }
 }
