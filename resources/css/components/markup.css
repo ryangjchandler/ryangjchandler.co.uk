@@ -22,17 +22,37 @@
     @apply bg-primary-100 text-primary-700 rounded font-medium px-2 py-1 border-b-2 border-primary-700 mx-1;
 }
 
-.markup pre code {
+.markup pre > code {
     @apply h-full;
 }
 
-.markup pre code::before {
+.markup pre > code::before {
     @apply absolute bg-primary-900 opacity-25 top-0 right-0 mr-6 mt-4 rounded-lg;
     content: attr(data-lang);
 }
 
 .markup code {
     @apply font-mono text-sm;
+}
+
+.markup pre code .hljs-built_in {
+    @apply text-purple-400;
+}
+
+.markup pre code .hljs-comment {
+    @apply text-gray-200 opacity-50;
+}
+
+.markup pre code .hljs-name, .markup pre code .hljs-keyword {
+    @apply text-green-300;
+}
+
+.markup pre code .hljs-attr, .markup pre code .hljs-title {
+    @apply text-orange-300;
+}
+
+.markup pre code .hljs-string {
+    @apply text-orange-600;
 }
 
 .markup ol {
