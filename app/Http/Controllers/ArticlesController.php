@@ -11,7 +11,7 @@ class ArticlesController
     public function index()
     {
         return view('articles.index', [
-            'articles' => Article::published()->withCount('likes')->get(),
+            'articles' => Article::latest('published_at')->published()->withCount('likes')->get(),
         ]);
     }
 

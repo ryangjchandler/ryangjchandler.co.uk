@@ -9,7 +9,7 @@ class HomeController
     public function __invoke()
     {
         return view('pages.home', [
-            'articles' => Article::published()->get(),
+            'articles' => Article::latest('published_at')->published()->get(),
         ]);
     }
 }

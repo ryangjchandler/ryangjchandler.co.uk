@@ -27,6 +27,10 @@ class Article extends Model
                 $article->slug = Str::slug($article->title);
             }
         });
+
+        static::saving(function (Article $article) {
+            Cache::forget("content_cache_{$article->id}");
+        });
     }
 
     public function scopePublished(Builder $query)
@@ -34,7 +38,7 @@ class Article extends Model
         $query->whereNotNull('published_at')->where('published_at', '<=', now());
     }
 
-    public function content()
+    public function parsedContent()
     {
         if (! app()->environment('production')) {
             return app(Markdown::class)->parse($this->content);

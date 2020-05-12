@@ -16,7 +16,7 @@
         <small class="mx-2 text-gray-400">|</small>
         <small class="text-gray-600 font-medium">{{ $article->likes->count() }} likes</small>
         <article class="mt-6 w-full markup">
-            {!! $article->content() !!}
+            {!! $article->parsedContent() !!}
         </article>
     </section>
     <section>
