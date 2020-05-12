@@ -9,7 +9,7 @@ class ArticlesController
     public function index()
     {
         return view('articles.index', [
-            'articles' => Article::published()->get(),
+            'articles' => Article::latest('published_at')->published()->get(),
         ]);
     }
 
