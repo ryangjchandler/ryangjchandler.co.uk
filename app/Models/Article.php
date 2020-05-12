@@ -36,6 +36,10 @@ class Article extends Model
 
     public function content()
     {
+        if (! app()->environment('production')) {
+            return app(Markdown::class)->parse($this->content);
+        }
+
         return Cache::remember("content_cache_{$this->id}", CarbonInterval::days(7)->totalSeconds, function () {
             return app(Markdown::class)->parse($this->content);
         });
