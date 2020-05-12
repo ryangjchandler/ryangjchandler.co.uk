@@ -18,6 +18,15 @@ class Comment extends Model
         });
     }
 
+    public function getLastInteractionAtAttribute()
+    {
+        if ($this->updated_at->gt($this->created_at)) {
+            return $this->updated_at;
+        }
+
+        return $this->created_at;
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
