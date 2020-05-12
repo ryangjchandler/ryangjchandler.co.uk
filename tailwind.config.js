@@ -1,9 +1,17 @@
+const defaults = require('tailwindcss/defaultTheme')
+
 module.exports = {
     purge: [
         './resources/views/**/*.blade.php'
     ],
     theme: {
         extend: {
+            fontFamily: {
+                mono: [
+                    'Fira Code',
+                    ...defaults.fontFamily.mono
+                ]
+            },
             colors: {
                 'primary': {
                     100: '#E6F2FF',

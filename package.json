@@ -2,6 +2,7 @@
     "private": true,
     "scripts": {
         "css": "postcss ./resources/css/app.css -o ./public/css/app.css",
+        "watch-css": "yarn css -w",
         "js": "node ./bin/build.js",
         "build": "yarn css && yarn js && node ./bin/manifest.js",
         "production": "NODE_ENV=production yarn build",

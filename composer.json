@@ -15,7 +15,9 @@
         "laravel/framework": "^7.0",
         "laravel/nova": "^3.5",
         "laravel/socialite": "^4.3",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "league/commonmark": "^1.4",
+        "spatie/commonmark-highlighter": "^2.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

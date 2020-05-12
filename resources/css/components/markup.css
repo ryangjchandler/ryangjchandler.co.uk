@@ -1,0 +1,48 @@
+.markup {
+    @apply text-base text-gray-900 leading-loose;
+}
+
+.markup h2 {
+    @apply text-2xl text-black font-semibold mb-4 mt-6;
+}
+
+.markup h3 {
+    @apply text-xl text-black font-medium mb-4 mt-6;
+}
+
+.markup p {
+    @apply my-4;
+}
+
+.markup pre {
+    @apply relative bg-primary-900 rounded text-white px-8 py-6 overflow-x-auto border-b-4 border-primary-400;
+}
+
+.markup :not(pre) > code {
+    @apply bg-primary-100 text-primary-700 rounded font-medium px-2 py-1 border-b-2 border-primary-700 mx-1;
+}
+
+.markup pre code {
+    @apply h-full;
+}
+
+.markup pre code::before {
+    @apply absolute bg-primary-900 opacity-25 top-0 right-0 mr-6 mt-4 rounded-lg;
+    content: attr(data-lang);
+}
+
+.markup code {
+    @apply font-mono text-sm;
+}
+
+.markup ol {
+    @apply list-decimal ml-10;
+}
+
+.markup li {
+    @apply mb-1;
+}
+
+.markup a {
+    @apply underline dotted text-primary-500 font-medium
+}

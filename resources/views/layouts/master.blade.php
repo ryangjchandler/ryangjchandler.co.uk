@@ -12,7 +12,7 @@
 
     @include('layouts.partials.style')
 </head>
-<body class="antialiased min-h-screen w-screen">
+<body class="antialiased min-h-screen max-w-screen">
     @yield('body')
 
     <script type="module" src="{{ mix('js/index.js') }}"></script>

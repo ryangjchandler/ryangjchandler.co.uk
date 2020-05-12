@@ -2,9 +2,14 @@
 
 namespace App\Models;
 
+use App\Services\Markdown\Markdown;
+use Carbon\Carbon;
+use Carbon\CarbonInterval;
+use Carbon\CarbonPeriod;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 class Article extends Model
 {
@@ -22,5 +27,12 @@ class Article extends Model
     public function scopePublished(Builder $query)
     {
         $query->whereNotNull('published_at')->where('published_at', '<=', now());
+    }
+
+    public function content()
+    {
+        // return Cache::remember("content_cache_{$this->id}", CarbonInterval::days(7)->totalSeconds, function () {
+            return app(Markdown::class)->parse($this->content);
+        // });
     }
 }
