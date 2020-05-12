@@ -6,7 +6,7 @@
         <div class="flex-1">
             <form action="{{ route('articles.comments.store', ['article' => $article]) }}" method="POST">
                 @csrf
-                <textarea class="form-textarea w-full resize-none mb-2" name="content" id="content"
+                <textarea class="form-textarea rounded-lg w-full resize-none mb-2" name="content" id="content"
                     placeholder="You **can** use Markdown inside of _here_..." rows="5"></textarea>
                 @error('content')
                     <span class="text-red-700">{{ $message }}</span>
