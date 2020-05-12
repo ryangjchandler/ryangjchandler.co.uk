@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class ArticlesController
 {
@@ -15,7 +17,9 @@ class ArticlesController
 
     public function show(Article $article)
     {
-        $article->load(['comments', 'likes', 'comments']);
+        $article->load(['comments' => function (MorphMany $comments) {
+            $comments->latest('created_at');
+        }, 'likes', 'comments.user']);
 
         return view('articles.show', [
             'article' => $article,
