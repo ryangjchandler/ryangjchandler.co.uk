@@ -2,17 +2,19 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasComments;
+use App\Models\Concerns\HasLikes;
 use App\Services\Markdown\Markdown;
-use Carbon\Carbon;
-use Carbon\CarbonInterval;
-use Carbon\CarbonPeriod;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Cache;
 
 class Article extends Model
 {
+    use HasComments, HasLikes;
+
+    protected $guarded = [];
+
     protected $dates = ['published_at'];
 
     public static function booted()
