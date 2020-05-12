@@ -22,6 +22,10 @@ class Article extends Model
                 $article->slug = Str::slug($article->title);
             }
         });
+
+        static::saving(function (Article $article) {
+            Cache::forget("content_cache_{$article->id}");
+        });
     }
 
     public function scopePublished(Builder $query)
