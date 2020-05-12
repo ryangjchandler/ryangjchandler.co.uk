@@ -33,7 +33,7 @@ class Article extends Model
         $query->whereNotNull('published_at')->where('published_at', '<=', now());
     }
 
-    public function content()
+    public function parsedContent()
     {
         return Cache::remember("content_cache_{$this->id}", CarbonInterval::days(7)->totalSeconds, function () {
             return app(Markdown::class)->parse($this->content);

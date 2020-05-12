@@ -14,7 +14,7 @@
             @endif
         @endif
         <article class="mt-6 w-full markup">
-            {!! $article->content() !!}
+            {!! $article->parsedContent() !!}
         </article>
     </section>
 @endsection
