@@ -3,7 +3,7 @@
     @forelse($article->comments as $comment)
         <div class="my-4 pl-4 py-4 pr-6 bg-primary-300 bg-opacity-75 rounded-lg">
             <div class="flex items-center justify-between mb-4">
-                <div class="flex items-center text-primary-800">
+                <div class="flex items-center text-primary-800  ">
                     <img src="{{ $comment->user->avatar() }}" alt="{{ $comment->user->name }}" class="rounded-full w-8 h-8 mr-4">
                     <span class="font-medium mr-1">{{ $comment->user->name }}</span> says...
                 </div>

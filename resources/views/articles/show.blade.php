@@ -23,7 +23,14 @@
         @auth
             @include('partials.article-comments-form')
         @else
-
+            <div class="my-4 pl-4 py-4 pr-6 bg-primary-300 border-b-2 border-primary-400 bg-opacity-50 rounded-t-lg">
+                <div class="flex items-start">
+                    <p>
+                        You need to <a href="{{ route('login') }}" class="font-semibold underline dotted text-primary-700">login</a> before commenting,
+                        or <a href="{{ route('register') }}" class="font-semibold underline dotted text-primary-700">click here</a> to create an account.
+                    </p>
+                </div>
+            </div>
         @endif
         @include('partials.article-comments')
     </section>
