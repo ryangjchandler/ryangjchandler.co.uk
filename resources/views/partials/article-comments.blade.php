@@ -1,7 +1,7 @@
-<details class="bg-primary-100 px-4 py-2 rounded-lg">
+<details class="bg-primary-100 px-4 py-2 rounded-b-lg">
     <summary class="font-semibold">View all comments</summary>
     @forelse($article->comments as $comment)
-        <div class="my-4 pl-4 py-4 pr-6 bg-primary-200 bg-opacity-50 rounded">
+        <div class="my-4 pl-4 py-4 pr-6 bg-primary-200 bg-opacity-50 rounded-lg">
             <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center">
                     <img src="{{ $comment->user->avatar() }}" alt="{{ $comment->user->name }}" class="rounded-full w-8 h-8 mr-4">

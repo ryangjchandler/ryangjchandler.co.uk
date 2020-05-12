@@ -20,6 +20,11 @@
         </article>
     </section>
     <section>
+        @auth
+            @include('partials.article-comments-form')
+        @else
+
+        @endif
         @include('partials.article-comments')
     </section>
 @endsection

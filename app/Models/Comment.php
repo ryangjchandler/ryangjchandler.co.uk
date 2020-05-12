@@ -13,6 +13,12 @@ class Comment extends Model
 
     public function getContentAttribute(string $content)
     {
+        $content = htmlspecialchars($content);
+
+        if (! app()->environment('production')) {
+            return app(Markdown::class)->parse($content);
+        }
+
         return Cache::remember('comment_content_' . $this->id, CarbonInterval::hours(8)->totalSeconds, function () use ($content) {
             return app(Markdown::class)->parse($content);
         });

@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\StoreCommentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
@@ -24,6 +25,7 @@ Route::get('/articles', [ArticlesController::class, 'index'])->name('articles.in
 Route::get('/articles/{article:slug}', [ArticlesController::class, 'show'])->name('articles.show');
 
 Route::middleware('auth')->group(function () {
+    Route::post('/articles/{article:slug}/comments', StoreCommentController::class)->name('articles.comments.store');
     Route::post('logout', LogoutController::class)->name('logout.submit');
 });
 
