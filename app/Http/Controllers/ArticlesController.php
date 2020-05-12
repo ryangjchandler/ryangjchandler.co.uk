@@ -18,7 +18,7 @@ class ArticlesController
     public function show(Article $article)
     {
         $article->load(['comments' => function (MorphMany $comments) {
-            $comments->latest('created_at');
+            $comments->latest('updated_at');
         }, 'likes', 'comments.user']);
 
         return view('articles.show', [
