@@ -19,7 +19,7 @@ class RedirectIfNotSponsor
 
             session()->flash('error', "You must be a <a href=\"{$sponsorsLink}\">GitHub Sponsor</a> to access this content.");
 
-            return redirect()->back();
+            return redirect()->route('support');
         }
 
         return $next($request);
