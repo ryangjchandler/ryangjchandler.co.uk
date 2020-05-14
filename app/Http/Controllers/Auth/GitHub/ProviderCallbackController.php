@@ -22,6 +22,18 @@ class ProviderCallbackController
             ]);
         }
 
+        if ($current->nickname !== $user->getNickname()) {
+            $current->nickname = $user->getNickname();
+        }
+
+        if ($current->avatar !== $user->getAvatar()) {
+            $current->avatar = $user->getAvatar();
+        }
+
+        if ($current->isDirty()) {
+            $current->save();
+        }
+
         auth()->login($current);
 
         return redirect()->route('home');

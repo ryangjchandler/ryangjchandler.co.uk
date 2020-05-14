@@ -11,7 +11,7 @@
     </section>
     <section>
         <h3 class="text-xl font-semibold mb-4">Articles</h3>
-        <p class="mb-2 text-gray-700">I like to document my thoughts and processes, as well as teach new programming techniques and concepts.</p>
+        <p class="mb-2 text-gray-700">A collection of tutorials, thoughts and brain dumps.</p>
         @foreach($articles as $article)
             @include('partials.article-card', ['article' => $article])
         @endforeach

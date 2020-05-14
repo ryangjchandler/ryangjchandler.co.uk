@@ -11,11 +11,11 @@
 }
 
 .markup p {
-    @apply my-4;
+    @apply mb-4;
 }
 
 .markup pre {
-    @apply relative bg-primary-900 rounded text-white px-8 py-6 overflow-x-auto border-b-4 border-primary-400;
+    @apply relative bg-primary-900 rounded text-white px-8 py-6 mb-4 overflow-x-auto border-b-4 border-primary-400;
 }
 
 .markup :not(pre) > code {
@@ -53,6 +53,17 @@
 
 .markup pre code .hljs-string {
     @apply text-orange-600;
+}
+
+.markup ul {
+    @apply list-disc ml-4;
+}
+
+@screen md {
+
+    .markup ul {
+        @apply ml-10;
+    }
 }
 
 .markup ol {

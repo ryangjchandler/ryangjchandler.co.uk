@@ -12,4 +12,10 @@
             <small class="text-gray-600 font-medium">Updated {{ $article->updated_at->diffForHumans() }}</small>
         @endif
     @endif
+    <small class="mx-2 text-gray-400">|</small>
+    <small class="text-gray-600 font-medium">{{ $article->likes_count }} likes</small>
+    @if($article->sponsors_only)
+        <small class="mx-2 text-gray-400">|</small>
+        <small class="bg-primary-200 text-primary-900 font-bold rounded px-2 py-1">Sponsors only</small>
+    @endif
 </article>
