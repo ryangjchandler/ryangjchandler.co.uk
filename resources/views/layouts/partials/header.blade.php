@@ -15,10 +15,14 @@
             <div class="pt-4 md:pt-0 md:block" :class="{ 'block': show, 'hidden': ! show }">
                 <ul class="flex flex-col md:flex-row items-center justify-start justify-between font-semibold text-sm">
                     <li class="nav-link">
-                        <a href="{{ route('articles.index') }}" class="@active('articles.index', ['active'])">Articles</a>
+                        <a href="{{ route('articles.index') }}" class="@active('articles.index', ['active'])" title="Articles">
+                            Articles
+                        </a>
                     </li>
                     <li class="nav-link">
-                        <a href="{{ route('support') }}" class="@active('support', ['active'])">Supporting</a>
+                        <a href="{{ route('support') }}" class="@active('support', ['active'])" title="Supporting">
+                            Supporting
+                        </a>
                     </li>
                     @guest
                         <li class="auth-nav-link">
