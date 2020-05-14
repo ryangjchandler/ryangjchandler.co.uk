@@ -18,7 +18,7 @@
                         <a href="{{ route('articles.index') }}" class="@active('articles.index', ['active'])">Articles</a>
                     </li>
                     <li class="nav-link">
-                        <a href="{{ route('support') }}" class="@active('support', ['active'])">Support</a>
+                        <a href="{{ route('support') }}" class="@active('support', ['active'])">Supporting</a>
                     </li>
                     @guest
                         <li class="auth-nav-link">
