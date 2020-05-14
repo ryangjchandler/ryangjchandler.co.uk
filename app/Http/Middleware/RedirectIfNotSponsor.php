@@ -10,8 +10,10 @@ class RedirectIfNotSponsor
     public function handle(Request $request, Closure $next)
     {
         if (
-            ! $request->user() ||
-            (! $request->user()->sponsor && ! $request->user()->admin && $request->route('article')->sponsors_only)
+            $request->route('article')->sponsors_only &&
+            (! $request->user() ||
+            ! $request->user()->sponsor ||
+            ! $request->user()->admin)
         ) {
             $sponsorsLink = config('services.github.sponsors_link');
 

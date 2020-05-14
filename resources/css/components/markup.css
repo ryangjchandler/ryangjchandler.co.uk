@@ -55,6 +55,17 @@
     @apply text-orange-600;
 }
 
+.markup ul {
+    @apply list-disc ml-4;
+}
+
+@screen md {
+
+    .markup ul {
+        @apply ml-10;
+    }
+}
+
 .markup ol {
     @apply list-decimal ml-10;
 }
