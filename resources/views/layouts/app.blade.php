@@ -17,6 +17,7 @@
                     </span>
                 </div>
             @endif
+
             @yield('content')
         </div>
     </main>
