@@ -11,7 +11,7 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'nickname', 'avatar'
     ];
 
     protected $hidden = [
@@ -29,5 +29,10 @@ class User extends Authenticatable
         }
 
         return url($this->avatar ?? '/img/default-avatar.jpg');
+    }
+
+    public function sponsor()
+    {
+        return $this->belongsTo(Sponsor::class, 'username', 'nickname');
     }
 }

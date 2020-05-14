@@ -18,6 +18,10 @@ class Article extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'sponsors_only' => 'bool',
+    ];
+
     protected $dates = ['published_at'];
 
     public static function booted()
