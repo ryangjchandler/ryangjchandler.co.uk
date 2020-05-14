@@ -10,13 +10,16 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
-use Carbon\CarbonPeriod;
 
 class Article extends Model
 {
     use HasComments, HasLikes;
 
     protected $guarded = [];
+
+    protected $casts = [
+        'sponsors_only' => 'bool',
+    ];
 
     protected $dates = ['published_at'];
 

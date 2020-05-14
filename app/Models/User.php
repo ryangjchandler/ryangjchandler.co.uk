@@ -30,4 +30,9 @@ class User extends Authenticatable
 
         return url($this->avatar ?? '/img/default-avatar.jpg');
     }
+
+    public function sponsor()
+    {
+        return $this->belongsTo(Sponsor::class, 'username', 'nickname');
+    }
 }
