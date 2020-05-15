@@ -33,6 +33,6 @@ class User extends Authenticatable
 
     public function sponsor()
     {
-        return $this->belongsTo(Sponsor::class, 'username', 'nickname');
+        return $this->hasOne(Sponsor::class, 'username', 'nickname');
     }
 }
