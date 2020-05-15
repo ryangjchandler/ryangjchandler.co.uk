@@ -26,11 +26,6 @@
     @apply h-full;
 }
 
-.markup pre > code::before {
-    @apply absolute bg-primary-900 opacity-25 top-0 right-0 mr-6 mt-4 rounded-lg;
-    content: attr(data-lang);
-}
-
 .markup code {
     @apply font-mono text-sm;
 }
