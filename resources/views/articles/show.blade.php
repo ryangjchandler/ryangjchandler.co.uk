@@ -15,6 +15,10 @@
         @endif
         <small class="mx-2 text-gray-400">|</small>
         <small class="text-gray-600 font-medium">{{ $article->likes->count() }} likes</small>
+        @if($article->sponsors_only)
+            <small class="mx-2 text-gray-400">|</small>
+            <small class="bg-primary-200 text-primary-900 font-bold rounded px-2 py-1">Sponsors only</small>
+        @endif
         <article class="mt-6 w-full markup">
             {!! $article->parsedContent() !!}
         </article>

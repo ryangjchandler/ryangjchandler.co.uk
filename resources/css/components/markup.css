@@ -56,7 +56,7 @@
 }
 
 .markup ul {
-    @apply list-disc ml-4;
+    @apply list-disc ml-4 mb-4;
 }
 
 @screen md {
