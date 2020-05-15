@@ -9,12 +9,11 @@ class RedirectIfNotSponsor
 {
     public function handle(Request $request, Closure $next)
     {
-        if (
-            $request->route('article')->sponsors_only &&
-            (! $request->user() ||
-            ! $request->user()->sponsor ||
-            ! $request->user()->admin)
-        ) {
+        if (! $request->user()) {
+            return redirect()->route('login');
+        }
+
+        if ($request->route('article')->sponsors_only && ! ($request->user()->admin || $request->user()->sponsor)) {
             $sponsorsLink = config('services.github.sponsors_link');
 
             session()->flash('error', "You must be a <a href=\"{$sponsorsLink}\">GitHub Sponsor</a> to access this content.");
