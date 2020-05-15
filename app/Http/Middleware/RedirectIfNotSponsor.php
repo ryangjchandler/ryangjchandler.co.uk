@@ -13,7 +13,9 @@ class RedirectIfNotSponsor
             return redirect()->route('login');
         }
 
-        if ($request->route('article')->sponsors_only && ! ($request->user()->admin || $request->user()->sponsor)) {
+        $isAdminOrSponsor = $request->user()->admin || $request->user()->sponsor || (int) $request->user()->sponsor->tier_price >= 5;
+
+        if ($request->route('article')->sponsors_only && ! $isAdminOrSponsor) {
             $sponsorsLink = config('services.github.sponsors_link');
 
             session()->flash('error', "You must be a <a href=\"{$sponsorsLink}\">GitHub Sponsor</a> to access this content.");
