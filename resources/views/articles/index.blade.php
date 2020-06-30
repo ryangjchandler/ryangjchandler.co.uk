@@ -9,9 +9,11 @@
     </section>
     <section class="flex">
         <div class="w-3/4">
-            @foreach($articles as $article)
+            @forelse($articles as $article)
                 @include('partials.article-card')
-            @endforeach
+            @empty
+                <p class="font-medium text-gray-700">Nothing to see here. 😐</p>
+            @endforelse
         </div>
         <aside class="flex flex-col align-end w-1/4">
             <h3 class="text-lg font-bold text-right text-gray-700 hover:text-gray-900">Archive</h3>
