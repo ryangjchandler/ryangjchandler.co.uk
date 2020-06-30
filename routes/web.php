@@ -42,3 +42,5 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', LogoutController::class)->name('logout.submit');
 });
 
+Route::feeds();
+
