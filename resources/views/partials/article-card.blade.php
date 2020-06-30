@@ -1,4 +1,4 @@
-<article class="mt-4">
+<article class="{{ ! $loop->first ? 'mt-4' : '' }}">
     <h3 class="text-primary-600 text-lg font-semibold mb-2">
         <a href="{{ route('articles.show', $article) }}" class="hover:underline">{{ $article->title }}</a>
     </h3>
