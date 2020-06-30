@@ -15,7 +15,7 @@
                 <p class="font-medium text-gray-700">Nothing to see here. 😐</p>
             @endforelse
         </div>
-        <aside class="flex flex-col mt-24 w-1/4 | md:mt-0">
+        <aside class="flex flex-col mt-24 | md:w-1/4 md:mt-0">
             <h3 class="text-lg font-bold md:text-right text-gray-700 hover:text-gray-900">Archive</h3>
             @foreach($dates as $date => $items)
                 <a href="?date={{ $date }}" class="md:text-right text-primary-400 hover:text-primary-600 hover:underline font-medium mt-4">
