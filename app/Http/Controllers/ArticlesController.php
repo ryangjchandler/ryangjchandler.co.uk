@@ -10,8 +10,14 @@ class ArticlesController
 {
     public function index()
     {
+        /** @var \Illuminate\Database\Eloquent\Collection $articles */
+        $articles = Article::latest('published_at')->published()->withCount('likes')->get();
+
         return view('articles.index', [
-            'articles' => Article::latest('published_at')->published()->withCount('likes')->get(),
+            'articles' => $articles,
+            'dates' => $articles->mapToGroups(function (Article $article) {
+                return [$article->published_at->format('F Y') => $article->title];
+            }),
         ]);
     }
 
