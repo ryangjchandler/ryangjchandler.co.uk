@@ -41,6 +41,11 @@
                             </x-form-button>
                         </li>
                     @endif
+                    <li class="text-primary-300 px-1 py-1 hover:text-primary-500 hover:bg-primary-100 focus:text-primary-500 focus:bg-primary-100 rounded">
+                        <a href="{{ route('feeds.main') }}" title="RSS Feed">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
