@@ -10,9 +10,10 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
-use Carbon\CarbonPeriod;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
-class Article extends Model
+class Article extends Model implements Feedable
 {
     use HasComments, HasLikes;
 
@@ -51,5 +52,22 @@ class Article extends Model
         return Cache::remember("content_cache_{$this->id}", CarbonInterval::days(7)->totalSeconds, function () {
             return app(Markdown::class)->parse($this->content);
         });
+    }
+
+    public function getFeedResults()
+    {
+        return static::query()->published()->latest('published_at')->get();
+    }
+
+    public function toFeedItem()
+    {
+        return FeedItem::create([
+            'id' => $this->id,
+            'title' => $this->title,
+            'summary' => $this->excerpt,
+            'updated' => $this->updated_at,
+            'link' => route('articles.show', $this),
+            'author' => 'Ryan Chandler',
+        ]);
     }
 }
