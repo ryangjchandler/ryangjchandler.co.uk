@@ -38,6 +38,15 @@ class Article extends Model implements Feedable
         });
     }
 
+    public function getTitleAttribute($title)
+    {
+        if ($this->series && str_contains($title, $this->series->title)) {
+            $title = Str::after($title, $this->search->title);
+        }
+
+        return Str::after($title, ': ');
+    }
+
     public function series()
     {
         return $this->belongsTo(Series::class);
