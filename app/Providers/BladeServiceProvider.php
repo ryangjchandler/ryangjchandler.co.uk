@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -9,6 +10,8 @@ final class BladeServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        Paginator::useTailwind();
+
         $this->registerDirectives();
     }
 
