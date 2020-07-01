@@ -2,6 +2,16 @@
 
 @section('title', $article->title)
 
+@section('seo')
+    <meta property="og:title" content="{{ $article->title }} - Ryan Chandler">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:description" content="{{ $article->excerpt }}">
+
+    <meta name="description" content="{{ $article->excerpt }}">
+@endsection
+
 @section('content')
     <section class="mb-8">
         <h2 class="text-2xl font-bold mb-4">{{ $article->title }}</h2>
