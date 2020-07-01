@@ -15,7 +15,9 @@
                 <p class="font-medium text-gray-700">Nothing to see here. 😐</p>
             @endforelse
 
-            {{ $articles->links() }}
+            <div class="mt-5">
+                {{ $articles->links() }}
+            </div>
         </div>
         <aside class="flex flex-col mt-24 | md:w-1/4 md:mt-0">
             <h3 class="text-lg font-bold md:text-right text-gray-700 hover:text-gray-900">Archive</h3>
