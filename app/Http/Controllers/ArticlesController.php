@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class ArticlesController
@@ -38,7 +39,9 @@ class ArticlesController
     {
         $article->load(['comments' => function (MorphMany $comments) {
             $comments->latest('updated_at');
-        }, 'likes', 'comments.user']);
+        }, 'likes', 'comments.user', 'series', 'series.articles' => function (HasMany $articles) {
+            $articles->latest('published_at');
+        }]);
 
         return view('articles.show', [
             'article' => $article,

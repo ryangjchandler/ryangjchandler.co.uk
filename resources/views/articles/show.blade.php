@@ -19,7 +19,27 @@
             <small class="mx-2 text-gray-400">|</small>
             <small class="bg-primary-200 text-primary-900 font-bold rounded px-2 py-1">Sponsors only</small>
         @endif
-        <article class="mt-6 w-full markup">
+        @if($article->series)
+            <div class="rounded bg-primary-100 bg-opacity-50 px-5 py-4 mt-4">
+                <p class="font-medium text-primary-800 mb-1">
+                    This article is part of the <strong>{{ $article->series->title }}</strong> series.
+                </p>
+                <ol class="list-decimal pl-5 mt-2">
+                    @foreach($article->series->articles as $seriesArticle)
+                        <li>
+                            @if(! $article->is($seriesArticle))
+                                <p>{{ $seriesArticle->title }}</p>
+                            @else
+                                <a href="{{ route('articles.show', $seriesArticle) }}">
+                                    {{ $seriesArticle->title }}
+                                </a>
+                            @endif
+                        </li>
+                    @endforeach
+                </ol>
+            </div>
+        @endif
+        <article class="@if($article->series) mt-4 @else mt-6 @endif w-full markup">
             {!! $article->parsedContent() !!}
         </article>
     </section>
