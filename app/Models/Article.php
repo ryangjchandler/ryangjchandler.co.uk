@@ -38,6 +38,11 @@ class Article extends Model implements Feedable
         });
     }
 
+    public function series()
+    {
+        return $this->belongsTo(Series::class);
+    }
+
     public function scopePublished(Builder $query)
     {
         $query->whereNotNull('published_at')->where('published_at', '<=', now());
