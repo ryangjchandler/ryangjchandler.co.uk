@@ -38,9 +38,11 @@ class Article extends Model implements Feedable
         });
     }
 
-    public function getTitleAttribute($title)
+    public function title(bool $removeSeriesTitle = false)
     {
-        if ($this->series && str_contains($title, $this->series->title)) {
+        $title = $this->title;
+
+        if ($this->series && str_contains($title, $this->series->title) && $removeSeriesTitle) {
             $title = Str::after($title, $this->series->title);
         }
 

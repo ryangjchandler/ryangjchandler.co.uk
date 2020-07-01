@@ -28,12 +28,12 @@
                     @foreach($article->series->articles as $seriesArticle)
                         <li class="@if(! $article->is($seriesArticle)) text-gray-600 @else text-primary-500 hover:text-primary-400 @endif">
                             @if(! $article->is($seriesArticle))
-                                <p class="@if(! $loop->first) mt-2 @endif">{{ $seriesArticle->title }}</p>
+                                <p class="@if(! $loop->first) mt-2 @endif">{{ $seriesArticle->title(true) }}</p>
                             @else
                                 <a href="{{ route('articles.show', $seriesArticle) }}"
                                     class="underline @if(! $loop->first) mt-2 @endif"
                                 >
-                                    {{ $seriesArticle->title }}
+                                    {{ $seriesArticle->title(true) }}
                                 </a>
                             @endif
                         </li>
