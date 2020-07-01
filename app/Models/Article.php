@@ -41,7 +41,7 @@ class Article extends Model implements Feedable
     public function getTitleAttribute($title)
     {
         if ($this->series && str_contains($title, $this->series->title)) {
-            $title = Str::after($title, $this->search->title);
+            $title = Str::after($title, $this->series->title);
         }
 
         return Str::after($title, ': ');
