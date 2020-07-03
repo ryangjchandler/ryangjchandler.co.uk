@@ -26,7 +26,7 @@ class TagController
             ]);
         }
 
-        return view('articles.index', [
+        return view('tags.show', [
             'articles' => $query->paginate(10),
             'dates' => Article::latest('published_at')->published()->get()->mapToGroups(function (Article $article) {
                 return [$article->published_at->format('F Y') => $article->id];
