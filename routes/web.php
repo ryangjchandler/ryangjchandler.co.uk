@@ -30,15 +30,7 @@ Route::get('/articles/{article:slug}', [ArticlesController::class, 'show'])
     ->middleware(RedirectIfNotSponsor::class)
     ->name('articles.show');
 
-Route::post('/articles/{article:slug}/likes', StoreLikeController::class)
-    ->middleware(RedirectIfNotSponsor::class)
-    ->name('articles.likes.store');
-
 Route::middleware('auth')->group(function () {
-    Route::post('/articles/{article:slug}/comments', StoreCommentController::class)
-        ->middleware(RedirectIfNotSponsor::class)
-        ->name('articles.comments.store');
-
     Route::post('logout', LogoutController::class)->name('logout.submit');
 });
 

@@ -9,8 +9,7 @@ class HomeController
     public function __invoke()
     {
         return view('pages.home', [
-            'articles' => Article::withCount('likes')
-                ->latest('published_at')
+            'articles' => Article::latest('published_at')
                 ->published()
                 ->get(),
         ]);

@@ -18,7 +18,7 @@ class ArticlesController
             $date = Carbon::parse($date);
         }
 
-        $query = Article::latest('published_at')->published()->withCount('likes');
+        $query = Article::latest('published_at')->published();
 
         if ($date) {
             $query->whereBetween('published_at', [
@@ -37,9 +37,7 @@ class ArticlesController
 
     public function show(Article $article)
     {
-        $article->load(['comments' => function (MorphMany $comments) {
-            $comments->latest('updated_at');
-        }, 'likes', 'comments.user', 'series', 'series.articles' => function (HasMany $articles) {
+        $article->load(['series', 'series.articles' => function (HasMany $articles) {
             $articles->latest('published_at');
         }]);
 
