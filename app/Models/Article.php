@@ -38,7 +38,7 @@ class Article extends Model implements Feedable
         });
     }
 
-    public function title(bool $removeSeriesTitle = false)
+    public function formattedTitle(bool $removeSeriesTitle = false)
     {
         $title = $this->title;
 
