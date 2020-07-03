@@ -1,11 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Articles')
+@section('title', $tag->title)
 
 @section('content')
     <section class="mb-8">
-        <h2 class="text-2xl font-bold mb-4">Articles</h2>
-        <p class="md:text-lg text-gray-700">Or more accurately, word dumps.</p>
+        <h2 class="text-2xl font-bold mb-4">{{ $tag->title }}</h2>
     </section>
     <section class="flex flex-col md:flex-row">
         <div class="w-3/4">
@@ -23,7 +22,7 @@
             <div class="md:mb-4 md:text-right">
                 <h3 class="text-lg font-bold md:text-right text-gray-700 hover:text-gray-900 mb-2">Tags</h3>
                 @foreach($tags as $tag)
-                    <a href="{{ route('tags.show', $tag) }}">
+                    <a href="#">
                         <x-badge class="mb-2 hover:bg-primary-200">{{ $tag->title }}</x-badge>
                     </a>
                 @endforeach
