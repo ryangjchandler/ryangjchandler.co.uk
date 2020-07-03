@@ -18,7 +18,7 @@ class Commit
         });
 
         if ($commit) {
-            $commit = ['', ''];
+            return ['', ''];
         }
 
         return [Str::limit($commit['sha'], 7), $commit['commit']['url']];
