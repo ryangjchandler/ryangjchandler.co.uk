@@ -7,7 +7,7 @@
         <p class="md:text-lg text-gray-700">I currently work at <a href="https://surewise.com" class="text-primary-500 underline font-medium">Surewise</a> where I build and maintain insurance systems.</p>
     </section>
     <section class="mb-8">
-        <x-newsletter-form />
+        <x-newsletter />
     </section>
     <section>
         <h3 class="text-xl font-semibold mb-4">Articles</h3>
