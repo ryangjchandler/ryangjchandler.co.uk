@@ -1,4 +1,4 @@
-<footer class="border-t border-gray-200 py-2 py-2">
+<footer class="border-t border-gray-200 py-4">
     <div class="max-w-4xl container px-4 mx-auto">
         <div class="flex items-center justify-between">
             <div>
