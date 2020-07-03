@@ -2,6 +2,7 @@
 
 namespace App\Models\Presenters;
 
+use App\Support\Markdown\Markdown;
 use Carbon\CarbonInterval;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
