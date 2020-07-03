@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Commit;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 final class BladeServiceProvider extends ServiceProvider
@@ -13,6 +15,11 @@ final class BladeServiceProvider extends ServiceProvider
         Paginator::useTailwind();
 
         $this->registerDirectives();
+
+        [$commit, $url] = Commit::latest();
+
+        View::share('latestCommit', $commit);
+        View::share('latestCommitUrl', $url);
     }
 
     private function registerDirectives()
