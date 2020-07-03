@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Concerns\HasComments;
 use App\Models\Concerns\HasLikes;
+use App\Models\Presenters\ArticlePresenter;
 use App\Services\Markdown\Markdown;
 use Carbon\CarbonInterval;
 use Illuminate\Database\Eloquent\Builder;
@@ -15,6 +16,8 @@ use Spatie\Feed\FeedItem;
 
 class Article extends Model implements Feedable
 {
+    use ArticlePresenter;
+
     protected $guarded = [];
 
     protected $casts = [
@@ -36,17 +39,6 @@ class Article extends Model implements Feedable
         });
     }
 
-    public function formattedTitle(bool $removeSeriesTitle = false)
-    {
-        $title = $this->title;
-
-        if ($this->series && str_contains($title, $this->series->title) && $removeSeriesTitle) {
-            $title = Str::after($title, $this->series->title);
-        }
-
-        return Str::after($title, ': ');
-    }
-
     public function series()
     {
         return $this->belongsTo(Series::class);
@@ -57,36 +49,8 @@ class Article extends Model implements Feedable
         $query->whereNotNull('published_at')->where('published_at', '<=', now());
     }
 
-    public function parsedContent()
-    {
-        if (! app()->environment('production')) {
-            return app(Markdown::class)->parse($this->content);
-        }
-
-        return Cache::remember("content_cache_{$this->id}", CarbonInterval::days(7)->totalSeconds, function () {
-            return app(Markdown::class)->parse($this->content);
-        });
-    }
-
     public function getFeedResults()
     {
         return static::query()->published()->latest('published_at')->get();
-    }
-
-    public function isPublished()
-    {
-        return $this->published_at && $this->published_at->isPast();
-    }
-
-    public function toFeedItem()
-    {
-        return FeedItem::create([
-            'id' => $this->id,
-            'title' => $this->title,
-            'summary' => $this->excerpt,
-            'updated' => $this->updated_at,
-            'link' => route('articles.show', $this),
-            'author' => 'Ryan Chandler',
-        ]);
     }
 }
