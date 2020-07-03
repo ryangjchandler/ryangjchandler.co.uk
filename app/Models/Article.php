@@ -18,8 +18,6 @@ class Article extends Model implements Feedable
 {
     use ArticlePresenter;
 
-    protected $guarded = [];
-
     protected $casts = [
         'sponsors_only' => 'bool',
     ];
