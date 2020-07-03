@@ -14,6 +14,8 @@
     @endif
     @if($article->sponsors_only)
         <small class="mx-2 text-gray-400">|</small>
-        <small class="bg-primary-200 text-primary-900 font-bold rounded px-2 py-1">Sponsors only</small>
+        <small class="bg-primary-200 text-primary-900 font-bold rounded px-2 py-1">
+            <a href="{{ route('support') }}">Sponsors only</a>
+        </small>
     @endif
 </article>
