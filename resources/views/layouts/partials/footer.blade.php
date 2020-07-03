@@ -5,21 +5,21 @@
                 <small class="text-gray-600">&copy; {{ date('Y') }} All rights reserved.</small>
             </div>
             <div>
-                <small class="text-gray-600">Latest commit: <a href="{{ $latestCommitUrl }}" class="text-blue-400">{{ $latestCommit }}</a></small>
+                <small class="text-gray-600">Latest commit: <a href="{{ $latestCommitUrl }}" class="text-blue-400 hover:underline">{{ $latestCommit }}</a></small>
             </div>
             <div>
                 <small class="text-blue-400 mr-4">
-                    <a href="https://twitter.com/ryangjchandler" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-400">
+                    <a href="https://twitter.com/ryangjchandler" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-400 hover:underline">
                         Twitter
                     </a>
                 </small>
                 <small class="text-blue-400 mr-4">
-                    <a href="https://github.com/ryangjchandler" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-400">
+                    <a href="https://github.com/ryangjchandler" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-400 hover:underline">
                         GitHub
                     </a>
                 </small>
                 <small class="text-blue-400">
-                    <a href="{{ route('feeds.main') }}" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-400">
+                    <a href="{{ route('feeds.main') }}" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-400 hover:underline">
                         RSS
                     </a>
                 </small>
