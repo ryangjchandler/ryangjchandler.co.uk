@@ -15,8 +15,6 @@ use Spatie\Feed\FeedItem;
 
 class Article extends Model implements Feedable
 {
-    use HasComments, HasLikes;
-
     protected $guarded = [];
 
     protected $casts = [
