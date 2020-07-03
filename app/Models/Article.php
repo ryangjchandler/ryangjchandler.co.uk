@@ -77,7 +77,7 @@ class Article extends Model implements Feedable
 
     public function isPublished()
     {
-        return $this->published_at->isPast();
+        return $this->published_at && $this->published_at->isPast();
     }
 
     public function toFeedItem()

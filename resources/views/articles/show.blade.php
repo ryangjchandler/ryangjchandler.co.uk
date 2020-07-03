@@ -40,7 +40,7 @@
                             @if($article->is($seriesArticle))
                                 <p class="@if(! $loop->first) mt-2 @endif">{{ $seriesArticle->formattedTitle(true) }}</p>
                             @else
-                                <a @if($article->isPublished()) href="{{ route('articles.show', $seriesArticle) }}" @endif
+                                <a @if($seriesArticle->isPublished()) href="{{ route('articles.show', $seriesArticle) }}" @endif
                                     class="underline @if(! $loop->first) mt-2 @endif"
                                 >
                                     {{ $seriesArticle->formattedTitle(true) }}
