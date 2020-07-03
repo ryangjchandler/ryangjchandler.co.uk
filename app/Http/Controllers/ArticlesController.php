@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Tag;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -32,6 +33,7 @@ class ArticlesController
             'dates' => Article::latest('published_at')->published()->get()->mapToGroups(function (Article $article) {
                 return [$article->published_at->format('F Y') => $article->id];
             }),
+            'tags' => Tag::all(),
         ]);
     }
 
