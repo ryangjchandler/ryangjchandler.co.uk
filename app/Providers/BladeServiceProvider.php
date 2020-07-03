@@ -15,11 +15,6 @@ final class BladeServiceProvider extends ServiceProvider
         Paginator::useTailwind();
 
         $this->registerDirectives();
-
-        [$commit, $url] = Commit::latest();
-
-        View::share('latestCommit', $commit);
-        View::share('latestCommitUrl', $url);
     }
 
     private function registerDirectives()
