@@ -42,6 +42,11 @@ class Article extends Model implements Feedable
         return $this->belongsTo(Series::class);
     }
 
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
     public function scopePublished(Builder $query)
     {
         $query->whereNotNull('published_at')->where('published_at', '<=', now());
