@@ -97,7 +97,7 @@ class Sponsor extends Model
                   }
                 }
               }
-    EOT,
+            EOT,
         ]);
 
         $sponsors = $response['data']['viewer']['sponsorshipsAsMaintainer']['nodes'];

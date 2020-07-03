@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Markdown;
+namespace App\Support\Markdown;
 
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;

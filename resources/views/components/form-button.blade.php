@@ -1,6 +1,7 @@
+@props(['method' => 'POST', 'action'])
+
 <form action="{{ $action }}" method="POST">
     @csrf
-    @method($method ?? 'POST')
-
-    <button class="{{ $buttonClasses ?? '' }}" style="{{ $style ?? '' }}">{{ $slot }}</button>
+    @method($method)
+    <button {{ $attributes }}>{{ $slot }}</button>
 </form>
