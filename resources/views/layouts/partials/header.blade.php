@@ -32,9 +32,6 @@
                             <a href="{{ route('register') }}">Register</a>
                         </li>
                     @else
-                        <li class="auth-nav-link opacity-25">
-                            <a title="Coming soon">Account</a>
-                        </li>
                         <li class="auth-nav-link">
                             <x-form-button action="{{ route('logout.submit') }}" buttonClasses="font-bold" style="padding-left: 1.25rem; padding-right: 1.25rem;">
                                 Log out
