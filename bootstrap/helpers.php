@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 if (! function_exists('active_classes')) {
     function active_classes(string $route, array $classes)
     {
-        if ($route === Route::getCurrentRouteName()) {
+        if ($route === Route::currentRouteName()) {
             return implode(' ', $classes);
         }
     }
