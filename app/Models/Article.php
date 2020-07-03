@@ -75,6 +75,11 @@ class Article extends Model implements Feedable
         return static::query()->published()->latest('published_at')->get();
     }
 
+    public function isPublished()
+    {
+        return $this->published_at->isPast();
+    }
+
     public function toFeedItem()
     {
         return FeedItem::create([
