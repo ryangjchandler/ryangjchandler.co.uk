@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Models\Concerns\HasComments;
 use App\Models\Concerns\HasLikes;
 use App\Models\Presenters\ArticlePresenter;
-use App\Services\Markdown\Markdown;
+use App\Support\Markdown\Markdown;
 use Carbon\CarbonInterval;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
