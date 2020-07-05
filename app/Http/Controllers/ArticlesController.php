@@ -37,9 +37,7 @@ class ArticlesController
 
     public function show(Article $article)
     {
-        $article->load(['series', 'series.articles' => function (HasMany $articles) {
-            $articles->latest('published_at');
-        }]);
+        $article->load(['series', 'series.articles']);
 
         return view('articles.show', [
             'article' => $article,
