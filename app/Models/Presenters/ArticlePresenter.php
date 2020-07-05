@@ -6,6 +6,7 @@ use Carbon\CarbonInterval;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 use Spatie\Feed\FeedItem;
+use App\Support\Markdown\Markdown;
 
 trait ArticlePresenter
 {
