@@ -47,8 +47,13 @@ class Article extends Model implements Feedable
         $query->whereNotNull('published_at')->where('published_at', '<=', now());
     }
 
+    public function scopeFree(Builder $query)
+    {
+        $query->where('sponsors_only', 0);
+    }
+
     public function getFeedResults()
     {
-        return static::query()->published()->latest('published_at')->get();
+        return static::query()->published()->free()->latest('published_at')->get();
     }
 }
