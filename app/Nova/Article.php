@@ -60,7 +60,8 @@ class Article extends Resource
 
             BelongsToMany::make('Tags'),
 
-            BelongsTo::make('Series'),
+            BelongsTo::make('Series')
+                ->nullable(),
         ];
     }
 
