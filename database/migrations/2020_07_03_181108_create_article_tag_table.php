@@ -17,6 +17,10 @@ class CreateArticleTagTable extends Migration
             $table->foreignId('article_id')->constrained()->onDelete('cascade');
             $table->foreignId('tag_id')->constrained()->onDelete('cascade');
         });
+        
+        Schema::table('articles', function (Blueprint $table) {
+            $table->>unsignedBigInteger('series_id')->nullable()->change();
+        });
     }
 
     /**
