@@ -19,7 +19,7 @@ class CreateArticleTagTable extends Migration
         });
         
         Schema::table('articles', function (Blueprint $table) {
-            $table->>unsignedBigInteger('series_id')->nullable()->change();
+            $table->unsignedBigInteger('series_id')->nullable()->change();
         });
     }
 
