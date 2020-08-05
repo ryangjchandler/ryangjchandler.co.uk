@@ -3,23 +3,19 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
-use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Article extends Resource
+class Tag extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Article::class;
+    public static $model = \App\Models\Tag::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -34,7 +30,7 @@ class Article extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'title',
+        'title',
     ];
 
     /**
@@ -47,21 +43,8 @@ class Article extends Resource
     {
         return [
             ID::make()->sortable(),
-
             Text::make('Title'),
-
-            Textarea::make('Excerpt'),
-
-            Markdown::make('Content'),
-
-            DateTime::make('Published At'),
-
-            Boolean::make('Sponsors Only'),
-
-            BelongsToMany::make('Tags'),
-
-            BelongsTo::make('Series')
-                ->nullable(),
+            BelongsToMany::make('Articles'),
         ];
     }
 

@@ -4,14 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Tag;
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
-class ArticlesController
+class TagController
 {
-    public function index()
+    public function __invoke(Request $request, Tag $tag)
     {
         $date = request()->query('date');
 
@@ -19,7 +17,7 @@ class ArticlesController
             $date = Carbon::parse($date);
         }
 
-        $query = Article::latest('published_at')->published();
+        $query = $tag->articles()->latest('published_at')->published();
 
         if ($date) {
             $query->whereBetween('published_at', [
@@ -28,21 +26,13 @@ class ArticlesController
             ]);
         }
 
-        return view('articles.index', [
+        return view('tags.show', [
             'articles' => $query->paginate(10),
             'dates' => Article::latest('published_at')->published()->get()->mapToGroups(function (Article $article) {
                 return [$article->published_at->format('F Y') => $article->id];
             }),
+            'tag' => $tag,
             'tags' => Tag::all(),
-        ]);
-    }
-
-    public function show(Article $article)
-    {
-        $article->load(['series', 'series.articles']);
-
-        return view('articles.show', [
-            'article' => $article,
         ]);
     }
 }
