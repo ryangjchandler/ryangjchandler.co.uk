@@ -18,7 +18,7 @@
                 {{ $articles->links() }}
             </div>
         </div>
-        <aside class="flex flex-col mt-24 | md:w-1/4 md:mt-0">
+        <aside class="flex flex-col mt-12 | md:w-1/4 md:mt-0">
             <div class="md:mb-4 md:text-right">
                 <h3 class="text-lg font-bold md:text-right text-gray-700 hover:text-gray-900 mb-2">Tags</h3>
                 @foreach($tags as $tag)
