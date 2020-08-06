@@ -8,7 +8,7 @@
         <p class="md:text-lg text-gray-700">Or more accurately, word dumps.</p>
     </section>
     <section class="flex flex-col md:flex-row">
-        <div class="w-3/4">
+        <div class="md:w-3/4">
             @forelse($articles as $article)
                 @include('partials.article-card')
             @empty
