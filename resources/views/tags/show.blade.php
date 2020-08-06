@@ -7,7 +7,7 @@
         <h2 class="text-2xl font-bold mb-4">{{ $tag->title }}</h2>
     </section>
     <section class="flex flex-col md:flex-row">
-        <div class="w-3/4">
+        <div class="md:w-3/4">
             @forelse($articles as $article)
                 @include('partials.article-card')
             @empty
