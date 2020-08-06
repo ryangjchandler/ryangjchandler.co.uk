@@ -31,7 +31,7 @@
             <div class="md:text-right">
                 <h3 class="text-lg font-bold md:text-right text-gray-700 hover:text-gray-900">Archive</h3>
                 @foreach($dates as $date => $items)
-                    <a href="?date={{ $date }}" class="md:text-right text-primary-400 hover:text-primary-600 hover:underline font-medium mt-4">
+                    <a href="?date={{ $date }}" class="block md:text-right text-primary-400 hover:text-primary-600 hover:underline font-medium mt-4">
                         {{ $date }} ({{ $items->count() }})
                     </a>
                 @endforeach
