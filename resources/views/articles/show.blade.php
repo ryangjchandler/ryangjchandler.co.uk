@@ -27,6 +27,13 @@
             <small class="mx-2 text-gray-400">|</small>
             <small class="bg-primary-200 text-primary-900 font-bold rounded px-2 py-1">Sponsors only</small>
         @endif
+        @if($article->tags)
+            <div class="mt-4">
+                @foreach($article->tags as $tag)
+                    <x-badge class="mr-2">{{ $tag->title }}</x-badge>
+                @endforeach
+            </div>
+        @endif
         @if($article->series)
             <div class="rounded bg-primary-100 bg-opacity-50 px-5 py-4 mt-4">
                 <p class="font-medium text-primary-800 mb-1">

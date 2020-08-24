@@ -1,11 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Articles')
+@section('title', $tag->title)
 
 @section('content')
     <section class="mb-8">
-        <h2 class="text-2xl font-bold mb-4">Articles</h2>
-        <p class="md:text-lg text-gray-700">Or more accurately, word dumps.</p>
+        <h2 class="text-2xl font-bold mb-4">{{ $tag->title }}</h2>
     </section>
     <section class="flex flex-col md:flex-row">
         <div class="md:w-3/4">
