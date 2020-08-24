@@ -14,6 +14,6 @@
         </button>
     </div>
     <small class="text-primary-400">
-        Powered by <a href="https://buttondown.email" target="_blank" class="font-semibold underline">Buttondown</a>
+        Powered by <a href="https://buttondown.email" target="_blank" rel="noopener noreferrer" class="font-semibold underline">Buttondown</a>
     </small>
 </form>
