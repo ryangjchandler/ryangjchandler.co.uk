@@ -1,2 +1,3 @@
 User-agent: *
-Disallow:
+Disallow: /nova/
+Sitemap: https://ryangjchandler.co.uk/sitemap.xml
