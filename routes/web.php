@@ -12,6 +12,7 @@ use App\Http\Controllers\StoreLikeController;
 use App\Http\Controllers\TagController;
 use App\Http\Middleware\RedirectIfNotSponsor;
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('/', HomeController::class)->name('home');
 Route::view('/supporting-me', 'pages.support')->name('support');
