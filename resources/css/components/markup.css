@@ -72,3 +72,8 @@
 .markup a {
     @apply underline dotted text-primary-500 font-medium
 }
+
+.markup blockquote {
+    @apply font-medium italic text-gray-900 border-l-4 border-primary-300 pl-4;
+    quotes: "\\201C""\\201D""\\2018""\\2019";
+}
