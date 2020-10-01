@@ -15,7 +15,7 @@
 @push('style')
     @if(! $article->show_toc)
         <style>
-            .table-of-contents {
+            .table-of-contents, .heading-permalink {
                 display: none !important;
             }
         </style>

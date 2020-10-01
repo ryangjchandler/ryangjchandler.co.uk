@@ -1,0 +1,19 @@
+.table-of-contents {
+    @apply w-full m-0 mb-4 bg-primary-100 list-none px-5 py-4 rounded-md !important;
+}
+
+.table-of-contents ul {
+    @apply list-none !important;
+}
+
+.table-of-contents p {
+    @apply m-0 !important;
+}
+
+.table-of-contents li a {
+    @apply font-bold !important;
+}
+
+.table-of-contents li > ul {
+    @apply mb-0 !important;
+}
