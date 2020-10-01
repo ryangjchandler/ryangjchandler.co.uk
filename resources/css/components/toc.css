@@ -1,0 +1,15 @@
+.table-of-contents {
+    @apply w-full m-0 mb-4 !important;
+}
+
+.table-of-contents li p {
+    @apply mb-1 !important;
+}
+
+.table-of-contents li > ul {
+    @apply text-sm mb-1 !important;
+}
+
+.table-of-contents li > ul > li p {
+    @apply text-sm mb-1 !important;
+}

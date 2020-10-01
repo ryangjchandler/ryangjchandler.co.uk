@@ -58,6 +58,8 @@ class Article extends Resource
 
             Boolean::make('Sponsors Only'),
 
+            Boolean::make('Show Table of Contents', 'show_toc'),
+
             BelongsToMany::make('Tags'),
 
             BelongsTo::make('Series')
