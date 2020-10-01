@@ -12,6 +12,16 @@
     <meta name="description" content="{{ $article->excerpt }}">
 @endsection
 
+@push('style')
+    @if(! $article->show_toc)
+        <style>
+            .table-of-contents {
+                display: none !important;
+            }
+        </style>
+    @endif
+@endpush
+
 @section('content')
     <section class="mb-8">
         <h2 class="text-2xl font-bold mb-4">{{ $article->title }}</h2>
