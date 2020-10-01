@@ -9,6 +9,8 @@ use League\CommonMark\Block\Element\IndentedCode;
 use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\Environment;
 use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
+use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkProcessor;
+use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkRenderer;
 use League\CommonMark\Extension\TableOfContents\TableOfContentsExtension;
 use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
 use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
@@ -37,6 +39,11 @@ final class MarkdownServiceProvider extends ServiceProvider implements Deferrabl
                     'max_heading_level' => 6,
                     'normalize' => 'relative',
                     'placeholder' => null,
+                ],
+                'heading_permalink' => [
+                    'symbol' => '#',
+                    'insert' => HeadingPermalinkProcessor::INSERT_AFTER,
+                    'title' => 'Permalink',
                 ],
             ], $env);
         });
