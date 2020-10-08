@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth\GitHub;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
 class ProviderCallbackController
@@ -34,7 +35,7 @@ class ProviderCallbackController
             $current->save();
         }
 
-        auth()->login($current);
+        auth()->login($current, true);
 
         if ($redirect = session('sponsors_intended_url')) {
             session()->forget('sponsors_intended_url');
