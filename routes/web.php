@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleOgImageController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\Auth\GitHub\ProviderCallbackController;
 use App\Http\Controllers\Auth\GitHub\ProviderRedirectController;
@@ -31,6 +32,9 @@ Route::get('/articles', [ArticlesController::class, 'index'])->name('articles.in
 Route::get('/articles/{article:slug}', [ArticlesController::class, 'show'])
     ->middleware(RedirectIfNotSponsor::class)
     ->name('articles.show');
+
+Route::get('/articles/{article}/og-image', ArticleOgImageController::class)
+    ->name('articles.og-image');
 
 Route::get('/tags/{tag:slug}', TagController::class)->name('tags.show');
 

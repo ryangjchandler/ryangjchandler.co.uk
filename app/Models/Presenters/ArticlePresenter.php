@@ -6,7 +6,9 @@ use App\Support\Markdown\Markdown;
 use Carbon\CarbonInterval;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
+use Spatie\Browsershot\Browsershot;
 use Spatie\Feed\FeedItem;
+use Spatie\Image\Manipulations;
 
 trait ArticlePresenter
 {
@@ -37,15 +39,24 @@ trait ArticlePresenter
         return $this->published_at && $this->published_at->isPast();
     }
 
-    public function toFeedItem()
+    public function ogImageUrl()
     {
-        return FeedItem::create([
-            'id' => $this->id,
-            'title' => $this->title,
-            'summary' => $this->excerpt,
-            'updated' => $this->updated_at,
-            'link' => route('articles.show', $this),
-            'author' => 'Ryan Chandler',
-        ]);
+        return route('articles.og-image', $this);
+    }
+
+    public function ogImageHtml()
+    {
+        return view('articles.og-image', [
+            'article' => $this,
+        ])->render();
+    }
+
+    public function ogImage()
+    {
+        return Cache::remember("og_image_{$this->id}", now()->addWeek(), function () {
+            return Browsershot::html($this->ogImageHtml())
+                ->windowSize(1200, 600)
+                ->screenshot();
+        });
     }
 }

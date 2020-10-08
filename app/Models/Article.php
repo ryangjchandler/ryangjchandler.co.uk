@@ -2,11 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Concerns\HasComments;
-use App\Models\Concerns\HasLikes;
 use App\Models\Presenters\ArticlePresenter;
-use App\Support\Markdown\Markdown;
-use Carbon\CarbonInterval;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
@@ -35,6 +31,7 @@ class Article extends Model implements Feedable
 
         static::saving(function (Article $article) {
             Cache::forget("content_cache_{$article->id}");
+            Cache::forget("og_image_{$article->id}");
         });
     }
 
@@ -61,5 +58,17 @@ class Article extends Model implements Feedable
     public function getFeedResults()
     {
         return static::query()->published()->free()->latest('published_at')->get();
+    }
+
+    public function toFeedItem()
+    {
+        return FeedItem::create([
+            'id' => $this->id,
+            'title' => $this->title,
+            'summary' => $this->excerpt,
+            'updated' => $this->updated_at,
+            'link' => route('articles.show', $this),
+            'author' => 'Ryan Chandler',
+        ]);
     }
 }

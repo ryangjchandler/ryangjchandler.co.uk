@@ -21,6 +21,9 @@
                     </a>
                 </small>
             </div>
+            <div>
+                <small class="text-gray-600">Open Graph Images by <a class="underline" href="https://twitter.com/caneco" target="_blank" rel="noreferrer noopener">Caneco</a></small>
+            </div>
         </div>
     </div>
 </footer>
