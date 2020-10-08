@@ -36,6 +36,12 @@ class ProviderCallbackController
 
         auth()->login($current);
 
+        if ($redirect = session('sponsors_intended_url')) {
+            session()->forget('sponsors_intended_url');
+
+            return redirect($redirect);
+        }
+
         return redirect()->route('home');
     }
 }

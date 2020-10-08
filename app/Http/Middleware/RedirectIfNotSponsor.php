@@ -14,16 +14,16 @@ class RedirectIfNotSponsor
         }
 
         if (! $request->user()) {
-            return redirect()->route('login');
+            session(['sponsors_intended_url' => route('articles.show', $request->route('article'))]);
+
+            return redirect()->route('login', [
+                'sponsors_only' => true,
+            ]);
         }
 
         $isAdminOrSponsor = $request->user()->admin || $request->user()->sponsor || (int) $request->user()->sponsor->tier_price >= 5;
 
         if (! $isAdminOrSponsor) {
-            $sponsorsLink = config('services.github.sponsors_link');
-
-            session()->flash('error', "You must be a <a href=\"{$sponsorsLink}\">GitHub Sponsor</a> to access this content.");
-
             return redirect()->route('support');
         }
 
