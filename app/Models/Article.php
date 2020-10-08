@@ -31,6 +31,7 @@ class Article extends Model implements Feedable
 
         static::saving(function (Article $article) {
             Cache::forget("content_cache_{$article->id}");
+            Cache::forget("og_image_{$article->id}");
         });
     }
 
