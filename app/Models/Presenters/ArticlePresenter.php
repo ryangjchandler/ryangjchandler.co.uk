@@ -50,11 +50,7 @@ trait ArticlePresenter
     {
         return Cache::remember("og_image_{$this->id}", now()->addWeek(), function () {
             return Browsershot::html($this->ogImageHtml())
-                ->setScreenshotType('jpeg', 100)
-                ->landscape(true)
                 ->windowSize(1200, 600)
-                ->devicePixelRatio(2)
-                ->waitUntilNetworkIdle()
                 ->screenshot();
         });
     }
