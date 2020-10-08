@@ -52,7 +52,7 @@ trait ArticlePresenter
             return Browsershot::html($this->ogImageHtml())
                 ->setScreenshotType('jpeg', 100)
                 ->landscape(true)
-                // ->windowSize(1200, 600)
+                ->windowSize(1200, 600)
                 ->devicePixelRatio(2)
                 ->waitUntilNetworkIdle()
                 ->screenshot();
