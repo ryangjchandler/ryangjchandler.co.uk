@@ -37,15 +37,8 @@ trait ArticlePresenter
         return $this->published_at && $this->published_at->isPast();
     }
 
-    public function toFeedItem()
+    public function ogImageUrl()
     {
-        return FeedItem::create([
-            'id' => $this->id,
-            'title' => $this->title,
-            'summary' => $this->excerpt,
-            'updated' => $this->updated_at,
-            'link' => route('articles.show', $this),
-            'author' => 'Ryan Chandler',
-        ]);
+        return route('articles.og-image', $this);
     }
 }
