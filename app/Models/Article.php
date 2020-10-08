@@ -60,7 +60,7 @@ class Article extends Model implements Feedable
         return static::query()->published()->free()->latest('published_at')->get();
     }
 
-    public function toFeedItem()
+    public function toFeedItem(): FeedItem
     {
         return FeedItem::create([
             'id' => $this->id,
