@@ -17,6 +17,7 @@ use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('/', HomeController::class)->name('home');
 Route::view('/supporting-me', 'pages.support')->name('support');
+Route::view('/talks', 'pages.talks')->name('talks');
 
 Route::middleware('guest')->group(function () {
     Route::view('/register', 'pages.auth.register')->name('register');

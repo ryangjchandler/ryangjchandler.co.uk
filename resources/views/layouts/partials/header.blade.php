@@ -13,10 +13,15 @@
                 </button>
             </div>
             <div class="pt-4 md:pt-0 md:block" :class="{ 'block': show, 'hidden': ! show }">
-                <ul class="flex flex-col md:flex-row items-center justify-start justify-between font-semibold text-sm">
+                <ul class="flex flex-col md:flex-row items-center justify-start md:justify-between font-semibold text-sm">
                     <li class="nav-link">
                         <a href="{{ route('articles.index') }}" class="@active('articles.index', ['active'])" title="Articles">
                             Articles
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{ route('talks') }}" class="@active('support', ['active'])" title="Supporting">
+                            Talks
                         </a>
                     </li>
                     <li class="nav-link">
@@ -28,16 +33,7 @@
                         <li class="auth-nav-link">
                             <a href="{{ route('login') }}">Login</a>
                         </li>
-                        <li class="auth-nav-link">
-                            <a href="{{ route('register') }}">Register</a>
-                        </li>
-                    @else
-                        <li class="auth-nav-link">
-                            <x-form-button action="{{ route('logout.submit') }}" class="font-bold px-5">
-                                Log out
-                            </x-form-button>
-                        </li>
-                    @endif
+                    @endguest
                     <li class="text-primary-300 px-1 py-1 hover:text-primary-500 hover:bg-primary-100 focus:text-primary-500 focus:bg-primary-100 rounded">
                         <a href="{{ route('feeds.main') }}" title="RSS Feed">
                             <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
