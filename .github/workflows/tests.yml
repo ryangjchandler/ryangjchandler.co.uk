@@ -28,7 +28,9 @@ jobs:
           key: composer-${{ hashFiles('composer.lock') }}
 
       - name: Run `composer install`
-        run: composer install -n --prefer-dist
+        run: |
+          composer config "http-basic.nova.laravel.com" "${{ secrets.NOVA_USERNAME }}" "${{ secrets.NOVA_PASSWORD }}"
+          composer install -n --prefer-dist
         env:
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
 
