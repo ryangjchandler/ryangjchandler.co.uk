@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\Article;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class ArticleTest extends TestCase
@@ -34,5 +35,15 @@ class ArticleTest extends TestCase
 
         $this->get('/articles/'.$article->slug)
             ->assertStatus(200);
+    }
+
+    public function test_that_a_slug_is_generated_from_title()
+    {
+        $article = Article::factory()->create();
+
+        $this->assertSame(
+            Str::slug($article->title),
+            $article->slug
+        );
     }
 }
