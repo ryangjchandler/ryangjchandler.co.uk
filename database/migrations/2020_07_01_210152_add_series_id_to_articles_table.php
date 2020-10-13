@@ -14,7 +14,7 @@ class AddSeriesIdToArticlesTable extends Migration
     public function up()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->unsignedBigInteger('series_id')->after('published_at');
+            $table->unsignedBigInteger('series_id')->after('published_at')->nullable();
         });
     }
 }
