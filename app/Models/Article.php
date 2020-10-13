@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Presenters\ArticlePresenter;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
@@ -12,6 +13,7 @@ use Spatie\Feed\FeedItem;
 
 class Article extends Model implements Feedable
 {
+    use HasFactory;
     use ArticlePresenter;
 
     protected $casts = [
