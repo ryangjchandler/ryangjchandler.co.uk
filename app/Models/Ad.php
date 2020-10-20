@@ -10,4 +10,9 @@ class Ad extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    protected $casts = [
+        'start_at' => 'date',
+        'end_at' => 'date'
+    ];
 }
