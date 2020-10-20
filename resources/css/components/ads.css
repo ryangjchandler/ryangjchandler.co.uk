@@ -5,3 +5,7 @@
 .pre-article-ad a {
     @apply text-gray-600 underline font-medium;
 }
+
+.banner-ad-content {
+    @apply text-sm leading-5 text-blue-700;
+}

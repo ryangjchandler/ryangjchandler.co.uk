@@ -25,25 +25,29 @@
         </div>
     </main>
 
-    <div x-data="{ show: true }" x-show="show" x-cloak class="fixed shadow rounded-md bg-blue-100 mx-auto border-2 border-blue-300 p-4" style="bottom: 25px; left: 50%; transform: translateX(-50%)">
-        <div class="flex items-center">
-            <div class="flex-shrink-0">
-                <a href="#" role="button" @click="show = false" class="mb-0 whitespace-no-wrap font-medium text-blue-400 hover:text-blue-6`00 transition ease-in-out duration-150">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </a>
-            </div>
-            <div class="ml-3 flex-1 md:flex md:justify-between">
-                <p class="text-sm leading-5 text-blue-700">
-                    Are you looking for a Laravel developer for your next project?
-                </p>
-                <p class="mt-3 text-sm leading-5 md:mt-0 md:ml-6">
-                    <a href="#"
-                        class="whitespace-no-wrap font-medium text-blue-700 hover:text-blue-600 transition ease-in-out duration-150">
-                        Details &rarr;
+    @if($bannerAd = banner_ad())
+        <div x-data="{ show: true }" x-show="show" x-cloak class="fixed shadow rounded-md bg-blue-100 mx-auto border-2 border-blue-300 p-4" style="bottom: 25px; left: 50%; transform: translateX(-50%)">
+            <div class="flex items-center">
+                <div class="flex-shrink-0">
+                    <a href="#" role="button" @click="show = false" class="mb-0 whitespace-no-wrap font-medium text-blue-400 hover:text-blue-6`00 transition ease-in-out duration-150">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                     </a>
-                </p>
+                </div>
+                <div class="ml-3 flex-1 md:flex md:justify-between">
+                    <div class="banner-ad-content">
+                        {!! $bannerAd->parsedContent() !!}
+                    </div>
+                    <p class="mt-3 text-sm leading-5 md:mt-0 md:ml-6">
+                        <a href="{{ $bannerAd->call_to_action }}?ref=ryangjchandler.co.uk"
+                            class="whitespace-no-wrap font-medium text-blue-700 hover:text-blue-600 transition ease-in-out duration-150"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            Details &rarr;
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
+    @endif
 
 @endsection
