@@ -7,6 +7,7 @@
 @import "./components/nav.css";
 @import "./components/markup.css";
 @import "./components/toc.css";
+@import "./components/ads.css";
 
 @import "tailwindcss/utilities";
 

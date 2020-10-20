@@ -1,0 +1,7 @@
+.pre-article-ad {
+    @apply bg-blue-100 border-2 border-blue-200 px-4 py-2 text-gray-500 -mt-10 mb-12;
+}
+
+.pre-article-ad a {
+    @apply text-gray-600 underline font-medium;
+}
