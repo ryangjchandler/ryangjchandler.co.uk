@@ -1,0 +1,17 @@
+.pre-article-ad {
+    @apply bg-blue-100 border-2 border-blue-200 px-4 py-2 text-gray-500 mb-6;
+}
+
+@screen md {
+    .pre-article-ad {
+        @apply -mt-1 mb-12;
+    }
+}
+
+.pre-article-ad a {
+    @apply text-gray-600 underline font-medium;
+}
+
+.banner-ad-content {
+    @apply text-sm leading-5 text-blue-700;
+}
