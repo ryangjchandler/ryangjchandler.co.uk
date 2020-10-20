@@ -1,10 +1,10 @@
 .pre-article-ad {
-    @apply bg-blue-100 border-2 border-blue-200 px-4 py-2 text-gray-500 mb-6;
+    @apply bg-blue-100 border-2 border-blue-200 px-4 py-2 text-gray-500 mb-6 leading-loose;
 }
 
 @screen md {
     .pre-article-ad {
-        @apply -mt-1 mb-12;
+        @apply -mt-10 mb-12 space-y-2;
     }
 }
 
