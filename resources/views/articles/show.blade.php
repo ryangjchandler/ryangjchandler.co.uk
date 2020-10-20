@@ -38,6 +38,9 @@
 @endpush
 
 @section('content')
+<div class="bg-blue-100 border-2 border-blue-200 px-4 py-2 text-gray-500 -mt-10 mb-12">
+    Are you looking for a Laravel developer for your next project? Consider using <a href="#" class="text-gray-700 underline">Ryan Chandler</a>, click <a href="#" class="text-gray-700 underline">here</a> to contact him now.
+</div>
 <section class="mb-8">
     <h2 class="text-2xl font-bold mb-4">{{ $article->title }}</h2>
     <p class="md:text-lg text-gray-700 mb-4">{{ $article->excerpt}}</p>
