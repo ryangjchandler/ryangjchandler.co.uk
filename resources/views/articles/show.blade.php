@@ -48,29 +48,33 @@
         <h2 class="text-2xl font-bold mb-4">{{ $article->title }}</h2>
         <p class="md:text-lg text-gray-700 mb-4">{{ $article->excerpt}}</p>
 
-        @if($article->published_at)
-            <small class="text-gray-600 font-medium">Published {{ $article->published_at->diffForHumans() }}</small>
-            @if($article->updated_at->gt($article->published_at))
-                <span class="mx-2 text-gray-400">|</span>
-                <small class="text-gray-600 font-medium">Updated {{ $article->updated_at->diffForHumans() }}</small>
+        <div class="print:hidden">
+            @if($article->published_at)
+                <small class="text-gray-600 font-medium">Published {{ $article->published_at->diffForHumans() }}</small>
+                @if($article->updated_at->gt($article->published_at))
+                    <span class="mx-2 text-gray-400">|</span>
+                    <small class="text-gray-600 font-medium">Updated {{ $article->updated_at->diffForHumans() }}</small>
+                @endif
             @endif
-        @endif
 
-        @if($article->sponsors_only)
-            <small class="mx-2 text-gray-400">|</small>
-            <small class="bg-primary-200 text-primary-900 font-bold rounded px-2 py-1">Sponsors only</small>
-        @endif
+            @if($article->sponsors_only)
+                <small class="mx-2 text-gray-400">|</small>
+                <small class="bg-primary-200 text-primary-900 font-bold rounded px-2 py-1">Sponsors only</small>
+            @endif
+        </div>
 
-        @if($article->tags)
-            <div class="mt-4">
-                @foreach($article->tags as $tag)
-                    <x-badge class="mr-2">{{ $tag->title }}</x-badge>
-                @endforeach
-            </div>
-        @endif
+        <div class="print:hidden">
+            @if($article->tags)
+                <div class="mt-4">
+                    @foreach($article->tags as $tag)
+                        <x-badge class="mr-2">{{ $tag->title }}</x-badge>
+                    @endforeach
+                </div>
+            @endif
+        </div>
 
         @if($article->series)
-            <div class="rounded bg-primary-100 bg-opacity-50 px-5 py-4 mt-4">
+            <div class="rounded bg-primary-100 bg-opacity-50 px-5 py-4 mt-4 print:hidden">
                 <p class="font-medium text-primary-800 mb-1">
                     This article is part of the <strong>{{ $article->series->title }}</strong> series.
                 </p>
