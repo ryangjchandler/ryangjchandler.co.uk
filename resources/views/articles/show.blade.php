@@ -29,11 +29,17 @@
 
 @push('style')
     @if(! $article->show_toc)
-    <style>
-        .table-of-contents {
-            display: none !important;
-        }
-    </style>
+        <style>
+            .table-of-contents {
+                display: none !important;
+            }
+        </style>
+    @endif
+
+    @if(! $article->allow_pdf_download)
+        <style media="print">
+            body { visibility: hidden !important; display: none !important; }
+        </style>
     @endif
 @endpush
 
@@ -62,14 +68,16 @@
                 <small class="bg-primary-200 text-primary-900 font-bold rounded px-2 py-1">Sponsors only</small>
             @endif
 
-            <span class="mx-2 text-gray-400">|</span>
+            @if($article->allow_pdf_download)
+                <span class="mx-2 text-gray-400">|</span>
 
-            <button class="group flex items-center justify-between space-x-2 text-gray-400 hover:text-primary-500 transition-colors ease-in-out duration-150">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                <small class="text-gray-400 font-medium mb-0 group-hover:text-primary-500 transition-colors ease-in-out duration-150">
-                    Download as PDF
-                </small>
-            </button>
+                <button x-data @click.prevent="window.print()" class="group flex items-center justify-between space-x-2 text-gray-400 hover:text-primary-500 transition-colors ease-in-out duration-150">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <small class="text-gray-400 font-medium mb-0 group-hover:text-primary-500 transition-colors ease-in-out duration-150">
+                        Download as PDF
+                    </small>
+                </button>
+            @endif
         </div>
 
         <div class="print:hidden">

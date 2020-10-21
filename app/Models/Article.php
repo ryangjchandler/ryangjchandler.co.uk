@@ -19,6 +19,7 @@ class Article extends Model implements Feedable
     protected $casts = [
         'sponsors_only' => 'bool',
         'show_toc' => 'bool',
+        'allow_pdf_download' => 'bool',
     ];
 
     protected $dates = ['published_at'];
