@@ -62,6 +62,9 @@ class Article extends Resource
 
             Boolean::make('Show Table of Contents', 'show_toc'),
 
+            Boolean::make('Allow PDF Download', 'allow_pdf_download')
+                ->default(false),
+
             BelongsToMany::make('Tags'),
 
             BelongsTo::make('Series')

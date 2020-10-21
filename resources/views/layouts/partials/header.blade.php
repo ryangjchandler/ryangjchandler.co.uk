@@ -1,4 +1,4 @@
-<header class="border-b border-gray-200 py-2">
+<header class="border-b border-gray-200 py-2 print:hidden">
     <div class="max-w-4xl container px-4 mx-auto">
         <nav x-data="{ show: false }" class="py-1 flex flex-col md:flex-row md:items-center justify-between">
             <div class="flex items-center justify-between">

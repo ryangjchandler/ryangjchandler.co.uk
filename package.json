@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "css": "postcss ./resources/css/app.css -o ./public/css/app.css",
-        "watch-css": "npm run css -w",
+        "watch-css": "npm run css --watch",
         "js": "node ./bin/build.js",
         "build": "npm run css && npm run js && node ./bin/manifest.js",
         "production": "NODE_ENV=production npm run build",

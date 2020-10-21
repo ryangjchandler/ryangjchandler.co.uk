@@ -19,7 +19,7 @@
 }
 
 .markup :not(pre) > code {
-    @apply bg-primary-100 text-primary-700 rounded font-medium px-2 py-1 border-b-2 border-primary-700 mx-1;
+    @apply bg-primary-100 text-primary-700 rounded font-medium px-2 py-1 border-b-2 border-primary-700 mx-1 whitespace-no-wrap;
 }
 
 .markup pre > code {
@@ -62,11 +62,18 @@
 }
 
 .markup ol {
-    @apply list-decimal ml-10;
+    counter-reset: item;
+    @apply ml-4 mb-4;
 }
 
 .markup li {
     @apply mb-1;
+}
+
+.markup ol > li:before {
+    content: counter(item) ". ";
+    counter-increment: item;
+    font-weight: bold;
 }
 
 .markup a {
@@ -76,4 +83,28 @@
 .markup blockquote {
     @apply font-medium italic text-gray-900 border-l-4 border-primary-300 pl-4;
     quotes: "\\201C""\\201D""\\2018""\\2019";
+}
+
+@screen print {
+
+    body {
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    @page {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .markup pre {
+        page-break-inside: avoid;
+    }
+
+    .markup h2 {
+        page-break-before: always;
+    }
+
+    .markup a.heading-permalink {
+        @apply hidden;
+    }
 }
