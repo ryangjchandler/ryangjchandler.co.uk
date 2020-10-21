@@ -2,7 +2,9 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\GenerateArticlePreviewLink;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
@@ -64,6 +66,22 @@ class Article extends Resource
 
             BelongsTo::make('Series')
                 ->nullable(),
+
+            Text::make('Preview Link')
+                ->onlyOnDetail()
+                ->asHtml()
+                ->resolveUsing(function () {
+                    return sprintf(
+                        '<a class="%s" href="javascript:void(0)" data-url="%s" onclick="%s">Click to Copy</a>',
+                        'no-underline font-bold dim text-primary',
+                        URL::signedRoute('articles.preview', $this),
+                        <<<HTML
+                            event.preventDefault();
+                            navigator.clipboard.writeText(event.target.dataset.url);
+                            window.Nova.app.\$toasted.show('Preview link copied!', { type: 'success' })
+                        HTML
+                    );
+                })
         ];
     }
 
