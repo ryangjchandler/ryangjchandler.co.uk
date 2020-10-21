@@ -70,7 +70,7 @@
     @apply mb-1;
 }
 
-.markup li:before {
+.markup ol > li:before {
     content: counter(item) ". ";
     counter-increment: item;
     font-weight: bold;
