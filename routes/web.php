@@ -11,6 +11,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StoreCommentController;
 use App\Http\Controllers\StoreLikeController;
 use App\Http\Controllers\TagController;
+use App\Http\Middleware\RedirectIfNotPublished;
 use App\Http\Middleware\RedirectIfNotSponsor;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
@@ -31,8 +32,12 @@ Route::middleware('guest')->group(function () {
 Route::get('/articles', [ArticlesController::class, 'index'])->name('articles.index');
 
 Route::get('/articles/{article:slug}', [ArticlesController::class, 'show'])
-    ->middleware(RedirectIfNotSponsor::class)
+    ->middleware(RedirectIfNotSponsor::class, RedirectIfNotPublished::class)
     ->name('articles.show');
+
+Route::get('/articles/{article:slug}/preview', [ArticlesController::class, 'show'])
+    ->middleware('signed')
+    ->name('articles.preview');
 
 Route::get('/articles/{article}/og-image', ArticleOgImageController::class)
     ->name('articles.og-image');

@@ -13,7 +13,9 @@ class ArticleTest extends TestCase
 
     public function test_that_an_article_can_be_viewed()
     {
-        $article = Article::factory()->create();
+        $article = Article::factory()->published()->create();
+
+        $this->withoutExceptionHandling();
 
         $this->get('/articles/'.$article->slug)
             ->assertStatus(200);
@@ -21,7 +23,7 @@ class ArticleTest extends TestCase
 
     public function test_that_a_sponsors_only_article_cant_be_viewed_when_not_logged_in()
     {
-        $article = Article::factory()->sponsorsOnly()->create();
+        $article = Article::factory()->sponsorsOnly()->published()->create();
 
         $this->get('/articles/'.$article->slug)
             ->assertRedirect('/login?sponsors_only=1');
@@ -31,7 +33,7 @@ class ArticleTest extends TestCase
     {
         $this->login();
 
-        $article = Article::factory()->sponsorsOnly()->create();
+        $article = Article::factory()->sponsorsOnly()->published()->create();
 
         $this->get('/articles/'.$article->slug)
             ->assertStatus(200);
@@ -39,7 +41,7 @@ class ArticleTest extends TestCase
 
     public function test_that_a_slug_is_generated_from_title()
     {
-        $article = Article::factory()->create();
+        $article = Article::factory()->published()->create();
 
         $this->assertSame(
             Str::slug($article->title),
