@@ -1,7 +1,5 @@
 <html>
     <head>
-    <script src="//d3plus.org/js/d3.js"></script>
-    <script src="//d3plus.org/js/d3plus.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
