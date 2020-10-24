@@ -24,6 +24,8 @@ class Tag extends Resource
      */
     public static $title = 'title';
 
+    public static $group = 'Blog';
+
     /**
      * The columns that should be searched.
      *
