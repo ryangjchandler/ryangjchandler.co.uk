@@ -2,47 +2,72 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsTo;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
-class NewsletterList extends Resource
+class NewsletterSubscriber extends Resource
 {
-    public static $model = \App\Models\NewsletterList::class;
+    /**
+     * The model the resource corresponds to.
+     *
+     * @var string
+     */
+    public static $model = \App\Models\NewsletterSubscriber::class;
 
-    public static $title = 'name';
+    /**
+     * The single value that should be used to represent the resource when being displayed.
+     *
+     * @var string
+     */
+    public static $title = 'id';
 
     public static $group = 'Newsletter';
 
+    /**
+     * The columns that should be searched.
+     *
+     * @var array
+     */
     public static $search = [
-        'id', 'name', 'subject'
+        'id',
     ];
 
+    /**
+     * Get the fields displayed by the resource.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */
     public function fields(Request $request)
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Name')
-                ->required(),
-
-            Text::make('Subject')
-                ->required(),
-
-            Text::make('From Name')
+            Text::make('First Name')
                 ->nullable(),
 
-            Text::make('From Email')
-                ->rules(['nullable', 'email']),
+            Text::make('Last Name')
+                ->nullable(),
 
-            Boolean::make('Active'),
+            Text::make('Email')
+                ->required(),
 
-            Boolean::make('Default')
-                ->help('This list will be used as the default when no other is provided.'),
+            Boolean::make('Double Opt In')
+                ->nullable(),
 
-            HasMany::make('Subscribers', 'subscribers', NewsletterSubscriber::class),
+            Boolean::make('Subscribed')
+                ->default(true),
+
+            DateTime::make('Unsubscribed At')
+                ->nullable(),
+
+            BelongsTo::make('List', 'list' , NewsletterList::class)
+                ->required(),
         ];
     }
 
@@ -92,11 +117,6 @@ class NewsletterList extends Resource
 
     public static function label()
     {
-        return 'Lists';
-    }
-
-    public static function singularLabel()
-    {
-        return 'List';
+        return 'Subscribers';
     }
 }

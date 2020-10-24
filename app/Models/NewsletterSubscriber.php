@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class NewsletterSubscriber extends Model
 {
     use HasFactory;
+
+    public function list()
+    {
+        return $this->belongsTo(NewsletterList::class);
+    }
 }
