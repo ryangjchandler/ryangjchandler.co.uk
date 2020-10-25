@@ -10,6 +10,10 @@ class Newsletter extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'sent_at' => 'datetime',
+    ];
+
     public function list()
     {
         return $this->belongsTo(NewsletterList::class, 'newsletter_list_id');

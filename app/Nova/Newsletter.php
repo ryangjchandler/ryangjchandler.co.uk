@@ -5,6 +5,7 @@ namespace App\Nova;
 use Laravel\Nova\Fields\BelongsTo;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Code;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
@@ -59,6 +60,9 @@ class Newsletter extends Resource
                 ->nullable(),
 
             BelongsTo::make('List', 'list', NewsletterList::class),
+
+            DateTime::make('Sent At')
+                ->onlyOnIndex(),
         ];
     }
 
