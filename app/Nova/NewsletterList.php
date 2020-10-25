@@ -43,6 +43,8 @@ class NewsletterList extends Resource
                 ->help('This list will be used as the default when no other is provided.'),
 
             HasMany::make('Subscribers', 'subscribers', NewsletterSubscriber::class),
+
+            HasMany::make('Newsletters', 'newsletters', Newsletter::class),
         ];
     }
 

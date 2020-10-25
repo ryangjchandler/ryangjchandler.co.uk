@@ -2,8 +2,12 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsTo;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Newsletter extends Resource
@@ -43,6 +47,18 @@ class Newsletter extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+
+            Text::make('Title')
+                ->required(),
+
+            Text::make('Subject')
+                ->nullable(),
+
+            Code::make('Content')
+                ->language('html')
+                ->nullable(),
+
+            BelongsTo::make('List', 'list', NewsletterList::class),
         ];
     }
 
