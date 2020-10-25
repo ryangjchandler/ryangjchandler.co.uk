@@ -18,6 +18,7 @@ class CreateNewslettersTable extends Migration
             $table->unsignedBigInteger('newsletter_list_id');
             $table->string('subject');
             $table->text('content')->nullable();
+            $table->timestamp('sent_at')->nullable();
             $table->timestamps();
         });
     }
