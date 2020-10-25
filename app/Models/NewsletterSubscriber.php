@@ -12,7 +12,7 @@ class NewsletterSubscriber extends Model
 
     public function list()
     {
-        return $this->belongsTo(NewsletterList::class);
+        return $this->belongsTo(NewsletterList::class, 'newsletter_list_id');
     }
 
     public function scopeOptedIn(Builder $query): void
