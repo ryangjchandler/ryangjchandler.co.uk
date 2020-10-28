@@ -3,7 +3,7 @@
     class="w-full bg-primary-100 bg-opacity-50 px-8 py-6"
 >
     <h4 class="text-xl font-semibold text-primary-800 mb-1">Want to stay up to date with my articles, videos and other resources?</h4>
-    <p class="text-normal font-medium text-primary-500 mb-3 text-sm">I run a bi-weekly newsletter for Laravel and JavaScript developers.</p>
+    <p class="text-normal font-medium text-primary-500 mb-3 text-sm">I run a fortnightly newsletter for Laravel and JavaScript developers.</p>
     <div class="flex flex-col md:flex-row items-center justify-between mb-2">
         <x-input type="email" name="email" id="bd-email" class="w-full mb-2 md:mb-0" aria-placeholder="mail@ryangjchandler.co.uk" placeholder="mail@ryangjchandler.co.uk" />
         <input type="hidden" value="1" name="embed"></input>
