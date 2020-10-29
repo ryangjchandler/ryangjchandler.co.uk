@@ -10,7 +10,12 @@ class RedirectIfNotPublished
 {
     public function handle(Request $request, Closure $next)
     {
-        if (! $request->route('article')->published_at->isPast() && ! ($request->user() && $request->user()->admin)) {
+        $article = $request->route('article');
+
+        if (
+            (! $article->published_at || ! $article->published_at->isPast()) &&
+            ! ($request->user() && $request->user()->admin)
+        ) {
             return redirect()->route('articles.index');
         }
 
