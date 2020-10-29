@@ -52,12 +52,12 @@
                     <span class="ml-2 text-gray-900">Remember me</span>
                 </label>
                 <div>
-                    <a href="{{ route('register') }}" class="text-primary-600 font-medium underline dotted" title="No account">
+                    <a href="{{ route('register') }}" class="text-brand-primary-600 font-medium underline dotted" title="No account">
                         No account?
                     </a>
                 </div>
             </div>
-            <button type="submit" class="w-full md:w-auto bg-primary-100 text-primary-600 font-bold px-6 py-2 rounded-t border-b border-primary-600">
+            <button type="submit" class="w-full md:w-auto bg-brand-primary-100 text-brand-primary-600 font-bold px-6 py-2 rounded-t border-b border-brand-primary-600">
                 Login
             </button>
         </form>

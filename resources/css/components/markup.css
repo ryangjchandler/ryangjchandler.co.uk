@@ -15,11 +15,11 @@
 }
 
 .markup pre {
-    @apply relative bg-primary-900 rounded text-white px-8 py-6 mb-4 overflow-x-auto border-b-4 border-primary-400;
+    @apply relative bg-brand-primary-900 rounded text-white px-8 py-6 mb-4 overflow-x-auto border-b-4 border-brand-primary-400;
 }
 
 .markup :not(pre) > code {
-    @apply bg-primary-100 text-primary-700 rounded font-medium px-2 py-1 border-b-2 border-primary-700 mx-1 whitespace-no-wrap;
+    @apply bg-brand-primary-100 text-brand-primary-700 rounded font-medium px-2 py-1 border-b-2 border-brand-primary-700 mx-1 whitespace-no-wrap;
 }
 
 .markup pre > code {
@@ -77,11 +77,11 @@
 }
 
 .markup a {
-    @apply underline dotted text-primary-500 font-medium
+    @apply underline dotted text-brand-primary-500 font-medium
 }
 
 .markup blockquote {
-    @apply font-medium italic text-gray-900 border-l-4 border-primary-300 pl-4;
+    @apply font-medium italic text-gray-900 border-l-4 border-brand-primary-300 pl-4;
     quotes: "\\201C""\\201D""\\2018""\\2019";
 }
 

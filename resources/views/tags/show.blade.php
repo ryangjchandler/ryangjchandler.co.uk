@@ -23,14 +23,14 @@
                 <h3 class="text-lg font-bold md:text-right text-gray-700 hover:text-gray-900 mb-2">Tags</h3>
                 @foreach($tags as $tag)
                     <a href="{{ route('tags.show', $tag) }}">
-                        <x-badge class="mb-2 hover:bg-primary-200">{{ $tag->title }}</x-badge>
+                        <x-badge class="mb-2 hover:bg-brand-primary-200">{{ $tag->title }}</x-badge>
                     </a>
                 @endforeach
             </div>
             <div class="md:text-right">
                 <h3 class="text-lg font-bold md:text-right text-gray-700 hover:text-gray-900">Archive</h3>
                 @foreach($dates as $date => $items)
-                    <a href="?date={{ $date }}" class="block md:text-right text-primary-400 hover:text-primary-600 hover:underline font-medium mt-4">
+                    <a href="?date={{ $date }}" class="block md:text-right text-brand-primary-400 hover:text-brand-primary-600 hover:underline font-medium mt-4">
                         {{ $date }} ({{ $items->count() }})
                     </a>
                 @endforeach

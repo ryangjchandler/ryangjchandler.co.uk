@@ -1,6 +1,11 @@
 const defaults = require('tailwindcss/defaultTheme')
 
 module.exports = {
+    experimental: 'all',
+    future: {
+        removeDeprecatedGapUtilities: true,
+        purgeLayersByDefault: true,
+    },
     purge: [
         './resources/views/**/*.blade.php'
     ],
@@ -13,7 +18,7 @@ module.exports = {
                 ]
             },
             colors: {
-                'primary': {
+                'brand-primary': {
                     100: '#E6F2FF',
                     200: '#BFDEFF',
                     300: '#99CAFF',
@@ -23,6 +28,11 @@ module.exports = {
                     700: '#004999',
                     800: '#003773',
                     900: '#00254D',
+                },
+                primary: {
+                    light: "#99CAFF",
+                    default: "#007AFF",
+                    dark: "#003773",
                 },
             },
             screens: {
@@ -34,10 +44,6 @@ module.exports = {
     },
     variants: {},
     plugins: [
-        require('@tailwindcss/custom-forms'),
-        require('@tailwindcss/ui')
+        require('kutty')
     ],
-    experimental: {
-        applyComplexClasses: true
-    }
 }
