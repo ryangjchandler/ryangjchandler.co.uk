@@ -3,7 +3,7 @@ li.nav-link {
 }
 
 li.nav-link:hover {
-    @apply bg-primary-100 text-primary-600;
+    @apply bg-brand-primary-100 text-brand-primary-600;
 }
 
 li.nav-link a {
@@ -11,15 +11,15 @@ li.nav-link a {
 }
 
 li.nav-link a.active {
-    @apply rounded bg-primary-100 text-primary-600;
+    @apply rounded bg-brand-primary-100 text-brand-primary-600;
 }
 
 li.auth-nav-link {
-    @apply w-full font-bold text-primary-500 rounded mr-2 text-center;
+    @apply w-full font-bold text-brand-primary-500 rounded mr-2 text-center;
 }
 
 li.auth-nav-link:hover {
-    @apply bg-primary-100 text-primary-600;
+    @apply bg-brand-primary-100 text-brand-primary-600;
 }
 
 li.auth-nav-link a, li.auth-nav-link button {
@@ -27,7 +27,7 @@ li.auth-nav-link a, li.auth-nav-link button {
 }
 
 .menu-button {
-    @apply block uppercase font-semibold border-b-2 border-primary-200 px-4 py-2 bg-primary-100 text-primary-600 rounded-t text-sm;
+    @apply block uppercase font-semibold border-b-2 border-brand-primary-200 px-4 py-2 bg-brand-primary-100 text-brand-primary-600 rounded-t text-sm;
 }
 
 @screen md {

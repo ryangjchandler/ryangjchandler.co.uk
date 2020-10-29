@@ -65,15 +65,15 @@
 
             @if($article->sponsors_only)
                 <small class="mx-2 text-gray-400">|</small>
-                <small class="bg-primary-200 text-primary-900 font-bold rounded px-2 py-1">Sponsors only</small>
+                <small class="bg-brand-primary-200 text-brand-primary-900 font-bold rounded px-2 py-1">Sponsors only</small>
             @endif
 
             @if($article->allow_pdf_download)
                 <span class="mx-2 text-gray-400">|</span>
 
-                <button x-data @click.prevent="window.print()" class="group flex items-center justify-between space-x-2 text-gray-400 hover:text-primary-500 transition-colors ease-in-out duration-150">
+                <button x-data @click.prevent="window.print()" class="group flex items-center justify-between space-x-2 text-gray-400 hover:text-brand-primary-500 transition-colors ease-in-out duration-150">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                    <small class="text-gray-400 font-medium mb-0 group-hover:text-primary-500 transition-colors ease-in-out duration-150">
+                    <small class="text-gray-400 font-medium mb-0 group-hover:text-brand-primary-500 transition-colors ease-in-out duration-150">
                         Download as PDF
                     </small>
                 </button>
@@ -91,14 +91,14 @@
         </div>
 
         @if($article->series)
-            <div class="rounded bg-primary-100 bg-opacity-50 px-5 py-4 mt-4 print:hidden">
-                <p class="font-medium text-primary-800 mb-1">
+            <div class="rounded bg-brand-primary-100 bg-opacity-50 px-5 py-4 mt-4 print:hidden">
+                <p class="font-medium text-brand-primary-800 mb-1">
                     This article is part of the <strong>{{ $article->series->title }}</strong> series.
                 </p>
                 <ol class="list-decimal pl-5 mt-2">
                     @foreach($article->series->articles as $seriesArticle)
                     <li
-                        class="@if(! $article->is($seriesArticle)) text-gray-600 @else text-primary-500 hover:text-primary-400 @endif">
+                        class="@if(! $article->is($seriesArticle)) text-gray-600 @else text-brand-primary-500 hover:text-brand-primary-400 @endif">
                         @if($article->is($seriesArticle))
                         <p class="@if(! $loop->first) mt-2 @endif">{{ $seriesArticle->formattedTitle(true) }}</p>
                         @else
