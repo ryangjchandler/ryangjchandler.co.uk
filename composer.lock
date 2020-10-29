@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "13b02789b410bb97c01119e5d462aebe",
+    "content-hash": "27be73502ff2b4997dfbe4a5f9842b41",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1351,6 +1351,61 @@
                 "watermark"
             ],
             "time": "2019-11-02T09:15:47+00:00"
+        },
+        {
+            "name": "larabug/larabug",
+            "version": "2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaraBug/LaraBug.git",
+                "reference": "31827dcfce4058e06b8af4bbf673ee13ce5d2f1b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaraBug/LaraBug/zipball/31827dcfce4058e06b8af4bbf673ee13ce5d2f1b",
+                "reference": "31827dcfce4058e06b8af4bbf673ee13ce5d2f1b",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.0.2|^7.0",
+                "illuminate/support": "^5.8|^6.0|^7.0|^8.0",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.8|^4.0|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaraBug\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaraBug\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dennis Smink",
+                    "email": "dennissmink@gmail.com",
+                    "homepage": "http://www.dennissmink.nl",
+                    "role": "Owner"
+                }
+            ],
+            "description": "Laravel 5.8/6.x/7.x bug notifier",
+            "keywords": [
+                "error",
+                "laravel",
+                "log"
+            ],
+            "time": "2020-09-03T11:04:15+00:00"
         },
         {
             "name": "laravel/framework",
