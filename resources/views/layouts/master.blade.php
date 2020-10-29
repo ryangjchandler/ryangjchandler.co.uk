@@ -14,7 +14,7 @@
 </head>
 <body class="antialiased min-h-screen max-w-screen">
     @yield('body')
+
     @include('layouts.partials.footer')
-    <script type="module" src="{{ mix('js/index.js') }}"></script>
 </body>
 </html>
