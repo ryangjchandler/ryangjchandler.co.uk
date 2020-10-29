@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>404 - {{ config('app.name') }}</title>
+    <title>500 - {{ config('app.name') }}</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 
