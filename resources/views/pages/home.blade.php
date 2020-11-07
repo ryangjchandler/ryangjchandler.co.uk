@@ -41,6 +41,13 @@
                             <p class="text-sm text-gray-600 font-normal mb-3">
                                 {{ $article->excerpt }}
                             </p>
+                            <div class="flex space-x-2 mb-6">
+                                @foreach($article->tags as $tag)
+                                    <a class="badge bg-gray-200 hover:bg-gray-400 text-gray-900" href="{{ $tag->url() }}">
+                                        {{ $tag->title }}
+                                    </a>
+                                @endforeach
+                            </div>
                             <a href="#" class="btn btn-light btn-sm">Read More</a>
                         </div>
                     </div>
