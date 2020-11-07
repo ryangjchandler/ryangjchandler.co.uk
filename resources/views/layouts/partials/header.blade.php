@@ -4,8 +4,8 @@
             Ryan Chandler
         </a>
         <div class="hidden md:inline-flex space-x-1 relative">
-            <a href="#" class="btn btn-sm rounded-full btn-white">About</a>
-            <a href="#" class="btn btn-sm rounded-full btn-white">Articles</a>
+            <!-- <a href="#" class="btn btn-sm rounded-full btn-white">About</a> -->
+            <a href="{{ route('articles.index') }}" class="btn btn-sm rounded-full btn-white">Articles</a>
         </div>
         <div class="flex items-center space-x-1">
             <a href="{{ route('support') }}" class="btn btn-sm rounded-full btn-dark">Support Me</a>
