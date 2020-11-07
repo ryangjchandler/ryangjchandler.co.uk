@@ -39,6 +39,11 @@ trait ArticlePresenter
         return $this->published_at && $this->published_at->isPast();
     }
 
+    public function url()
+    {
+        return route('articles.show', $this);
+    }
+
     public function ogImageUrl()
     {
         return route('articles.og-image', $this);

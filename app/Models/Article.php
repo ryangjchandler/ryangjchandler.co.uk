@@ -21,6 +21,7 @@ class Article extends Model implements Feedable
         'show_toc' => 'bool',
         'allow_pdf_download' => 'bool',
         'show_series_title_in_og_image' => 'bool',
+        'featured' => 'bool',
     ];
 
     protected $dates = ['published_at'];
@@ -57,6 +58,11 @@ class Article extends Model implements Feedable
     public function scopeFree(Builder $query)
     {
         $query->where('sponsors_only', 0);
+    }
+
+    public function scopeFeatured(Builder $query)
+    {
+        $query->where('featured', 1);
     }
 
     public function getFeedResults()

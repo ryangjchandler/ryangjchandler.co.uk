@@ -69,6 +69,9 @@ class Article extends Resource
             Boolean::make('Show Series Title in Open Graph Image', 'show_series_title_in_og_image')
                 ->default(false),
 
+            Boolean::make('Featured')
+                ->default(false),
+
             BelongsToMany::make('Tags'),
 
             BelongsTo::make('Series')

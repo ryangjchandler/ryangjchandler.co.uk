@@ -9,8 +9,9 @@ class HomeController
     public function __invoke()
     {
         return view('pages.home', [
-            'articles' => Article::latest('published_at')
-                ->published()
+            'featured' => Article::query()
+                ->featured()
+                ->limit(3)
                 ->get(),
         ]);
     }
