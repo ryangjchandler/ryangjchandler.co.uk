@@ -27,19 +27,9 @@ final class MarkdownServiceProvider extends ServiceProvider implements Deferrabl
             $env = Environment::createCommonMarkEnvironment()
                 ->addBlockRenderer(FencedCode::class, new FencedCodeRenderer($this->languages))
                 ->addBlockRenderer(IndentedCode::class, new IndentedCodeRenderer($this->languages))
-                ->addExtension(new HeadingPermalinkExtension)
-                ->addExtension(new TableOfContentsExtension);
+                ->addExtension(new HeadingPermalinkExtension);
 
             return new CommonMarkConverter([
-                'table_of_contents' => [
-                    'html_class' => 'table-of-contents',
-                    'position' => 'top',
-                    'style' => 'bullet',
-                    'min_heading_level' => 1,
-                    'max_heading_level' => 6,
-                    'normalize' => 'relative',
-                    'placeholder' => null,
-                ],
                 'heading_permalink' => [
                     'symbol' => '#',
                     'insert' => HeadingPermalinkProcessor::INSERT_AFTER,

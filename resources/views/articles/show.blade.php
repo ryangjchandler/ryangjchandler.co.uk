@@ -11,7 +11,7 @@
     <meta property="og:image" content="{{ $article->ogImageUrl() }}" />
 
     @foreach($article->tags as $tag)
-        <meta property="article:tag" content="{{ $tag->title }}" />
+    <meta property="article:tag" content="{{ $tag->title }}" />
     @endforeach
 
     <meta property="article:published_time" content="{{ optional($article->published_at)->toIso8601String() }}">
@@ -28,99 +28,53 @@
 @endsection
 
 @push('style')
-    @if(! $article->show_toc)
-        <style>
-            .table-of-contents {
-                display: none !important;
-            }
-        </style>
-    @endif
+    <link href="https://unpkg.com/nord-highlightjs@0.2.0/dist/nord.css" rel="stylesheet" type="text/css" />
 
-    @if(! $article->allow_pdf_download)
-        <style media="print">
-            body { visibility: hidden !important; display: none !important; }
-        </style>
-    @endif
+    <script src="https://cdn.jsdelivr.net/npm/kutty@latest/dist/tooltip.min.js"></script>
 @endpush
 
 @section('content')
-    @if($preArticleAd = pre_article_ad())
-        <div class="pre-article-ad">
-            {!! $preArticleAd->parsedContent() !!}
-        </div>
-    @endif
-
-    <section class="mb-8">
-        <h2 class="text-2xl font-bold mb-4">{{ $article->title }}</h2>
-        <p class="md:text-lg text-gray-700 mb-4">{{ $article->excerpt}}</p>
-
-        <div class="flex items-center print:hidden">
-            @if($article->published_at)
-                <small class="text-gray-600 font-medium">Published {{ $article->published_at->diffForHumans() }}</small>
-                @if($article->updated_at->gt($article->published_at))
-                    <span class="mx-2 text-gray-400">|</span>
-                    <small class="text-gray-600 font-medium">Updated {{ $article->updated_at->diffForHumans() }}</small>
-                @endif
-            @endif
-
-            @if($article->sponsors_only)
-                <small class="mx-2 text-gray-400">|</small>
-                <small class="bg-brand-primary-200 text-brand-primary-900 font-bold rounded px-2 py-1">Sponsors only</small>
-            @endif
-
-            @if($article->allow_pdf_download)
-                <span class="mx-2 text-gray-400">|</span>
-
-                <button x-data @click.prevent="window.print()" class="group flex items-center justify-between space-x-2 text-gray-400 hover:text-brand-primary-500 transition-colors ease-in-out duration-150">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                    <small class="text-gray-400 font-medium mb-0 group-hover:text-brand-primary-500 transition-colors ease-in-out duration-150">
-                        Download as PDF
-                    </small>
-                </button>
-            @endif
-        </div>
-
-        <div class="print:hidden">
-            @if($article->tags)
-                <div class="mt-4">
-                    @foreach($article->tags as $tag)
-                        <x-badge class="mr-2">{{ $tag->title }}</x-badge>
-                    @endforeach
-                </div>
-            @endif
-        </div>
-
-        @if($article->series)
-            <div class="rounded bg-brand-primary-100 bg-opacity-50 px-5 py-4 mt-4 print:hidden">
-                <p class="font-medium text-brand-primary-800 mb-1">
-                    This article is part of the <strong>{{ $article->series->title }}</strong> series.
+    <article class="container max-w-2xl mx-auto py-24 px-4 md:px-0" itemid="#" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="w-full mx-auto text-left mb-12">
+            @if($article->series)
+                <p class="mt-6 mb-2 text-primary uppercase tracking-wider font-semibold text-xs">
+                    {{ $article->series->title }}
                 </p>
-                <ol class="list-decimal pl-5 mt-2">
-                    @foreach($article->series->articles as $seriesArticle)
-                    <li
-                        class="@if(! $article->is($seriesArticle)) text-gray-600 @else text-brand-primary-500 hover:text-brand-primary-400 @endif">
-                        @if($article->is($seriesArticle))
-                        <p class="@if(! $loop->first) mt-2 @endif">{{ $seriesArticle->formattedTitle(true) }}</p>
-                        @else
-                        <a @if($seriesArticle->isPublished()) href="{{ route('articles.show', $seriesArticle) }}" @endif
-                            class="underline @if(! $loop->first) mt-2 @endif"
-                            >
-                            {{ $seriesArticle->formattedTitle(true) }}
-                        </a>
-                        @endif
-                    </li>
-                    @endforeach
-                </ol>
+            @endif
+            <h1 class="text-3xl md:text-4xl text-gray-900 leading-tight mb-3 font-bold" itemprop="headline"
+                title="{{ $article->formattedTitle() }}">
+                {{ $article->formattedTitle() }}
+            </h1>
+            <div class="flex space-x-2 mb-6">
+                @foreach($article->tags as $tag)
+                    <a class="badge bg-gray-200 hover:bg-gray-400 text-gray-900" href="{{ $tag->url() }}">
+                        {{ $tag->title }}
+                    </a>
+                @endforeach
             </div>
-        @endif
-
-        <article class="@if($article->series) mt-4 @else mt-6 @endif w-full markup">
-            {!! $article->parsedContent() !!}
-        </article>
-
-        <div class="mt-6 bg-brand-primary-400 rounded-lg px-4 py-2 font-medium text-sm text-gray-200">
-            Got some feedback for me? Let me know on <a href="https://twitter.com/ryangjchandler" class="underline dotted hover:text-white">Twitter</a>, or send me an email at
-            <a href="mailto:{{ $article->slug }}-feedback@ryangjchandler.co.uk" class="underline dotted hover:text-white">{{ $article->slug }}-feedback@ryangjchandler.co.uk</a>.
+            <div class="flex space-x-4">
+                <p class="text-base text-gray-700">{{ $article->published_at->format('F d, Y') }}</p>
+                <span>&mdash;</span>
+                <div class="flex items-center space-x-2 mb-6">
+                    <p class="text-gray-700">Share this article</p>
+                    <a x-data="tooltip()" x-spread="tooltip" x-position="top" title="Share on Twitter" class="text-gray-700 hover:text-gray-900"
+                        href="https://twitter.com/share?text={{ $article->title }}&url={{ $article->url() }}" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="h-5 w-5 flex-none" fill="currentColor">
+                            <path
+                            d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809	c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793	c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05	c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032	c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028	c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22	c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"
+                            />
+                        </svg>
+                    </a>
+                    <a @click.prevent="navigator.clipboard.writeText(url) && ($el.title = 'Copied')"
+                        x-data="{ ...tooltip(), url: '{{ $article->url() }}' }" x-spread="tooltip" x-position="top" title="Click to copy link to clipboard" class="text-gray-700 hover:text-gray-900 cursor-pointer">
+                        <svg class="w-4 h-4 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                    </a>
+                </div>
+            </div>
         </div>
-    </section>
+
+        <div class="w-full mx-auto prose">
+            {!! $article->parsedContent() !!}
+        </div>
+    </article>
 @endsection

@@ -48,7 +48,7 @@
                                     </a>
                                 @endforeach
                             </div>
-                            <a href="#" class="btn btn-light btn-sm">Read More</a>
+                            <a href="{{ $article->url() }}" class="btn btn-light btn-sm">Read More</a>
                         </div>
                     </div>
                 @endforeach
