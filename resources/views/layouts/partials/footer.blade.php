@@ -18,10 +18,12 @@
         <nav class="col-span-2 md:col-span-1 lg:col-span-2">
             <p class="uppercase text-gray-600 text-xs tracking-wider font-medium mb-3">Contact</p>
             <a href="https://twitter.com/ryangjchandler"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="flex mb-3 md:mb-2 text-sm font-medium text-gray-800 hover:text-primary transition-colors duration-100 ease-in">Twitter</a>
-            <a href="contact@ryangjchandler.co.uk"
+            <a href="mailto:contact@ryangjchandler.co.uk"
                 class="flex mb-3 md:mb-2 text-sm font-medium text-gray-800 hover:text-primary transition-colors duration-100 ease-in">Email</a>
-            <a href="ads@ryangjchandler.co.uk"
+            <a href="mailto:ads@ryangjchandler.co.uk"
                 class="flex mb-3 md:mb-2 text-sm font-medium text-gray-800 hover:text-primary transition-colors duration-100 ease-in">Advertising</a>
         </nav>
         <div class="col-span-4">
