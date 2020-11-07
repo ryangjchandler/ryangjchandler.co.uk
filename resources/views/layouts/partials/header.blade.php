@@ -1,46 +1,44 @@
-<header class="border-b border-gray-200 py-2 print:hidden">
-    <div class="max-w-4xl container px-4 mx-auto">
-        <nav x-data="{ show: false }" class="py-1 flex flex-col md:flex-row md:items-center justify-between">
-            <div class="flex items-center justify-between">
-                <h1 class="font-bold">
-                    <a href="{{ route('home') }}" class="text-lg">Ryan Chandler</a>
-                </h1>
-                <button type="button" @click="show = !show"
-                    class="menu-button"
-                    :class="{ 'border-blue-400 bg-brand-primary-200': show }"
-                >
-                    Menu
+<header class="z-30 bg-white pl-4 pr-2 sm:px-4 py-4">
+    <div class="container max-w-5xl mx-auto flex justify-between items-center">
+        <a href="/" title="ryangjchandler.co.uk Home Page" class="flex items-center font-medium">
+            Ryan Chandler
+        </a>
+        <div class="hidden md:inline-flex space-x-1 relative">
+            <a href="#" class="btn btn-sm rounded-full btn-white">About</a>
+            <a href="#" class="btn btn-sm rounded-full btn-white">Articles</a>
+        </div>
+        <div class="flex items-center space-x-1">
+            <a href="#" class="btn btn-sm rounded-full btn-dark">Contact Me</a>
+            <div class="inline-flex md:hidden" x-data="{ open: true }">
+                <button class="btn btn-white btn-sm px-2 flex-none" @click="open = true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                    <span class="sr-only">Open Menu</span>
                 </button>
+                <div class="flex flex-col space-y-1 absolute m-2 top-0 left-0 right-0 rounded bg-white z-50 p-2 border border-gray-300 shadow"
+                    x-show.transition="open" @click.away="open = false" x-cloak>
+                    <button class="btn btn-link btn-icon px-2 flex-none self-end" @click="open = false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        <span class="sr-only">Close Menu</span>
+                    </button>
+                    <div class="grid grid-cols-2 gap-1">
+                        <a href="#"
+                            class="font-semibold rounded px-3 py-2 hover:bg-gray-200 hover:text-primary transition-colors duration-200 ease-in-out">About</a>
+                        <a href="#"
+                            class="font-semibold rounded px-3 py-2 hover:bg-gray-200 hover:text-primary transition-colors duration-200 ease-in-out">Articles</a>
+                    </div>
+                </div>
             </div>
-            <div class="pt-4 md:pt-0 md:block" :class="{ 'block': show, 'hidden': ! show }">
-                <ul class="flex flex-col md:flex-row items-center justify-start md:justify-between font-semibold text-sm">
-                    <li class="nav-link">
-                        <a href="{{ route('articles.index') }}" class="@active('articles.index', ['active'])" title="Articles">
-                            Articles
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="{{ route('talks') }}" class="@active('support', ['active'])" title="Supporting">
-                            Talks
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="{{ route('support') }}" class="@active('support', ['active'])" title="Supporting">
-                            Supporting
-                        </a>
-                    </li>
-                    @guest
-                        <li class="auth-nav-link">
-                            <a href="{{ route('login') }}">Login</a>
-                        </li>
-                    @endguest
-                    <li class="text-brand-primary-300 px-1 py-1 hover:text-brand-primary-500 hover:bg-brand-primary-100 focus:text-brand-primary-500 focus:bg-brand-primary-100 rounded">
-                        <a href="{{ route('feeds.main') }}" title="RSS Feed">
-                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        </div>
     </div>
 </header>
