@@ -45,7 +45,7 @@
         </div>
     </div>
     <div
-        class="flex flex-col md:flex-row justify-between items-start md:items-center border-t border-gray-200 pt-4 mt-10">
+        class="flex flex-col md:flex-row justify-between items-start md:items-center border-t border-gray-200 py-4 mt-10">
         <div class="container max-w-5xl mx-auto">
             <p class="text-gray-700 font-medium text-sm text-left mb-6 md:mb-0">© Copyright {{ date('Y') }} Ryan Chandler. All Rights
                 Reserved.</p>
