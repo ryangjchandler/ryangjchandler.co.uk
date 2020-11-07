@@ -1,4 +1,4 @@
-<header class="z-30 bg-white pl-4 pr-2 sm:px-4 py-4">
+<header class="z-30 bg-white pl-4 pr-2 sm:px-4 py-4 border-b border-gray-200">
     <div class="container max-w-5xl mx-auto flex justify-between items-center">
         <a href="/" title="ryangjchandler.co.uk Home Page" class="flex items-center font-medium">
             Ryan Chandler
