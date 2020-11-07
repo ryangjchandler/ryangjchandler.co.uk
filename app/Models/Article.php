@@ -20,6 +20,7 @@ class Article extends Model implements Feedable
         'sponsors_only' => 'bool',
         'show_toc' => 'bool',
         'allow_pdf_download' => 'bool',
+        'show_series_title_in_og_image' => 'bool',
     ];
 
     protected $dates = ['published_at'];

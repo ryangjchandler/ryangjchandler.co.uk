@@ -13,6 +13,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use PhpParser\Node\Expr\Cast\Bool_;
 
 class Article extends Resource
 {
@@ -63,6 +64,9 @@ class Article extends Resource
             Boolean::make('Show Table of Contents', 'show_toc'),
 
             Boolean::make('Allow PDF Download', 'allow_pdf_download')
+                ->default(false),
+
+            Boolean::make('Show Series Title in Open Graph Image', 'show_series_title_in_og_image')
                 ->default(false),
 
             BelongsToMany::make('Tags'),
