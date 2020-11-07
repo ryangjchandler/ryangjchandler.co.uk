@@ -1,4 +1,4 @@
-<footer class="w-full">
+<footer class="w-full border-t border-gray-200">
     <div class="container max-w-5xl mx-auto pt-12 px-4">
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-10 lg:gap-20 mb-3">
             <div class="col-span-3">
