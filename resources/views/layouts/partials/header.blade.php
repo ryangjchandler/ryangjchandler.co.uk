@@ -8,7 +8,7 @@
             <a href="#" class="btn btn-sm rounded-full btn-white">Articles</a>
         </div>
         <div class="flex items-center space-x-1">
-            <a href="#" class="btn btn-sm rounded-full btn-dark">Contact Me</a>
+            <a href="{{ route('support') }}" class="btn btn-sm rounded-full btn-dark">Support Me</a>
             <div class="inline-flex md:hidden" x-data="{ open: true }">
                 <button class="btn btn-white btn-sm px-2 flex-none" @click="open = true">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
