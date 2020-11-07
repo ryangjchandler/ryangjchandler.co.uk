@@ -117,5 +117,10 @@
         <article class="@if($article->series) mt-4 @else mt-6 @endif w-full markup">
             {!! $article->parsedContent() !!}
         </article>
+
+        <div class="mt-6 bg-brand-primary-400 rounded-lg px-4 py-2 font-medium text-sm text-gray-200">
+            Got some feedback for me? Let me know on <a href="https://twitter.com/ryangjchandler" class="underline dotted hover:text-white">Twitter</a>, or send me an email at
+            <a href="mailto:{{ $article->slug }}-feedback@ryangjchandler.co.uk" class="underline dotted hover:text-white">{{ $article->slug }}-feedback@ryangjchandler.co.uk</a>.
+        </div>
     </section>
 @endsection
