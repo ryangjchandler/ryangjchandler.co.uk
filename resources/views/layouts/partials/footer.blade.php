@@ -3,7 +3,7 @@
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-10 lg:gap-20 mb-3">
             <div class="col-span-3">
                 <p class="text-xs text-gray-600">
-                    A web development blog by a 20-something year old from the United Kingdom.
+                    A web development blog by a guy from the United Kingdom.
                     Covers a range of topics, including Laravel and JavaScript development.
                 </p>
             </div>
