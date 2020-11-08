@@ -18,7 +18,9 @@ use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
 final class MarkdownServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     private $languages = [
-        'html', 'css', 'javascript', 'php', 'bash', 'blade', 'yaml', 'yml',
+        'html', 'css', 'javascript', 'php',
+        'bash', 'blade', 'yaml', 'yml',
+        'markdown',
     ];
 
     public function register()
