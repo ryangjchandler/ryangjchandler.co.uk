@@ -41,6 +41,8 @@
             body { visibility: hidden !important; display: none !important; }
         </style>
     @endif
+
+    <link rel="stylesheet" href="{{ asset('static/theme.css') }}">
 @endpush
 
 @section('content')

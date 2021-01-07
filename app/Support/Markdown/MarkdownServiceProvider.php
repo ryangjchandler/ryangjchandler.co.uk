@@ -2,6 +2,7 @@
 
 namespace App\Support\Markdown;
 
+use Highlight\Highlighter;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use League\CommonMark\Block\Element\FencedCode;
@@ -25,6 +26,8 @@ final class MarkdownServiceProvider extends ServiceProvider implements Deferrabl
 
     public function register()
     {
+        Highlighter::registerLanguage('blade', resource_path('syntax/blade.json'), true);
+
         $this->app->singleton(CommonMarkConverter::class, function () {
             $env = Environment::createCommonMarkEnvironment()
                 ->addBlockRenderer(FencedCode::class, new FencedCodeRenderer($this->languages))

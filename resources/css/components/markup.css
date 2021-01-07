@@ -15,7 +15,8 @@
 }
 
 .markup pre {
-    @apply relative bg-brand-primary-900 rounded text-white px-8 py-6 mb-4 overflow-x-auto border-b-4 border-brand-primary-400;
+    background-color: #2B2B2D;
+    @apply relative rounded text-white px-8 py-6 mb-4 overflow-x-auto border-b-4 border-brand-primary-400;
 }
 
 .markup :not(pre) > code {
@@ -28,26 +29,6 @@
 
 .markup code {
     @apply font-mono text-sm;
-}
-
-.markup pre code .hljs-built_in {
-    @apply text-purple-400;
-}
-
-.markup pre code .hljs-comment {
-    @apply text-gray-200 opacity-50;
-}
-
-.markup pre code .hljs-name, .markup pre code .hljs-keyword {
-    @apply text-green-300;
-}
-
-.markup pre code .hljs-attr, .markup pre code .hljs-title {
-    @apply text-orange-300;
-}
-
-.markup pre code .hljs-string {
-    @apply text-orange-600;
 }
 
 .markup ul {
