@@ -69,7 +69,7 @@ class Article extends Model implements Feedable
         return FeedItem::create([
             'id' => $this->id,
             'title' => $this->title,
-            'summary' => $this->excerpt,
+            'summary' => $this->excerpt ?? '',
             'updated' => $this->updated_at,
             'link' => route('articles.show', $this),
             'author' => 'Ryan Chandler',
