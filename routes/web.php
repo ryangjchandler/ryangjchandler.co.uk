@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeController::class)->name('home');
 
 Route::view('/supporting-me', 'pages.support', [
-    'community' => Sponsor::all()->where('tier_price', '<=', 30),
+    'community' => Sponsor::all(),
 ])->name('support');
 
 Route::view('/talks', 'pages.talks')->name('talks');
