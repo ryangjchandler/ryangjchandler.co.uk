@@ -14,6 +14,10 @@ class Sponsor extends Model
 {
     use Sushi;
 
+    protected $casts = [
+        'created_at' => 'datetime'
+    ];
+
     public function user()
     {
         return $this->hasOne(User::class, 'nickname', 'username');
