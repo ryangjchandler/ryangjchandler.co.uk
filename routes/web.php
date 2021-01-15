@@ -13,11 +13,15 @@ use App\Http\Controllers\StoreLikeController;
 use App\Http\Controllers\TagController;
 use App\Http\Middleware\RedirectIfNotPublished;
 use App\Http\Middleware\RedirectIfNotSponsor;
+use App\Models\Sponsor;
 use Illuminate\Support\Facades\Route;
-use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('/', HomeController::class)->name('home');
-Route::view('/supporting-me', 'pages.support')->name('support');
+
+Route::view('/supporting-me', 'pages.support', [
+    'community' => Sponsor::all()->where('tier_price', '<=', 30),
+])->name('support');
+
 Route::view('/talks', 'pages.talks')->name('talks');
 
 Route::middleware('guest')->group(function () {
