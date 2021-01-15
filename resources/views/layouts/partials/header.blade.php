@@ -20,7 +20,7 @@
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="{{ route('talks') }}" class="@active('support', ['active'])" title="Supporting">
+                        <a href="{{ route('talks') }}" class="@active('talks', ['active'])" title="Supporting">
                             Talks
                         </a>
                     </li>
