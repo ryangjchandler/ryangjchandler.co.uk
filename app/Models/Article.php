@@ -34,6 +34,10 @@ class Article extends Model implements Feedable
         });
 
         static::saving(function (Article $article) {
+            if (! $article->isPublished()) {
+                $article->slug = Str::slug($article->title);
+            }
+            
             Cache::forget("content_cache_{$article->id}");
             Cache::forget("og_image_{$article->id}");
         });
