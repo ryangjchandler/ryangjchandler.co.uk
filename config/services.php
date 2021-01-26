@@ -30,17 +30,4 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'buttondown' => [
-        'key' => env('BUTTONDOWN_KEY'),
-        'url' => env('BUTTONDOWN_URL'),
-    ],
-
-    'github' => [
-        'token' => env('GITHUB_TOKEN'),
-        'client_id' => env('GITHUB_CLIENT_ID'),
-        'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => env('GITHUB_CALLBACK_URL'),
-        'sponsors_link' => env('GITHUB_SPONSORS_LINK', 'https://github.com/sponsors/ryangjchandler'),
-    ],
-
 ];
