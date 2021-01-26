@@ -7,8 +7,11 @@ use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\SocialiteCallbackController;
+use App\Http\Controllers\Auth\SocialiteRedirectController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
     ->middleware('guest')
@@ -23,6 +26,14 @@ Route::get('/login', [AuthenticatedSessionController::class, 'create'])
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
     ->middleware('guest');
+
+Route::get('/login/{provider}/redirect', SocialiteRedirectController::class)
+    ->middleware('guest')
+    ->name('login.provider.redirect');
+
+Route::get('/login/{provider}/callback', SocialiteCallbackController::class)
+    ->middleware('guest')
+    ->name('login.provider.callback');
 
 Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
     ->middleware('guest')
