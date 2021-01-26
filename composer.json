@@ -16,7 +16,6 @@
         "larabug/larabug": "^2.2",
         "laravel/breeze": "^1.0",
         "laravel/framework": "^8.0",
-        "laravel/nova": "^3.10",
         "laravel/socialite": "^5.0",
         "laravel/tinker": "^2.0",
         "league/commonmark": "^1.4",
