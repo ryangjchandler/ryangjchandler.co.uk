@@ -13,7 +13,7 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
-        'name', 'email', 'password', 'nickname', 'avatar'
+        'name', 'email', 'password'
     ];
 
     protected $hidden = [
@@ -23,9 +23,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function sponsor()
-    {
-        return $this->hasOne(Sponsor::class, 'username', 'nickname');
-    }
 }
