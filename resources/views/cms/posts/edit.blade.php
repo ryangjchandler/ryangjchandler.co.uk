@@ -1,5 +1,6 @@
 <x-cms-layout title="Edit Post">
-    <form action="{{ route('cms.posts.store') }}" method="POST">
+    <form action="{{ route('cms.posts.update', $post) }}" method="POST">
+        @method('PUT')
         @csrf
 
         <h3>Edit Post</h3>

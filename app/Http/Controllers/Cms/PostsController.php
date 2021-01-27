@@ -72,6 +72,8 @@ class PostsController extends Controller
 
         $post = Post::create($data);
 
+        $request->session()->flash('message', 'Post created successfully.');
+
         return redirect()->route('cms.posts.show', $post);
     }
 
@@ -113,7 +115,19 @@ class PostsController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $data = $request->validate([
+            'title' => ['required', 'string', 'max:255'],
+            'slug' => ['required', 'string'],
+            'content' => ['nullable', 'string'],
+            'excerpt' => ['nullable', 'string', 'max:255'],
+            'status' => ['required', Rule::in(['draft', 'published', 'archived'])],
+        ]);
+
+        $post->update($data);
+
+        $request->session()->flash('message', 'Post created successfully.');
+
+        return redirect()->back();
     }
 
     /**
@@ -124,6 +138,10 @@ class PostsController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        request()->session()->flash('message', 'Post successfully deleted.');
+
+        return redirect()->back();
     }
 }

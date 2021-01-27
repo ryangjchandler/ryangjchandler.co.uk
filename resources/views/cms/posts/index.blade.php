@@ -29,4 +29,38 @@
             </div>
         </fieldset>
     </form>
+
+    <hr>
+
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th width="5%">ID</th>
+                    <th width="55%">Title</th>
+                    <th width="10%">Status</th>
+                    <th width="20%"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($posts as $post)
+                    <tr>
+                        <td>{{ $post->id }}</td>
+                        <td>{{ $post->title }}</td>
+                        <td>{{ ucfirst($post->status) }}</td>
+                        <td>
+                            <a href="{{ route('cms.posts.edit', $post) }}">
+                                Edit
+                            </a>
+                            <form action="{{ route('cms.posts.destroy', $post) }}" method="POST" style="display: inline;">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </section>
 </x-cms-layout>

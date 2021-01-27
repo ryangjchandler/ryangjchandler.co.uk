@@ -20,6 +20,10 @@
     </header>
 
     <main>
+        @if(session('message'))
+            <p><strong>{{ session('message') }}</strong></p>
+        @endif
+
         {{ $slot }}
     </main>
 
