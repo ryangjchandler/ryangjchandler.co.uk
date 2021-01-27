@@ -21,6 +21,7 @@ class CreateCmsPostsTable extends Migration
             $table->string('excerpt')->nullable();
             $table->longText('content')->nullable();
             $table->string('status')->default('draft')->nullable();
+            $table->timestamp('publish_at')->nullable();
             $table->timestamps();
         });
     }
