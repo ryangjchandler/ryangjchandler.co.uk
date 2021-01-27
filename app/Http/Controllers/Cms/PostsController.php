@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Cms;
 use App\Http\Controllers\Controller;
 use App\Models\Cms\Post;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class PostsController extends Controller
 {
@@ -25,7 +26,13 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('cms.posts.create', [
+            'statuses' => [
+                'draft' => 'Draft',
+                'published' => 'Published',
+                'archived' => 'Archived',
+            ]
+        ]);
     }
 
     /**
@@ -36,7 +43,16 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title' => ['required', 'string', 'max:255'],
+            'content' => ['nullable', 'string'],
+            'excerpt' => ['nullable', 'string', 'max:255'],
+            'status' => ['required', Rule::in(['draft', 'published', 'archived'])],
+        ]);
+
+        $post = Post::create($data);
+
+        return redirect()->route('cms.posts.show', $post);
     }
 
     /**
@@ -47,7 +63,7 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('cms.posts.show', ['post' => $post]);
     }
 
     /**
