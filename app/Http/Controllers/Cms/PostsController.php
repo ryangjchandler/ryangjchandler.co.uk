@@ -63,7 +63,7 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        return view('cms.posts.show', ['post' => $post]);
+        return redirect()->route('cms.posts.edit', $post);
     }
 
     /**
@@ -74,7 +74,14 @@ class PostsController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('cms.posts.edit', [
+            'post' => $post,
+            'statuses' => [
+                'draft' => 'Draft',
+                'published' => 'Published',
+                'archived' => 'Archived',
+            ]
+        ]);
     }
 
     /**
