@@ -44,6 +44,13 @@
                 <strong>{{ $message }}</strong>
             @enderror
 
+            <label for="publish_at">Publish at</label>
+            <input type="datetime-local" name="publish_at" id="publish_at" value="{{ old('publish_at', $post->publish_at->format('Y-m-d\TH:i')) }}">
+
+            @error('publish_at')
+                <strong>{{ $message }}</strong>
+            @enderror
+
             <input type="submit" value="Save">
         </fieldset>
     </form>

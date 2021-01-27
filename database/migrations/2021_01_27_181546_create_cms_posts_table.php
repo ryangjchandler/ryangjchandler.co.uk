@@ -17,7 +17,7 @@ class CreateCmsPostsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('title');
-            $table->string('slug')->nullable();
+            $table->string('slug')->nullable()->unique();
             $table->string('excerpt')->nullable();
             $table->longText('content')->nullable();
             $table->string('status')->default('draft')->nullable();

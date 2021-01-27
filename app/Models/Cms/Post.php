@@ -13,6 +13,10 @@ class Post extends Model
 
     protected $table = 'cms_posts';
 
+    protected $casts = [
+        'publish_at' => 'datetime'
+    ];
+
     public static function booted()
     {
         static::creating(function (Post $post): void {

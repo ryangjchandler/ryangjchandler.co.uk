@@ -64,10 +64,16 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'title' => ['required', 'string', 'max:255'],
+            'title' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('cms_posts', 'title')
+            ],
             'content' => ['nullable', 'string'],
             'excerpt' => ['nullable', 'string', 'max:255'],
             'status' => ['required', Rule::in(['draft', 'published', 'archived'])],
+            'publish_at' => ['nullable', 'date']
         ]);
 
         $post = Post::create($data);
@@ -116,16 +122,22 @@ class PostsController extends Controller
     public function update(Request $request, Post $post)
     {
         $data = $request->validate([
-            'title' => ['required', 'string', 'max:255'],
+            'title' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('cms_posts', 'title')->ignore($post->id),
+            ],
             'slug' => ['required', 'string'],
             'content' => ['nullable', 'string'],
             'excerpt' => ['nullable', 'string', 'max:255'],
             'status' => ['required', Rule::in(['draft', 'published', 'archived'])],
+            'publish_at' => ['nullable', 'date']
         ]);
 
         $post->update($data);
 
-        $request->session()->flash('message', 'Post created successfully.');
+        $request->session()->flash('message', 'Post saved successfully.');
 
         return redirect()->back();
     }
