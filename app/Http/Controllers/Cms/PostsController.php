@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Cms;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cms\Post;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -14,9 +15,28 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('cms.posts.index');
+        $posts = Post::query()
+            ->when($request->input('sortBy'), function (Builder $query) use ($request) {
+                $query->orderBy($request->input('sortBy'), $request->input('sort') ?: 'desc');
+            })
+            ->when($request->input('status'), function (Builder $query) use ($request) {
+                $query->where('status', $request->input('status'));
+            })
+            ->get();
+
+        return view('cms.posts.index', [
+            'posts' => $posts,
+            'sort' => $request->input('sort'),
+            'sortBy' => $request->input('sortBy'),
+            'status' => $request->input('status'),
+            'statuses' => [
+                'draft' => 'Draft',
+                'published' => 'Published',
+                'archived' => 'Archived',
+            ]
+        ]);
     }
 
     /**
