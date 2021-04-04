@@ -20,4 +20,6 @@ Route::get('/page/{page:slug}', fn (Page $page) => view('pages.show', [
     'page' => $page,
 ]))->name('pages.show');
 
+Route::get('/articles/{post:slug}', fn (Post $post) => redirect('/posts/'.$post->slug, 301));
+
 Route::feeds();
