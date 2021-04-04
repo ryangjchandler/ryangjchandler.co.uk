@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
 use App\Models\Page;
 use App\Models\Post;
 use Illuminate\Support\Facades\Blade;
@@ -32,5 +33,6 @@ class AppServiceProvider extends ServiceProvider
 
         Post::unguard();
         Page::unguard();
+        Category::unguard();
     }
 }

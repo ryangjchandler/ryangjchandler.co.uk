@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c83d0bbddc5500257f451f2654c66462",
+    "content-hash": "08734f79212a14c8c214dc5969e03e18",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3298,16 +3298,16 @@
         },
         {
             "name": "ryangjchandler/orbit",
-            "version": "v0.7.3",
+            "version": "v0.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ryangjchandler/orbit.git",
-                "reference": "c326f4ba92e02c13720e0d68eb4bc7b038b9e3fd"
+                "reference": "2636eb680e96a3cd4e2a911e44df3850f4e90518"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ryangjchandler/orbit/zipball/c326f4ba92e02c13720e0d68eb4bc7b038b9e3fd",
-                "reference": "c326f4ba92e02c13720e0d68eb4bc7b038b9e3fd",
+                "url": "https://api.github.com/repos/ryangjchandler/orbit/zipball/2636eb680e96a3cd4e2a911e44df3850f4e90518",
+                "reference": "2636eb680e96a3cd4e2a911e44df3850f4e90518",
                 "shasum": ""
             },
             "require": {
@@ -3354,7 +3354,7 @@
             "description": "A flat-file database driver for Eloquent.",
             "support": {
                 "issues": "https://github.com/ryangjchandler/orbit/issues",
-                "source": "https://github.com/ryangjchandler/orbit/tree/v0.7.3"
+                "source": "https://github.com/ryangjchandler/orbit/tree/v0.7.4"
             },
             "funding": [
                 {
@@ -3362,7 +3362,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-04-03T11:13:56+00:00"
+            "time": "2021-04-04T21:29:16+00:00"
         },
         {
             "name": "scrivo/highlight.php",

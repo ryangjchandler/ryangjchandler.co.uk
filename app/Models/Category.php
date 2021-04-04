@@ -11,11 +11,13 @@ class Category extends Model
 {
     use Orbital;
 
+    public $timestamps = false;
+
     public static function schema(Blueprint $table)
     {
         $table->string('title');
         $table->string('slug');
-        $table->string('color')->default('gray');
+        $table->string('color')->nullable();
     }
 
     public function url()

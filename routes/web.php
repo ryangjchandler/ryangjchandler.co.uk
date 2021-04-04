@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'index', [
-    'page' => Page::findOrFail('index'),
-])->name('index');
+Route::get('/', function () {
+    return view('index', [
+        'page' => Page::findOrFail('index'),
+    ]);
+})->name('index');
 
 Route::get('/posts', function (Request $request) {
     $posts = Post::published()
