@@ -1,8 +1,9 @@
 ---
-slug: how-puny-works-under-the-hood-the-basics
 title: 'How Puny Works under the Hood: The Basics'
+slug: how-puny-works-under-the-hood-the-basics
 excerpt: 'Let me show you how some of Puny''s internal codebase works and why I''m in love with it.'
 published_at: 2021-02-05T12:00:00+00:00
+category_slug: insights
 ---
 ## Introduction
 

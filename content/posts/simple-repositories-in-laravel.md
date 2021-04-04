@@ -1,8 +1,9 @@
 ---
-slug: simple-repositories-in-laravel
 title: 'Simple Repositories in Laravel'
+slug: simple-repositories-in-laravel
 excerpt: 'Abstracting common queries in your Laravel applications can be done in many ways. Let''s take a look at the simplest way using the "Repository pattern".'
 published_at: 2020-05-24T18:00:00+00:00
+category_slug: laravel
 ---
 The "Repository pattern" is essentially another level of abstraction on top of your database abstraction layer. In the context of Laravel, these are simple classes with methods that call more complex chains of methods on your model classes.
 

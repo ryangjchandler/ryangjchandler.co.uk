@@ -1,8 +1,9 @@
 ---
-slug: manually-refreshing-a-livewire-component
 title: 'Manually Refreshing a Livewire Component'
+slug: manually-refreshing-a-livewire-component
 excerpt: 'Livewire provides a clean API for automatically polling and refreshing a component, but what if you want to manually refresh a component?'
 published_at: 2020-06-10T11:00:00+00:00
+category_slug: livewire
 ---
 Livewire's polling API is great for periodically refreshing your component or invoking an action, but one of the more quietly documented features is the ability to manually refresh a component using a "magic" action.
 

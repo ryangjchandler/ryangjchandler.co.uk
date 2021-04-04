@@ -1,8 +1,9 @@
 ---
-slug: highlight-laravel-blade-templates-with-highlightphp
 title: 'Highlight Laravel Blade Templates with Highlight.php'
+slug: highlight-laravel-blade-templates-with-highlightphp
 excerpt: 'Out of the box, Highlight.php doesn''t support Laravel Blade templates. I''ll show you how to register a custom syntax so that you can start highlighting your Blade content.'
 published_at: 2021-01-08T12:00:00+00:00
+category_slug: php
 ---
 Before we begin, this blog posts assumes you already have [Highlight.php](https://github.com/scrivo/highlight.php) setup in your application. If you don't already have it setup, consult the [official documentation](https://github.com/scrivo/highlight.php) or look into alternatives such as [`commonmark-highlighter`](https://github.com/spatie/commonmark-highlighter) that use this library under the hood.
 

@@ -1,8 +1,9 @@
 ---
-slug: accessing-helper-methods-in-your-livewire-components
 title: 'Accessing Helper Methods in Your Livewire Components'
+slug: accessing-helper-methods-in-your-livewire-components
 excerpt: 'Helper methods can be, well, helpful. Did you know that you can actually write helper methods in your Livewire classes and use them really easily in your Blade views?'
 published_at: 2020-08-24T10:00:00+00:00
+category_slug: livewire
 ---
 Anyone who is familiar with [Livewire](https://laravel-livewire.com/) has probably used [computed properties](https://laravel-livewire.com/docs/properties#computed-properties) at some point. The magic behind them isn't actually all that magic.
 

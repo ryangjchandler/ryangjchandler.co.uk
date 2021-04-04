@@ -1,8 +1,9 @@
 ---
-slug: share-data-with-your-frontend-in-laravel
 title: 'Share Data With Your Frontend in Laravel'
+slug: share-data-with-your-frontend-in-laravel
 excerpt: 'Sharing data with your frontend doesn''t need to be difficult, let''s look at a couple of way of doing it.'
 published_at: 2020-06-26T13:00:00+00:00
+category_slug: laravel
 ---
 Have you ever needed access to the current user's name or email address in your applications JavaScript? There are many different ways it can be done, but let's take a look at the 2 simplest methods.
 

@@ -1,8 +1,9 @@
 ---
-slug: anonymous-alpine-components
 title: 'Anonymous Alpine Components'
+slug: anonymous-alpine-components
 excerpt: 'One of Alpine''s main selling points is that it provides most of the reactive goodies that Vue and React do at a much lower cost. What if you don''t need reactivity for your site? Well, Alpine can definitely still fit into your stack!'
 published_at: 2020-04-18T23:00:00+00:00
+category_slug: alpinejs
 ---
 At it's core, Alpine depends on an `x-data` attribute. At the time of writing this article, there isn't any other way to let Alpine know your component exists. One fun fact is that your `x-data` attribute can actually be empty and have no value at all.
 

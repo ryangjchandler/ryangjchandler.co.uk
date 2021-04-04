@@ -1,8 +1,9 @@
 ---
-slug: parsing-markdown-with-php-autolinking-and-strikethrough
 title: 'Parsing Markdown with PHP: Autolinking and Strikethrough'
+slug: parsing-markdown-with-php-autolinking-and-strikethrough
 excerpt: 'Let''s take a look at how you can extend the CommonMark converter to make working with links easier and allow you to strikethrough text.'
 published_at: 2020-11-09T17:00:00+00:00
+category_slug: php
 ---
 When you want to use links in your Markdown, you would normally use the following syntax:
 

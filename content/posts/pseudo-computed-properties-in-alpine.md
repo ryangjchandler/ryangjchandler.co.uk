@@ -1,8 +1,9 @@
 ---
-slug: pseudo-computed-properties-in-alpine
 title: 'Pseudo Computed Properties in Alpine'
+slug: pseudo-computed-properties-in-alpine
 excerpt: 'One feature that I love in Vue is computed properties. You access them in the same way as normal data properties, but you can dynamically generate the value. Let''s take a look at how we can do this in Alpine.'
 published_at: 2020-04-15T23:00:00+00:00
+category_slug: alpinejs
 ---
 I've been trying to use [Alpine.js](https://github.com/alpinejs/alpine) more and more throughout my projects, both personal and professional. At work, most of the JavaScript is still using good ol' jQuery (yeah, I know 🤦‍♂️) so it's been super nice to sprinkle some lightweight reactivity and interactive goodness in there too.
 

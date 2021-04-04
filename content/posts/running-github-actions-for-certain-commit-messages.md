@@ -1,8 +1,9 @@
 ---
-slug: running-github-actions-for-certain-commit-messages
 title: 'Running GitHub Actions for Certain Commit Messages'
+slug: running-github-actions-for-certain-commit-messages
 excerpt: 'A quick look at how you can configure your GitHub Actions workflows to only run when a certain phrase is present in the commit message.'
 published_at: 2020-09-29T12:00:00+00:00
+category_slug: github-actions
 ---
 I'm going to be honest with you all for a second. I write a lot of `wip` commits. These commits are normally small changes that I want to push up to GitHub so that:
 

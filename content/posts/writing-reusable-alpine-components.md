@@ -1,8 +1,9 @@
 ---
-slug: writing-reusable-alpine-components
 title: 'Writing Reusable Alpine Components'
+slug: writing-reusable-alpine-components
 excerpt: 'Reusability is important when it comes to scaling projects and future-proofing the maintainability of a project. Let''s take a look at how you can write more re-usable components in Alpine.'
 published_at: 2020-08-30T18:30:00+00:00
+category_slug: alpinejs
 ---
 Since Alpine lives directly in the markup, it can be difficult to abstract components in the correct way. I'd like to go over a few ways that you can abstract your component logic into more re-usable components.
 

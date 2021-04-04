@@ -1,8 +1,9 @@
 ---
-slug: prevent-updating-or-saving-of-laravel-models
 title: 'Prevent Updating or Saving of Laravel Models'
+slug: prevent-updating-or-saving-of-laravel-models
 excerpt: 'Recently I''ve needed to disable particular methods and mutations on my Laravel models.'
 published_at: 2020-03-31T11:00:00+00:00
+category_slug: laravel
 ---
 For example, after a model gets created I don't want anyone to be able to update that record again. Instead, it should get overwritten with a brand new record and archived.
 

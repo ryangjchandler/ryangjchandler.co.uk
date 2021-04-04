@@ -1,8 +1,9 @@
 ---
-slug: validating-laravel-console-input
 title: 'Validating Laravel Console Input'
+slug: validating-laravel-console-input
 excerpt: 'When distributing console commands in a package or within an application, making sure data is in the correct format can be important. Let''s build a `make:user` command that takes advantage of Laravel''s validation helpers.'
 published_at: 2021-03-02T18:30:00+00:00
+category_slug: livewire
 ---
 Let's start off by creating a new console command. Run the following command in your terminal:
 

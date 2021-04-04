@@ -1,8 +1,9 @@
 ---
-slug: deploy-an-aws-lambda-function-from-the-terminal
 title: 'Deploy an AWS Lambda Function from the Terminal'
+slug: deploy-an-aws-lambda-function-from-the-terminal
 excerpt: 'Lambda''s GUI is perfect for toying with your function''s code, but what if you have Node dependencies or additional files you want to upload from your local machine or CI/CD? Learn how to deploy from your terminal in this article.'
 published_at: 2021-02-02T11:00:00+00:00
+category_slug: tips-tricks
 ---
 My last article gave a quick run-down on [how you can invoke a Lambda function from your terminal](https://ryangjchandler.co.uk/articles/execute-an-aws-lambda-function-from-the-terminal). I've had a few people message me asking how I deploy / upload my Lambda functions to AWS.
 

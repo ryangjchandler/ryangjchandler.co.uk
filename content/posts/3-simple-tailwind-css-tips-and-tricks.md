@@ -1,8 +1,9 @@
 ---
-slug: 3-simple-tailwind-css-tips-and-tricks
 title: '3 Simple Tailwind CSS Tips and Tricks'
+slug: 3-simple-tailwind-css-tips-and-tricks
 excerpt: 'Here are 3 simple Tailwind CSS tips and tricks that you can start applying and using in your Tailwind based applications right now!'
 published_at: 2021-01-24T17:00:00+00:00
+category_slug: tailwind-css
 ---
 ## 1. Always know the current breakpoint
 

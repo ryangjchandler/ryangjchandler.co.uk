@@ -1,8 +1,9 @@
 ---
-slug: execute-an-aws-lambda-function-from-the-terminal
 title: 'Execute an AWS Lambda Function from the Terminal'
+slug: execute-an-aws-lambda-function-from-the-terminal
 excerpt: 'Sick of manually testing your Lambda functions using the AWS interface or hitting your stage URL in Postman? Learn how to invoke / execute your function from the terminal using the AWS CLI.'
 published_at: 2021-01-28T20:00:00+00:00
+category_slug: tips-tricks
 ---
 ## Getting started
 

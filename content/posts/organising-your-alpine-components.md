@@ -1,8 +1,9 @@
 ---
-slug: organising-your-alpine-components
 title: 'Maintainable Alpine Components'
+slug: organising-your-alpine-components
 excerpt: 'Writing maintainable code is an important part of any software project. Let''s take a look at some ways you can make your Alpine components more maintainable.'
 published_at: 2020-05-15T11:00:00+00:00
+category_slug: alpinejs
 ---
 I've been using Alpine for the last couple of months in most of my projects and have experimented with different organisation patterns that improve the maintainability of my components.
 
