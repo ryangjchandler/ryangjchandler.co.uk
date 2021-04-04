@@ -27,11 +27,21 @@ Artisan::command('script:tags', function () {
     $tags = DB::table('tags')->get();
 
     $tags->each(function ($tag) {
-        Category::updateOrCreate([
+        $category = Category::updateOrCreate([
             'slug' => $tag->slug,
         ], [
             'title' => $tag->title,
         ]);
+
+        $articles = DB::table('article_tag')->where('tag_id', $tag->id)->get();
+
+        $articles->each(function ($pivot) use ($category) {
+            $article = DB::table('articles')->where('id', $pivot->article_id)->first();
+
+            $post = Post::find($article->slug);
+
+            $post->update(['category_slug' => $category->slug]);
+        });
 
         $this->info('Transferred '.$tag->slug);
     });

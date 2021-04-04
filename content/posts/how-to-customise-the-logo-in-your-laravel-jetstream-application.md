@@ -1,8 +1,9 @@
 ---
-slug: how-to-customise-the-logo-in-your-laravel-jetstream-application
 title: 'How to Customise the Logo in Your Laravel Jetstream Application'
+slug: how-to-customise-the-logo-in-your-laravel-jetstream-application
 excerpt: 'Laravel Jetstream comes jam-packed with lots of great features but some people struggle to change the logo in their application. Let me show you how it can be done in 2 simple steps.'
 published_at: 2021-02-14T20:00:00+00:00
+category_slug: tips-tricks
 ---
 > This article assumes you've already got a [Laravel Jetstream](https://jetstream.laravel.com/) application setup. If you haven't, read the official documentation on [how to get started](https://jetstream.laravel.com/2.x/installation.html).
 

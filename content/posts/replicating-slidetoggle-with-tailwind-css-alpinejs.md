@@ -1,8 +1,9 @@
 ---
-slug: replicating-slidetoggle-with-tailwind-css-alpinejs
 title: 'Replicating `$.slideToggle` with Tailwind CSS & Alpine.js'
+slug: replicating-slidetoggle-with-tailwind-css-alpinejs
 excerpt: 'One of jQuery''s most powerful and popular features is the `slide` helpers and lots of people would like to replicate these in Alpine, so let''s take a look at how we can do just that.'
 published_at: 2020-08-08T16:00:00+00:00
+category_slug: alpinejs
 ---
 I think jQuery's greatest feature is all of the animation / transition utilities. These methods truly changed how fast you can build a clean and interactive UI with some nice animations along the way.
 

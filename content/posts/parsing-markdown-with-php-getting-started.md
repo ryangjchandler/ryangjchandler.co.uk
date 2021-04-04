@@ -1,8 +1,9 @@
 ---
-slug: parsing-markdown-with-php-getting-started
 title: 'Parsing Markdown with PHP: Getting Started'
+slug: parsing-markdown-with-php-getting-started
 excerpt: 'Markdown is a great way of making notes, writing articles and generally managing content. Let''s take a look at how quickly you can begin using Markdown in your PHP applications.'
 published_at: 2020-11-07T17:00:00+00:00
+category_slug: php
 ---
 I'm a huge fan of Markdown. I use it, literally, everywhere I can. The article that you're reading right now was written in Markdown. If I'm ever making notes, I'm using an application that supports Markdown.
 

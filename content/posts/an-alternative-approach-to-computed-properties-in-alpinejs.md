@@ -1,8 +1,9 @@
 ---
-slug: an-alternative-approach-to-computed-properties-in-alpinejs
 title: 'An Alternative Approach to Computed Properties in Alpine.js'
+slug: an-alternative-approach-to-computed-properties-in-alpinejs
 excerpt: 'I previously wrote about using functions as computed properties in Alpine, but what if there was a better way?'
 published_at: 2020-04-20T23:00:00+00:00
+category_slug: alpinejs
 ---
 The other day, I wrote an article on [how to achieve a similar effect to computed properties](/articles/pseudo-computed-properties-in-alpine) in [Alpine.js](https://github.com/alpinejs/alpine). The approach that I took involved simply calling a method that returned a value:
 

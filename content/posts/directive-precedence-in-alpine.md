@@ -1,8 +1,9 @@
 ---
-slug: directive-precedence-in-alpine
 title: 'Directive precedence in Alpine'
+slug: directive-precedence-in-alpine
 excerpt: 'Lots of people get caught out by the fact that Alpine evaluates each directive in a particular order. Let''s look at the order it uses,'
 published_at: 2020-05-19T20:00:00+00:00
+category_slug: alpinejs
 ---
 Since Alpine doesn't have a virtual DOM and doesn't compile your templates, it evaluates a component's directives procedurally, in the order that they are defined.
 

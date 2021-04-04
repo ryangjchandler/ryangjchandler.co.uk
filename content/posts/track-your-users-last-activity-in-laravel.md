@@ -1,8 +1,9 @@
 ---
-slug: track-your-users-last-activity-in-laravel
 title: 'Track Your Users Last Activity in Laravel'
+slug: track-your-users-last-activity-in-laravel
 excerpt: 'It''s quite common to keep tabs on when an authenticated user last used your web application. The information can be really useful when calculating software adoption, usage frequency and return rate.'
 published_at: 2020-04-23T23:00:00+00:00
+category_slug: laravel
 ---
 Although there's many ways to do this in Laravel, the simplest way is with a piece of `web` middleware.
 

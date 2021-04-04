@@ -1,8 +1,9 @@
 ---
-slug: 5-simple-alpinejs-tips-and-tricks
 title: '3 Simple Alpine.js Tips and Tricks'
+slug: 5-simple-alpinejs-tips-and-tricks
 excerpt: 'Here are 3 simple Alpine.js tips and tricks that you can start applying and using in your Alpine.js components right now!'
 published_at: 2021-01-18T12:00:00+00:00
+category_slug: tips-tricks
 ---
 > This article has been written based on functionality in Alpine.js v2.x - when a new major version is released or any of these tips are no longer applicable, I'll be sure to update it.
 

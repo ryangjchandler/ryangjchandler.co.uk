@@ -1,8 +1,9 @@
 ---
-slug: build-a-remaining-character-count-component-with-alpinejs
 title: 'Build a Remaining Character Count Component with Alpine.js'
+slug: build-a-remaining-character-count-component-with-alpinejs
 excerpt: 'Learn how to build a remaining character counter in Alpine.js using only a few lines of code.'
 published_at: 2020-10-29T17:00:00+00:00
+category_slug: alpinejs
 ---
 Before we begin, let's lay down some basic markup for our character counter.
 

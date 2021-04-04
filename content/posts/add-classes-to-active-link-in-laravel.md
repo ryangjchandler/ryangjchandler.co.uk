@@ -1,8 +1,9 @@
 ---
-slug: add-classes-to-active-link-in-laravel
 title: 'Add Classes to Active Link in Laravel'
+slug: add-classes-to-active-link-in-laravel
 excerpt: 'Adding a class to make the current page "active" in your application''s navigation is a simple UI improvement. Let me show you how I typically do this in my apps.'
 published_at: 2020-06-29T15:00:00+00:00
+category_slug: laravel
 ---
 Generally speaking, the easiest way to do this is comparing the name of the current route and the one you'd like to test against.
 

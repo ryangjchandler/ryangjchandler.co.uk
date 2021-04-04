@@ -26,6 +26,7 @@ class Post extends Model implements Feedable
         $table->text('excerpt')->nullable();
         $table->text('content')->nullable();
         $table->timestamp('published_at')->nullable();
+        $table->string('category_slug')->nullable();
     }
 
     public function getPublishedAttribute()
@@ -48,6 +49,11 @@ class Post extends Model implements Feedable
             ->whereNotNull('published_at')
             ->whereDate('published_at', '<=', now())
             ->orderBy('published_at', 'DESC');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 
     public function getKeyName()

@@ -1,8 +1,9 @@
 ---
-slug: hiding-elements-until-alpine-is-ready-with-x-cloak
 title: 'Hiding elements until Alpine loads with `x-cloak`'
+slug: hiding-elements-until-alpine-is-ready-with-x-cloak
 excerpt: '`x-cloak` can be used to hide elements until Alpine has initialised all components and has control of them.'
 published_at: 2020-05-15T16:00:00+00:00
+category_slug: alpinejs
 ---
 If you've used Alpine before, you might have seen a brief flick when you load your site up. This is common if you have components that are conditionally rendered and are hidden by default.
 

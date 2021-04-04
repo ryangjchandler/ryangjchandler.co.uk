@@ -1,8 +1,9 @@
 ---
-slug: 5-simple-laravel-tips-and-tricks
 title: '5 Simple Laravel Tips and Tricks'
+slug: 5-simple-laravel-tips-and-tricks
 excerpt: 'Here are 5 simple Laravel tips and tricks that you can start applying and using in your Laravel applications right now!'
 published_at: 2021-01-17T12:00:00+00:00
+category_slug: tips-tricks
 ---
 ## 1. Chained `dd` and `dump`
 

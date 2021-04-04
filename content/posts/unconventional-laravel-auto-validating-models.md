@@ -1,8 +1,9 @@
 ---
-slug: unconventional-laravel-auto-validating-models
 title: 'Unconventional Laravel: Auto-validating models'
+slug: unconventional-laravel-auto-validating-models
 excerpt: 'Join me as I go through some strange and unconventional things that you can do in your Laravel applications, starting with auto-validating Laravel models.'
 published_at: 2020-07-02T16:00:00+00:00
+category_slug: laravel
 ---
 In most applications validation logic is placed in standardised places. You can do it inside of `FormRequest` objects or as part of your controller logic. You could even do it inside of your middleware if you really wanted to.
 

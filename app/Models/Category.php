@@ -15,6 +15,14 @@ class Category extends Model
     {
         $table->string('title');
         $table->string('slug');
+        $table->string('color')->default('gray');
+    }
+
+    public function url()
+    {
+        return route('posts.index', [
+            'category' => $this->slug,
+        ]);
     }
 
     public function getKeyName()

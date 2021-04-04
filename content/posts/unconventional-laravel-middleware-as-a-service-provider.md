@@ -1,8 +1,9 @@
 ---
-slug: unconventional-laravel-middleware-as-a-service-provider
 title: 'Unconventional Laravel: Middleware-as-a-Service-Provider'
+slug: unconventional-laravel-middleware-as-a-service-provider
 excerpt: 'Have you ever used a service provider to set a default value for a third-party library? Have you ever done this based on the current request or URL? Have you ever considered doing this inside of middleware instead?'
 published_at: 2020-09-29T16:00:00+00:00
+category_slug: laravel
 ---
 Service providers are the backbone of Laravel's powerful [service container](https://laravel.com/docs/8.x/container). They can be used to bind new services to the container, call setup methods on third party libraries and interact with first-party / core services (generally through [facades](https://laravel.com/docs/8.x/facades)).
 

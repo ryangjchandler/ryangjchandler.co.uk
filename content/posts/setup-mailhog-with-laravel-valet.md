@@ -1,8 +1,9 @@
 ---
-slug: setup-mailhog-with-laravel-valet
 title: 'Setup MailHog with Laravel Valet'
+slug: setup-mailhog-with-laravel-valet
 excerpt: 'Testing emails can be a pain. Luckily, there are plenty of tools out there that can make the process a lot easier. Let me show you how to setup MailHog, a local development tool for testing emails.'
 published_at: 2021-01-07T12:00:00+00:00
+category_slug: tooling
 ---
 Before we begin, you need to have **[Homebrew](https://brew.sh/)** installed. If you don't, visit [https://brew.sh/](https://brew.sh/) for instructions on how to get it installed.
 

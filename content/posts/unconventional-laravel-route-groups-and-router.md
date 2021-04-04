@@ -1,8 +1,9 @@
 ---
-slug: unconventional-laravel-route-groups-and-router
 title: 'Unconventional Laravel: Route groups and `$router`'
+slug: unconventional-laravel-route-groups-and-router
 excerpt: 'When registering grouped routes using `Route::group()`, it''s normal to register those nested routes using the `Route` facade, but have you ever used the `$router` variable?'
 published_at: 2020-07-13T16:00:00+00:00
+category_slug: laravel
 ---
 I'd estimate that 99% of Laravel applications register their routes using the `Illuminate\Support\Facades\Route` class. It looks a little something like:
 

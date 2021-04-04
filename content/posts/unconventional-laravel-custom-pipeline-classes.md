@@ -1,8 +1,9 @@
 ---
-slug: unconventional-laravel-custom-pipeline-classes
 title: 'Unconventional Laravel: Custom Pipeline Classes'
+slug: unconventional-laravel-custom-pipeline-classes
 excerpt: 'Laravel makes use of the internal `Pipeline` class and it''s more common in userland too, but have you ever considered tidying up these pipeline processes with custom pipeline classes?'
 published_at: 2020-09-15T11:00:00+00:00
+category_slug: laravel
 ---
 I'll start off by going over what the `Pipeline` class actually does. In [layman's terms](https://en.wikipedia.org/wiki/Plain_English), this class will take a value and pass it off to a collection of handler classes before being returned.
 

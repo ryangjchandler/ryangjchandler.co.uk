@@ -1,8 +1,9 @@
 ---
-slug: unconventional-laravel-synchronous-jobs-for-reusability
 title: 'Unconventional Laravel: Synchronous jobs for reusability'
+slug: unconventional-laravel-synchronous-jobs-for-reusability
 excerpt: 'Code reusability is a big thing to consider when working on larger applications, but have you ever considered using synchronous jobs?'
 published_at: 2020-07-05T16:00:00+00:00
+category_slug: laravel
 ---
 Most applications use jobs as a way of pushing heavy logic off of the main thread and doing work asynchronously, in the background.
 

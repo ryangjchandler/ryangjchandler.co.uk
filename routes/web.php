@@ -1,16 +1,29 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Page;
 use App\Models\Post;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index', [
     'page' => Page::findOrFail('index'),
 ])->name('index');
 
-Route::view('/posts', 'posts.index', [
-    'posts' => Post::published()->simplePaginate(),
-])->name('posts.index');
+Route::get('/posts', function (Request $request) {
+    $posts = Post::published()
+        ->when($request->has('category'), fn ($query) => $query->whereHas(
+            'category', fn ($query) => $query->where('slug', $request->input('category'))
+        ))
+        ->published()
+        ->simplePaginate();
+
+    return view('posts.index', [
+        'posts' => $posts,
+        'category' => Category::find($request->input('category')),
+    ]);
+})->name('posts.index');
 
 Route::get('/posts/{post:slug}', fn (Post $post) => view('posts.show', [
     'post' => $post,

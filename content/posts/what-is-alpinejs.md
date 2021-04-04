@@ -1,8 +1,9 @@
 ---
-slug: what-is-alpinejs
 title: 'What is Alpine.js?'
+slug: what-is-alpinejs
 excerpt: 'A brief look at the new Vue-inspired JavaScript framework, with no virtual DOM.'
 published_at: 2020-03-28T00:00:00+00:00
+category_slug: alpinejs
 ---
 If you're a part of the Laravel community, you've probably already heard of Alpine. It's a minimalistic JavaScript framework that ditches the virtual DOM in favour of raw DOM updates and operations. The documentation says to *Think of it like [Tailwind](https://tailwindcss.com/) for JavaScript.*
 

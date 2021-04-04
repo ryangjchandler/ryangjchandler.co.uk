@@ -1,8 +1,9 @@
 ---
-slug: creating-custom-magic-variables-in-alpinejs
 title: 'Creating Custom Magic Variables in Alpine.js'
+slug: creating-custom-magic-variables-in-alpinejs
 excerpt: 'We all come across tasks that are repetitive and probably struggle to find ways of making them more re-usable in our Alpine components. Since v2.5 we can register custom magic variables that can help us out with that.'
 published_at: 2020-08-23T16:50:00+00:00
+category_slug: alpinejs
 ---
 DRY code is important and it can be difficult to be _completely_ DRY with your code, especially when you're using a front-end framework such as Alpine. 
 
