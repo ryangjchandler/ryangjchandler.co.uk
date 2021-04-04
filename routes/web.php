@@ -9,7 +9,7 @@ Route::view('/', 'index', [
 ])->name('index');
 
 Route::view('/posts', 'posts.index', [
-    'posts' => Post::published()->paginate(),
+    'posts' => Post::published()->simplePaginate(),
 ])->name('posts.index');
 
 Route::get('/posts/{post:slug}', fn (Post $post) => view('posts.show', [

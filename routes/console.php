@@ -1,19 +1,23 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 
-/*
-|--------------------------------------------------------------------------
-| Console Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of your Closure based console
-| commands. Each Closure is bound to a command instance allowing a
-| simple approach to interacting with each command's IO methods.
-|
-*/
+Artisan::command('script:transfer', function ($command) {
+    $articles = DB::table('articles')->get();
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote');
+    $articles->each(function ($article) {
+        Post::updateOrCreate([
+            'slug' => $article->slug,
+        ], [
+            'title' => $article->title,
+            'excerpt' => $article->excerpt,
+            'content' => $article->content,
+            'published_at' => $article->published_at,
+        ]);
+
+        $this->info('Transferred '.$article->slug);
+    });
+});

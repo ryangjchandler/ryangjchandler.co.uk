@@ -33,11 +33,21 @@ class Post extends Model implements Feedable
         return $this->published_at && $this->published_at->isPast();
     }
 
+    public function getExcerptAttribute($excerpt)
+    {
+        if ($excerpt) {
+            return $excerpt;
+        }
+
+        return Str::limit($this->content, 100, '');
+    }
+
     public function scopePublished($query)
     {
         return $query
             ->whereNotNull('published_at')
-            ->whereDate('published_at', '<=', now());
+            ->whereDate('published_at', '<=', now())
+            ->orderBy('published_at', 'DESC');
     }
 
     public function getKeyName()
@@ -69,7 +79,9 @@ class Post extends Model implements Feedable
     public static function booted()
     {
         static::creating(function (Post $post) {
-            $post->slug = Str::slug($post->title);
+            if (! $post->slug) {
+                $post->slug = Str::slug($post->title);
+            }
         });
 
         static::updating(function (Post $post) {

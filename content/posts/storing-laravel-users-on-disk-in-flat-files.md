@@ -1,8 +1,8 @@
 ---
-title: 'Hello, World'
-slug: hello-world
+slug: storing-laravel-users-on-disk-in-flat-files
+title: 'Storing Laravel Users on Disk in Flat-Files'
 excerpt: 'Let me demonstrate how simple it is to get a flat-file `User` model going in your Laravel application.'
-published_at: 2021-04-04T17:30:56+00:00
+published_at: 2021-03-28T11:00:00+00:00
 ---
 **I'm tired of generic SQL databases.** I've become infactuated with flat-file systems where content and data is stored on disk and persisted between environments, whether that be an SQLite database that powers my application or plain Markdown files.
 

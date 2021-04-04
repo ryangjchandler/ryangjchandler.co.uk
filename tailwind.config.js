@@ -1,5 +1,8 @@
 module.exports = {
-    purge: ['./resources/**/*.blade.php'],
+    purge: [
+        './resources/**/*.blade.php',
+        './storage/framework/views/*.php'
+    ],
     darkMode: 'class',
     theme: {
         extend: {},

@@ -1,8 +1,8 @@
 ---
-title: 'How to Schedule Artisan Commands from Your Laravel Package'
 slug: how-to-schedule-artisan-commands-from-your-laravel-package
+title: 'How to Schedule Artisan Commands from Your Laravel Package'
 excerpt: 'Ever needed to schedule an `artisan` command from one of your Laravel packages but couldn''t figure out how to do it? Let me show you!'
-published_at: 2021-04-04T19:39:40+00:00
+published_at: 2021-03-21T17:45:00+00:00
 ---
 Before you can run your command on the scheduler, you need to make sure you've actually registered the command with `artisan`.
 
