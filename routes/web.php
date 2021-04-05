@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Byte;
 use App\Models\Category;
 use App\Models\Page;
 use App\Models\Post;
@@ -36,5 +37,9 @@ Route::get('/page/{page:slug}', fn (Page $page) => view('pages.show', [
 ]))->name('pages.show');
 
 Route::get('/articles/{post:slug}', fn (Post $post) => redirect('/posts/'.$post->slug, 301));
+
+Route::get('/bytes', fn () => view('bytes.index', [
+    'bytes' => Byte::latest('created_at')->simplePaginate(),
+]))->name('bytes.index');
 
 Route::feeds();
