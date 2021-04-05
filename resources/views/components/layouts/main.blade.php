@@ -17,10 +17,7 @@
         <nav class="space-x-8">
             <a href="{{ route('index') }}" class="text-sm md:text-base hover:underline focus:underline {{ active('index', 'underline text-gray-900 font-semibold', 'font-medium text-gray-600') }}">About</a>
             <a href="{{ route('posts.index') }}" class="text-sm md:text-base hover:underline focus:underline {{ active('posts.index', 'underline text-gray-900 font-semibold', 'font-medium text-gray-600') }}">Blog</a>
-
-            @if(config('features.bytes_enabled'))
-                <a href="/" class="text-sm md:text-base hover:underline focus:underline {{ active('bytes', 'underline text-gray-900 font-semibold', 'font-medium text-gray-600') }}">Bytes</a>
-            @endif
+            <a href="{{ route('bytes.index') }}" class="text-sm md:text-base hover:underline focus:underline {{ active('bytes.index', 'underline text-gray-900 font-semibold', 'font-medium text-gray-600') }}">Bytes</a>
 
             @if(config('features.projects_enabled'))
                 <a href="/" class="text-sm md:text-base hover:underline focus:underline {{ active('projects.index', 'underline text-gray-900 font-semibold', 'font-medium text-gray-600') }}">Projects</a>
