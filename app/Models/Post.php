@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use Orbit\Concerns\Orbital;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Cache;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 
@@ -94,6 +95,8 @@ class Post extends Model implements Feedable
             if (! $post->published) {
                 $post->slug = Str::slug($post->title);
             }
+
+            Cache::forget('post-content-'.$post->slug);
         });
     }
 }
