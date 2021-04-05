@@ -57,6 +57,11 @@ class Post extends Model implements Feedable
         return $this->belongsTo(Category::class);
     }
 
+    public function views()
+    {
+        return $this->morphMany(View::class, 'viewable');
+    }
+
     public function getKeyName()
     {
         return 'slug';
