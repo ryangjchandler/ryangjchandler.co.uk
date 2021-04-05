@@ -1,4 +1,4 @@
-<x-layouts.main title="Blog">
+<x-layouts.main title="Bytes">
     <section>
         @foreach($bytes as $byte)
             <div class="space-y-4 {{ $loop->last ? 'mb-16' : null }}">
