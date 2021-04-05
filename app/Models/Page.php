@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use Orbit\Concerns\Orbital;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Cache;
 
 class Page extends Model
 {
@@ -38,6 +39,8 @@ class Page extends Model
 
         static::updating(function (Page $page) {
             $page->slug = Str::slug($page->title);
+
+            Cache::forget('page-content-'.$page->slug);
         });
     }
 }
