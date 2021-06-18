@@ -4,7 +4,7 @@ slug: the-magic-behind-reactivity-proxies
 excerpt: |
     Reactive JavaScript frameworks are full of magic. In this series, I'll cover the basics of
     reactivity in JavaScript, starting with proxies.
-published_at: 2021-06-27T17:00:00+00:00
+published_at: 2021-06-18T17:00:00+00:00
 category_slug: javascript
 ---
 
