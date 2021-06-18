@@ -46,6 +46,10 @@ class Post extends Model implements Feedable
 
     public function scopePublished($query)
     {
+        if (!app()->environment('production')) {
+            return $query->orderBy('published_at', 'DESC');
+        }
+
         return $query
             ->whereNotNull('published_at')
             ->whereDate('published_at', '<=', now())
