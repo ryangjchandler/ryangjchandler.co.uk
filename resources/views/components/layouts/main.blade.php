@@ -9,6 +9,12 @@
     @include('feed::links')
     <title>@isset($title) {{ $title }} - @endisset {{ config('app.name') }}</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <script
+        src="https://analytics.ryangjchandler.co.uk/js/tracker.js"
+        data-url="https://analytics.ryangjchandler.co.uk"
+        data-site="93b485b6-7185-49a6-97f2-d55d303275bc"
+        async
+    ></script>
 </head>
 <body class="flex flex-col min-h-screen font-sans text-base antialiased min-w-screen">
     <header class="max-w-3xl p-8 space-y-4 md:space-y-8 md:px-32 md:pt-24 md:pb-16">
